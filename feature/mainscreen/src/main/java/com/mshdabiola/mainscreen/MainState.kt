@@ -1,10 +1,11 @@
 package com.mshdabiola.mainscreen
 
-sealed interface MainState {
-    data class Show(val models: List<ModelUiState>) : MainState
-    object Error : MainState
+import com.mshdabiola.ui.data.AlbumUiState
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 
-    object Loading : MainState
-}
 
-data class ModelUiState(val id: Long, val name: String)
+data class MainState(
+    val newRelease : ImmutableList<AlbumUiState> = emptyList<AlbumUiState>().toImmutableList(),
+    val recommendations : ImmutableList<AlbumUiState> = emptyList<AlbumUiState>().toImmutableList()
+)

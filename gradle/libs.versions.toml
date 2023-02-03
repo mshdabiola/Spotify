@@ -61,7 +61,7 @@ retrofitKotlinxSerializationJson = "0.8.0"
 room = "2.5.0-rc01"
 secrets = "2.0.1"
 turbine = "0.8.0"
-ktor ="2.2.2"
+ktor ="2.2.3"
 ktorKotlinxSerializationJson="1.0.1"
 timber="5.0.1"
 
@@ -150,6 +150,7 @@ ktor-client-mock={module="io.ktor:ktor-client-mock",version.ref="ktor"}
 ktor-client-content-negotiation={module="io.ktor:ktor-client-content-negotiation",version.ref="ktor"}
 ktor-client-resources={module="io.ktor:ktor-client-resources",version.ref="ktor"}
 ktor-client-logging={module="io.ktor:ktor-client-logging-jvm",version.ref="ktor"}
+ktor-client-auth={module="io.ktor:ktor-client-auth",version.ref="ktor"}
 timber ={module="com.jakewharton.timber:timber",version.ref="timber"}
 
 

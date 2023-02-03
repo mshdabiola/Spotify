@@ -60,10 +60,13 @@ dependencies {
     //implementation(libs.bundles.compose.bundle)
     implementation (project(":core:designsystem"))
    implementation (project(":feature:mainscreen"))
+    implementation (project(":feature:searchscreen"))
+    implementation (project(":feature:libraryscreen"))
     implementation(libs.androidx.profileinstaller)
     //implementation(libs.kotlinx.collection.immutable)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.timber)
+    implementation(libs.androidx.compose.material.iconsExtended)
 //    implementation(libs.firebase.crashlytics.kts)
 //    implementation(libs.firebase.analytics.kts)
 

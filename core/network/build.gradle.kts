@@ -19,6 +19,7 @@ dependencies{
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.serialization)
     implementation(libs.ktor.client.resources)
+    implementation(libs.ktor.client.auth)
 
     testImplementation (libs.ktor.client.mock)
 }

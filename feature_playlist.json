@@ -1,0 +1,373 @@
+{
+  "message": "Editor's picks",
+  "playlists": {
+    "href": "https://api.spotify.com/v1/browse/featured-playlists?country=NG&timestamp=2023-02-05T17%3A32%3A50&offset=0&limit=20",
+    "items": [
+      {
+        "collaborative": false,
+        "description": "The Kid LAROI is on top of the Hottest 50!",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M",
+        "id": "37i9dQZF1DXcBWIGoYBM5M",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003b684598113677a364b791f2e",
+            "width": null
+          }
+        ],
+        "name": "Today's Top Hits",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY3NTQwMDQwMCwwMDAwMDAwMDMzMjdlYTFiOTNmNmFjZDY1MmIxOTQ1NDI0Y2I2ZDRi",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+      },
+      {
+        "collaborative": false,
+        "description": "All the hits you'll need to make your summer sizzle.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX1gRalH1mWrP"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1gRalH1mWrP",
+        "id": "37i9dQZF1DX1gRalH1mWrP",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000034fdcd4954713745550ba27b3",
+            "width": null
+          }
+        ],
+        "name": "Summer Hits",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY2MjA3OTIwMCwwMDAwMDAwMGU4Njg3NTQ2MzY5M2NkZDMwZjAzNGEzYTI2MDI2NjJk",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX1gRalH1mWrP/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX1gRalH1mWrP"
+      },
+      {
+        "collaborative": false,
+        "description": "Happy tunes from the 50s, 60s & 70s. Cover: The Beach Boys.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWVinJBuv0P4z"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVinJBuv0P4z",
+        "id": "37i9dQZF1DWVinJBuv0P4z",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000032cbdcb688db08f392ee02c80",
+            "width": null
+          }
+        ],
+        "name": "Feel Good Classics",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY3Mjc1ODI3NiwwMDAwMDAwMGVjYWU5NjU1OTcwNjhiZDhjYjdhNzJkYTY1YjRlMDI4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVinJBuv0P4z/tracks",
+          "total": 150
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWVinJBuv0P4z"
+      },
+      {
+        "collaborative": false,
+        "description": "Keep your night easy and light with this acoustic mix.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcWBRiUaG3o5"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcWBRiUaG3o5",
+        "id": "37i9dQZF1DXcWBRiUaG3o5",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003bdd580456b856d8e1176ffb1",
+            "width": null
+          }
+        ],
+        "name": "Evening Acoustic",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY1MDA0MTgwOSwwMDAwMDAwMGY2OTQ5YTY0Y2M3MmMwODRjYjE1NTJkNGJhNmZhOGRh",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcWBRiUaG3o5/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXcWBRiUaG3o5"
+      },
+      {
+        "collaborative": false,
+        "description": "Hits to boost your mood and fill you with happiness!",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdPec7aLTmlC",
+        "id": "37i9dQZF1DXdPec7aLTmlC",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003b55b6074da1d43715fc16d6d",
+            "width": null
+          }
+        ],
+        "name": "Happy Hits!",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY3NTM3ODg2MCwwMDAwMDAwMDg3YWEyNTkzZGM3OTE0ZDkwNjFmNGMwNmY0ZWEzYzg2",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdPec7aLTmlC/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXdPec7aLTmlC"
+      },
+      {
+        "collaborative": false,
+        "description": "A selection of the greatest funk & soul records ever made.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWWvhKV4FBciw"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWvhKV4FBciw",
+        "id": "37i9dQZF1DWWvhKV4FBciw",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003e0113d1b6e16f0813877a9f9",
+            "width": null
+          }
+        ],
+        "name": "Funk & Soul Classics",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY2Mzk1MjgxMSwwMDAwMDAwMGI2NDQwMzM2ZGM3ZGFkZjU5NDgyMGMxYmUwZGNmMDk1",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWvhKV4FBciw/tracks",
+          "total": 80
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWWvhKV4FBciw"
+      },
+      {
+        "collaborative": false,
+        "description": "The biggest songs of the 1970s. \n",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWTJ7xPn4vNaz"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTJ7xPn4vNaz",
+        "id": "37i9dQZF1DWTJ7xPn4vNaz",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003e973c34650c72b5ad115fc3a",
+            "width": null
+          }
+        ],
+        "name": "All Out 70s",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY3NDM0NTYwMCwwMDAwMDAwMDA4MWZkZWVhMTU2YWJhYWZhZjM0MjhjNjcxN2U0NDAx",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWTJ7xPn4vNaz/tracks",
+          "total": 150
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWTJ7xPn4vNaz"
+      },
+      {
+        "collaborative": false,
+        "description": "Lofi's crispiest beatmakers. Cover: Cookin Soul",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX36Xw4IJIVKA"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX36Xw4IJIVKA",
+        "id": "37i9dQZF1DX36Xw4IJIVKA",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000035bfa4d6bec505c7a2634cc69",
+            "width": null
+          }
+        ],
+        "name": "Lofi Hip-Hop",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY0NTEzODkyMCwwMDAwMDAwMDQwMzgyMWQ4NDk0YzA3ODdjZTBjZjVmYzQ0ODJiYzg4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX36Xw4IJIVKA/tracks",
+          "total": 94
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX36Xw4IJIVKA"
+      },
+      {
+        "collaborative": false,
+        "description": "You can practically taste the desert dirt in your mouth while listening to these riff-heavy, fuzzed out numbers. Cover: Queens of the Stone Age",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXdpVGstUksUC"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdpVGstUksUC",
+        "id": "37i9dQZF1DXdpVGstUksUC",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003b6f6b2370a52ccf772a90d1c",
+            "width": null
+          }
+        ],
+        "name": "Stoner Rock",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY3MDYwOTA2MSwwMDAwMDAwMDdmYTM1YmRlMmRlNzdjMzNiYmRiYWIzNzQ0YTMyNThk",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdpVGstUksUC/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXdpVGstUksUC"
+      },
+      {
+        "collaborative": false,
+        "description": "Feel good with this positively timeless playlist!",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX9XIFQuFvzM4"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX9XIFQuFvzM4",
+        "id": "37i9dQZF1DX9XIFQuFvzM4",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f0000000313a02d059c0479e65a850267",
+            "width": null
+          }
+        ],
+        "name": "Feelin' Good",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY2NjMyNDgwMCwwMDAwMDAwMGQ3NjQ1NmM3YmY3NjBjZmFmN2Y5NTRhMDdjMTUyZWY3",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX9XIFQuFvzM4/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DX9XIFQuFvzM4"
+      }
+    ],
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 10
+  }
+}

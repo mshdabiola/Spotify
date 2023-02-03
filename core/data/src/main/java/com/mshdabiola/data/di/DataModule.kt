@@ -1,7 +1,9 @@
 package com.mshdabiola.data.di
 
 import com.mshdabiola.data.repository.ModelRepository
+import com.mshdabiola.data.repository.NetworkRepository
 import com.mshdabiola.data.repository.RealModelRepository
+import com.mshdabiola.data.repository.RealNetworkRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,4 +15,7 @@ interface DataModule {
 
     @Binds
     fun bindModelRepository(realModelRepository: RealModelRepository): ModelRepository
+
+    @Binds
+    fun bindNetworkRepository(realNetworkRepository: RealNetworkRepository):NetworkRepository
 }
