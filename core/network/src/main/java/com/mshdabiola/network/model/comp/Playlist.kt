@@ -7,7 +7,7 @@ data class Playlist(
 	val images: List<ImagesItem>,
 	val description: String,
 	val type: String,
-	val tracks: Tracks,
+	//val tracks: Tracks,
 	val name: String,
 	val id: String,
 )

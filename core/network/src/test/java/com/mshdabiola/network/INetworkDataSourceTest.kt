@@ -56,10 +56,14 @@ class INetworkDataSourceTest {
 
     @Test
     fun getCategory() = runTest {
+    val categories= networkDataSource.getCategory()
+        assertEquals(20,categories.items.size)
     }
 
     @Test
     fun getFeaturePlaylist() = runTest {
+        val playlists= networkDataSource.getFeaturePlaylist()
+        assertEquals(2,playlists.items.size)
     }
 
     @Test

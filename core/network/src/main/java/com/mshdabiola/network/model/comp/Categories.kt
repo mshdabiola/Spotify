@@ -4,10 +4,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Categories(
-	val next: String,
+	val next: String?=null,
 	val total: Int,
 	val offset: Int,
-	val previous: String,
+	val previous: String?=null,
 	val limit: Int,
 	val href: String,
 	val items: List<Category>

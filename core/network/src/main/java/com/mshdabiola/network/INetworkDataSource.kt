@@ -1,9 +1,11 @@
 package com.mshdabiola.network
 
+import com.mshdabiola.network.model.CategoryItem
 import com.mshdabiola.network.model.NewRelease
 import com.mshdabiola.network.model.Recommendation
 import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
+import com.mshdabiola.network.model.comp.Feature
 import com.mshdabiola.network.model.comp.Playlists
 import com.mshdabiola.network.model.comp.Track
 import com.mshdabiola.network.model.comp.Tracks
@@ -32,12 +34,25 @@ class INetworkDataSource @Inject constructor(
     }
 
     override suspend fun getCategory(): Categories {
-        return httpClient.get(Request.Browse.Category()).body()
+        val categoryItem:CategoryItem= httpClient.get(Request.Browse.Category(
+            country = "NG",
+            locale = "yo_NG",
+            limit = "10",
+            offset = "0"
+        )).body()
+        return categoryItem.categories
     }
 
 
     override suspend fun getFeaturePlaylist(): Playlists {
-        return httpClient.get(Request.Browse.FeaturedPlaylist()).body()
+        val feature:Feature= httpClient.get(Request.Browse.FeaturedPlaylist(
+            country = "NG",
+            locale = "yo_NG",
+            limit = "10",
+            offset = "0"
+        )).body()
+
+        return feature.playlists
     }
 
     override suspend fun getNewRelease(): Albums {

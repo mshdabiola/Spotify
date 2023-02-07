@@ -8,12 +8,21 @@ class Request {
     @Resource("browse")
     class Browse(val request: Request= Request()) {
         @Resource("categories")
-        class Category(val browse: Browse= Browse())
+        class Category(
+            val browse: Browse= Browse(),
+            val country: String,
+            val locale : String,
+            val limit: String,
+            val offset: String,
+        )
 
         @Resource("featured-playlists")
         class FeaturedPlaylist(
             val browse: Browse = Browse(),
-            val country: String = "NG"
+            val country: String,
+            val locale : String,
+            val limit: String,
+            val offset: String,
         )
 
         @Resource("new-releases")
