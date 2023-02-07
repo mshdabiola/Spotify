@@ -6,6 +6,8 @@ import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.headersOf
 import io.ktor.utils.io.ByteReadChannel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
 import org.junit.Assert.*
 
 import org.junit.After
@@ -13,6 +15,7 @@ import org.junit.Before
 import org.junit.Test
 import java.io.File
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class INetworkDataSourceTest {
     private lateinit var networkDataSource: NetworkDataSource
     private val path="/Users/user/AndroidStudioProjects/Spotify/data/"
@@ -40,22 +43,29 @@ class INetworkDataSourceTest {
         networkDataSource = INetworkDataSource(client)
     }
     @After
-    fun tearDown() {
+    fun tearDown() = runTest {
     }
 
     @Test
-    fun getRecommendation() {
+    fun getRecommendation() = runTest {
+
+        val recommendation= networkDataSource.getRecommendation()
+
+        assertEquals(10,recommendation.size)
     }
 
     @Test
-    fun getCategory() {
+    fun getCategory() = runTest {
     }
 
     @Test
-    fun getFeaturePlaylist() {
+    fun getFeaturePlaylist() = runTest {
     }
 
     @Test
-    fun getNewRelease() {
+    fun getNewRelease()= runTest {
+        val newRelease=networkDataSource.getNewRelease()
+
+        assertEquals(20,newRelease.items.size)
     }
 }

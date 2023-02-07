@@ -1,4 +1,4 @@
-package com.mshdabiola.network.model.comp
+package com.mshdabiola.network.model
 
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException

@@ -17,15 +17,20 @@ class Request {
         )
 
         @Resource("new-releases")
-        class NewReleases(val browse: Browse=Browse())
+        class NewReleases(
+            val browse: Browse = Browse(),
+            val country: String,
+            val limit: String,
+            val offset: String
+        )
     }
     @Resource("recommendations")
     class Recommendations(
         val request: Request = Request(),
-        val limit: String = "10",
-        val market: String = "NG",
-        val seed_artists: String = "4NHQUGzhtTLFvgF5SZesLK",
-        val seed_genres: String = "classical",
-        val seed_tracks: String = "0c6xIDDpzE81m2q797ordA"
+        val limit: String,
+        val market: String,
+        val seed_artists: String,
+        val seed_genres: String,
+        val seed_tracks: String
     )
 }

@@ -6,10 +6,10 @@ import kotlinx.serialization.Serializable
 data class Track(
 	val album: Album,
 	val type: String,
-	val durationMs: Int,
-	val isPlayable: Boolean,
+	val durationMs: Int?=null,
+	val isPlayable: Boolean?=null,
 	val artists: List<ArtistsItem>,
-	val previewUrl: String,
+	val previewUrl: String?=null,
 	val name: String,
 	val href: String,
 	val id: String,
