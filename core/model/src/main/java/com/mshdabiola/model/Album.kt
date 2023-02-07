@@ -2,8 +2,11 @@ package com.mshdabiola.model
 
 data class Album(
     val id :String,
-    val title : String,
+    val name : String,
+    val releaseDate:String,
+    val albumType : String,
     val type:String,
     val artist:String,
-    val imageUri : String
+    val imageUri : String,
+    val tracks :List<Track>
     )

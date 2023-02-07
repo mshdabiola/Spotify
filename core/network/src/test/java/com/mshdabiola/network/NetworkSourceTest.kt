@@ -1,5 +1,6 @@
 package com.mshdabiola.network
 
+import android.util.Log
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.http.HttpHeaders
@@ -63,12 +64,15 @@ class NetworkSourceTest {
     }
 
     @Test
-    fun getFeaturePlaylist() {
+    fun getFeaturePlaylist()= runTest {
+        val playlists=networkSource.getFeaturePlaylist()
+        Log.e("",playlists.playlists.playlists?.joinToString () ?:"empty")
+        assertEquals("abiola",playlists.message)
     }
 
     @Test
     fun getNewRelease() = runTest{
         val newRelease=networkSource.getNewRelease()
-        assert(newRelease.albums?.items?.isNotEmpty() ?:false)
+        assert(newRelease.albums.items.isNotEmpty())
     }
 }

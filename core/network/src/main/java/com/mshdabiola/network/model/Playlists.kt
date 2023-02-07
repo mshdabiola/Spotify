@@ -1,7 +1,9 @@
 package com.mshdabiola.network.model
 
 import com.mshdabiola.network.model.component.Playlist
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class Playlists(
 	val next: String? = null,
 	val total: Int? = null,

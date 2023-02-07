@@ -18,7 +18,7 @@ class Request {
         }
 
         @Resource("featured-playlists")
-        class FeaturedPlaylist(val browse: Browse= Browse())
+        class FeaturedPlaylist(val browse: Browse= Browse(),val country:String="NG")
 
         @Resource("new-releases")
         class NewReleases(val browse: Browse=Browse())

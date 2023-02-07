@@ -1,6 +1,9 @@
 package com.mshdabiola.network.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class FPlaylist(
-	val playlists: Playlists? = null,
-	val message: String? = null
+	val playlists: Playlists,
+	val message: String
 )
