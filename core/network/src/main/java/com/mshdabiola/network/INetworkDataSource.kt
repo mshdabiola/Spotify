@@ -1,17 +1,20 @@
 package com.mshdabiola.network
 
 import com.mshdabiola.network.model.CategoryItem
+import com.mshdabiola.network.model.HttpError
 import com.mshdabiola.network.model.NewRelease
 import com.mshdabiola.network.model.Recommendation
 import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
+import com.mshdabiola.network.model.comp.Message
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
 import com.mshdabiola.network.request.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.resources.get
+import io.ktor.http.HttpStatusCode
 import javax.inject.Inject
 
 class INetworkDataSource @Inject constructor(
@@ -19,7 +22,7 @@ class INetworkDataSource @Inject constructor(
 ) : NetworkDataSource {
 
     override suspend fun getRecommendation(): List<NetworkTrack> {
-        val recommendation: Recommendation = httpClient.get(
+        val response = httpClient.get(
             Request.Recommendations(
                 limit = "10",
                 market = "NG",
@@ -27,41 +30,69 @@ class INetworkDataSource @Inject constructor(
                 seed_genres = "classical",
                 seed_tracks = "0c6xIDDpzE81m2q797ordA"
             )
-        ).body()
+        )
+        val recommendation: Recommendation= if (response.status== HttpStatusCode.OK){
+            response.body()
+        }else
+        {
+            val message :Message=response.body()
+            throw Exception(message.error.message)
+        }
+
 
         return recommendation.tracks
     }
 
     override suspend fun getCategory(): Categories {
-        val categoryItem:CategoryItem= httpClient.get(Request.Browse.Category(
+
+        val response=httpClient.get(Request.Browse.Category(
             country = "NG",
             locale = "yo_NG",
             limit = "10",
             offset = "0"
-        )).body()
+        ))
+        val categoryItem:CategoryItem=if (response.status== HttpStatusCode.OK){
+            response.body()
+        }else{
+            val message:Message=response.body()
+            throw Exception(message.error.message)
+        }
         return categoryItem.categories
     }
 
 
     override suspend fun getFeaturePlaylist(): NetworkPlaylists {
-        val feature:Feature= httpClient.get(Request.Browse.FeaturedPlaylist(
+        val response=httpClient.get(Request.Browse.FeaturedPlaylist(
             country = "NG",
             locale = "yo_NG",
             limit = "10",
             offset = "0"
-        )).body()
+        ))
+
+        val feature:Feature=if(response.status== HttpStatusCode.OK){
+            response.body()
+        }else{
+            val message:Message=response.body()
+            throw Exception(message.error.message)
+        }
 
         return feature.playlists
     }
 
     override suspend fun getNewRelease(): Albums {
-        val newRelease: NewRelease = httpClient.get(
-            Request.Browse.NewReleases(
-                limit = "",
-                country = "NG",
-                offset = "0"
-            )
-        ).body()
+        val response=httpClient.get(
+        Request.Browse.NewReleases(
+            limit = "10",
+            country = "NG",
+            offset = "0"
+        )
+        )
+        val newRelease: NewRelease = if (response.status== HttpStatusCode.OK){
+            response.body()
+        }else{
+            val message:Message=response.body()
+            throw Exception(message.error.message)
+        }
         return newRelease.albums
     }
 }

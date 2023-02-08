@@ -16,7 +16,7 @@ class Request {
             val offset: String,
         )
 
-        @Resource("featured-networkPlaylists")
+        @Resource("featured-playlists")
         class FeaturedPlaylist(
             val browse: Browse = Browse(),
             val country: String,

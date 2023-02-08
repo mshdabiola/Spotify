@@ -8,13 +8,13 @@ import com.mshdabiola.model.Track
 
 interface NetworkRepository {
 
-    suspend fun getRecommendation(): List<Track>
+    suspend fun getRecommendation(): Result <List<Track>>
 
-    suspend fun getFeaturePlaylist():List<Playlist>
+    suspend fun getFeaturePlaylist():Result<List<Playlist>>
 
-    suspend fun getCategory () : List<Category>
+    suspend fun getCategory () :Result< List<Category>>
 
-    suspend fun getArtiste():List<Artist>
+    suspend fun getArtiste():Result<List<Artist>>
 
-    suspend fun getNewRelease():List<Album>
+    suspend fun getNewRelease():Result<List<Album>>
 }

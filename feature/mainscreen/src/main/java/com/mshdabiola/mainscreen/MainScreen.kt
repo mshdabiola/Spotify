@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.ui.AlbumCard
+import com.mshdabiola.ui.PlaylistCard
+import com.mshdabiola.ui.TrackCard
 import com.mshdabiola.ui.data.AlbumUiState
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
@@ -39,20 +41,62 @@ internal fun MainScreen(
     back: () -> Unit = {},
 ) {
     Column(Modifier.fillMaxSize()) {
-        MainRow(title = "New Release", tracks = mainState.newRelease)
+        Text(
+            text = "New Release",
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            items(items = mainState.newRelease, key = {it.id}) {
+                AlbumCard(track = it)
+            }
+        }
         Spacer(modifier = Modifier.height(16.dp))
-        MainRow(title = "Recommendations", tracks = mainState.recommendations)
+        Text(
+            text = "Recommendations",
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            items(items = mainState.recommendations, key = {it.id}) {
+                TrackCard(track = it)
+            }
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = "Editor's Pick",
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            items(items = mainState.featurePlaylist, key = {it.id}) {
+                PlaylistCard(playlist = it)
+            }
+        }
+
 
 
     }
 }
 
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
     val release = (1..5)
-        .map { AlbumUiState(id = "$it", "Yoga", "Spiritual", "Asake", "") }
+        .map { AlbumUiState(
+            id = "Arya$it",
+            name = "Nada",
+            releaseDate = "Millicent",
+            albumType = "Deanthony",
+            type = "Maribel",
+            artist = "Dennison",
+            imageUri = "Dru"
+
+        ) }
         .toImmutableList()
     SpotifyAppTheme {
         MainScreen(mainState = MainState(newRelease = release))

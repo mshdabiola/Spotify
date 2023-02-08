@@ -15,25 +15,47 @@ import javax.inject.Inject
 class INetworkRepository @Inject constructor(
     private val networkDataSource: NetworkDataSource,
 ) : NetworkRepository {
-    override suspend fun getRecommendation(): List<Track> {
-        return networkDataSource.getRecommendation().map { it.asTrack() }
+    override suspend fun getRecommendation(): Result<List<Track>> {
+        return try {
+           Result.success(networkDataSource.getRecommendation().map { it.asTrack() })
+        }catch (e : Exception){
+            Result.failure(e)
+        }
+
     }
 
-    override suspend fun getFeaturePlaylist(): List<Playlist> {
-        return networkDataSource.getFeaturePlaylist().items.map { it.asPlaylist() }
+    override suspend fun getFeaturePlaylist(): Result<List<Playlist>> {
+        return try {
+            Result.success(networkDataSource.getFeaturePlaylist().items.map { it.asPlaylist() })
+        }catch (e : Exception){
+            Result.failure(e)
+        }
     }
 
-    override suspend fun getCategory(): List<Category> {
-        return networkDataSource.getCategory().items.map { it.asCategory() }
+    override suspend fun getCategory(): Result<List<Category>> {
+        return try {
+            Result.success( networkDataSource.getCategory().items.map { it.asCategory() })
+        }catch (e : Exception){
+            Result.failure(e)
+        }
     }
 
-    override suspend fun getArtiste(): List<Artist> {
+    override suspend fun getArtiste(): Result<List<Artist>> {
         //return networkDataSource.
-        return emptyList()
+        return try {
+            Result.success(emptyList())
+        }catch (e : Exception){
+            Result.failure(e)
+        }
     }
 
-    override suspend fun getNewRelease(): List<Album> {
-        return networkDataSource.getNewRelease().items.map { it.asAlbum() }
+    override suspend fun getNewRelease(): Result<List<Album>> {
+        return try {
+            Result.success(networkDataSource.getNewRelease().items.map { it.asAlbum() })
+        }catch (e : Exception){
+            Result.failure(e)
+        }
+
     }
 
 }

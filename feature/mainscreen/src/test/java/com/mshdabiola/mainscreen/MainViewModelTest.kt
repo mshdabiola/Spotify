@@ -5,13 +5,16 @@ import app.cash.turbine.test
 import com.mshdabiola.data.repository.ModelRepository
 import com.mshdabiola.model.Model
 import com.mshdabiola.testing.MainDispatcherRule
+import com.mshdabiola.testing.repository.FakeNetworkRepository
 import com.mshdabiola.testing.repository.TestModelRepository
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class MainViewModelTest {
 
     @get:Rule
@@ -25,22 +28,19 @@ class MainViewModelTest {
         modelRepository = TestModelRepository()
 
         mainViewModel = MainViewModel(
-            savedStateHandle = SavedStateHandle(initialState = mapOf()),
-            modelRepository = modelRepository,
+            networkRepository = FakeNetworkRepository()
         )
     }
 
     @Test
     fun getMainState() {
     }
-
     @Test
-    fun insert() = runTest {
-        mainViewModel.insert(Model(1, "old"))
+    fun getPlaylist()= runTest{
         mainViewModel
             .mainState
             .test {
-                assertEquals(2, awaitItem().first().id)
+                assertEquals("1",awaitItem().featurePlaylist.first().id)
             }
     }
 }

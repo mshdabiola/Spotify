@@ -1,5 +1,8 @@
 package com.mshdabiola.network.di
 
+import com.mshdabiola.network.INetworkDataSource
+import com.mshdabiola.network.NetworkDataSource
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,8 +40,9 @@ import kotlinx.serialization.json.Json
 import java.io.File
 import java.net.URL
 import java.util.logging.Logger
+import javax.inject.Singleton
 
-const val code="BQAUFlGO4esOAm9p2B03cvsOl9afk2UwoaIkJVAL21SYukbxiIDvYnJhcQAVN8c-GgIzMel12hu3XSVu9BKh1YA8oLwkwWdEpjwMh7yxrV1RbVsB0L1Zm2VBuHqZbJ4E-4YgaiI_PmKc2CF16A8DHUQ7ypM32LNYWUDP8bDctSmC2S144dtHRuFU1Kucm6DPHCEk"
+const val code="BQBH-RERgDiU2pKsa0pzlcRDBoZhAKRu5PLiCzur9LSEHi5abaWvK6g0SI9rDZNe4TJ3KQ9sZCsJ66rbNy8Li83VTJY_xadS4L1v8EvWtX-BQDw8fS3VDj8aYcBBPK1V9pdYz864AND19kAO3m8FFokvrKtNweNcBIdfU0dPOTJ8NmxdGjOYt3sEArx-65HU-9nu"
 @InstallIn(SingletonComponent::class)
 @Module
 object NetworkModule {
@@ -86,4 +90,14 @@ object NetworkModule {
         }
 
     }
+}
+
+@InstallIn(SingletonComponent::class)
+@Module
+interface NetworkBind{
+
+    @Binds
+    @Singleton
+    fun bindNetworkDataSource(iNetworkDataSource: INetworkDataSource):NetworkDataSource
+
 }

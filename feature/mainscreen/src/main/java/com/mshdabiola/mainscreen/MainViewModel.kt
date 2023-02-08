@@ -5,7 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mshdabiola.data.repository.ModelRepository
 import com.mshdabiola.data.repository.NetworkRepository
-import com.mshdabiola.ui.toTrackUiState
+import com.mshdabiola.ui.data.toAlbumUiState
+import com.mshdabiola.ui.data.toCategoryUiState
+import com.mshdabiola.ui.data.toPlaylistUiState
+import com.mshdabiola.ui.data.toTrackUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,8 +21,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel
 @Inject constructor(
-    private val savedStateHandle: SavedStateHandle,
-    private val modelRepository: ModelRepository,
+    //private val savedStateHandle: SavedStateHandle,
+   // private val modelRepository: ModelRepository,
     private val networkRepository: NetworkRepository
 ) : ViewModel() {
 
@@ -29,9 +32,9 @@ class MainViewModel
         viewModelScope.launch {
 
             networkRepository
-                .newRelease()
+                .getNewRelease()
                .onSuccess { albumList ->
-                   val value=  albumList.map { it.toTrackUiState() }
+                   val value=  albumList.map { it.toAlbumUiState() }
                .toImmutableList()
             Timber.e(albumList.joinToString())
             _mainState.update {
@@ -51,9 +54,9 @@ class MainViewModel
         viewModelScope.launch {
 
             networkRepository
-                .recommendation()
+                .getRecommendation()
                 .onSuccess { albumList ->
-                    val value=  albumList.map { it.toTrackUiState() }
+                    val value=  albumList.map { it.toTrackUiState()}
                         .toImmutableList()
                     Timber.e(albumList.joinToString())
                     _mainState.update {
@@ -68,6 +71,32 @@ class MainViewModel
                 }
 
 //
+        }
+
+        viewModelScope.launch {
+            networkRepository
+                .getCategory()
+                .onSuccess { list->
+                   _mainState.update { mainState1 ->
+                       mainState1.copy(category = list.map { it.toCategoryUiState() }.toImmutableList())
+                   }
+                }
+                .onFailure {
+                    Timber.e(it)
+                }
+        }
+
+        viewModelScope.launch {
+            networkRepository
+                .getFeaturePlaylist()
+                .onSuccess { playlist->
+                    _mainState.update { mainState1 ->
+                        mainState1.copy(featurePlaylist = playlist.map { it.toPlaylistUiState() }.toImmutableList())
+                    }
+                }
+                .onFailure {
+                    Timber.e(it)
+                }
         }
     }
 
