@@ -8,8 +8,10 @@ import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
 import com.mshdabiola.network.model.comp.Message
+import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
+import com.mshdabiola.network.model.comp.RelatedArtists
 import com.mshdabiola.network.request.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -95,6 +97,20 @@ class INetworkDataSource @Inject constructor(
         }
         return newRelease.albums
     }
+
+    override suspend fun getRelatedArtists(): List<NetworkArtist> {
+        val response=httpClient.get(Request.Artist.Id.RelatedArtists(
+            Request.Artist.Id(id="1E5hfn5BduN2nnoZCJmUVG")))
+
+        val relatedArtists: RelatedArtists=if(response.status==HttpStatusCode.OK){
+            response.body()
+        }else{
+            val message:Message=response.body()
+            throw Exception(message.error.message)
+        }
+        return relatedArtists.artists
+    }
+
 }
 
 

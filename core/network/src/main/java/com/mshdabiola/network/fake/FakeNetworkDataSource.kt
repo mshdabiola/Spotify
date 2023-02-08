@@ -7,8 +7,10 @@ import com.mshdabiola.network.model.Recommendation
 import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
+import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
+import com.mshdabiola.network.model.comp.RelatedArtists
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.io.File
@@ -43,6 +45,13 @@ class FakeNetworkDataSource : NetworkDataSource {
         val jsonString= File(path,name).readText()
         val newRelease : NewRelease=json.decodeFromString(jsonString)
         return newRelease.albums
+    }
+
+    override suspend fun getRelatedArtists(): List<NetworkArtist> {
+        val name="artists.json"
+        val jsonString= File(path,name).readText()
+        val relatedArtists:RelatedArtists=json.decodeFromString(jsonString)
+        return relatedArtists.artists
     }
 
 }

@@ -42,4 +42,12 @@ class Request {
         val seed_genres: String,
         val seed_tracks: String
     )
+    @Resource("artists")
+    class Artist(val request: Request= Request()){
+        @Resource("{id}")
+        class Id(val artist: Request.Artist=Artist(),val id : String){
+            @Resource("related-artists")
+            class RelatedArtists(val id: Id)
+        }
+    }
 }

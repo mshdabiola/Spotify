@@ -2,6 +2,7 @@ package com.mshdabiola.network
 
 import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
+import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
 
@@ -15,6 +16,8 @@ interface NetworkDataSource{
     suspend fun getFeaturePlaylist(): NetworkPlaylists
 
     suspend fun getNewRelease(): Albums
+
+    suspend fun getRelatedArtists():List<NetworkArtist>
 }
 
 
