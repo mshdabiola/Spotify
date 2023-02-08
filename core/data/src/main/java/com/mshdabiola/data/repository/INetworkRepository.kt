@@ -1,6 +1,7 @@
 package com.mshdabiola.data.repository
 
 import com.mshdabiola.data.model.asAlbum
+import com.mshdabiola.data.model.asArtiste
 import com.mshdabiola.data.model.asCategory
 import com.mshdabiola.data.model.asPlaylist
 import com.mshdabiola.data.model.asTrack
@@ -43,7 +44,7 @@ class INetworkRepository @Inject constructor(
     override suspend fun getArtiste(): Result<List<Artist>> {
         //return networkDataSource.
         return try {
-            Result.success(emptyList())
+            Result.success(networkDataSource.getRelatedArtists().map { it.asArtiste() })
         }catch (e : Exception){
             Result.failure(e)
         }

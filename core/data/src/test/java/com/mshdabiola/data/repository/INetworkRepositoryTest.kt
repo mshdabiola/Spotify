@@ -21,30 +21,30 @@ class INetworkRepositoryTest {
     @Test
     fun getRecommendation()= runTest {
        val tracks=  networkRepository.getRecommendation()
-        assertEquals(10,tracks.size)
+        assertEquals(10,tracks.getOrNull()!!.size)
     }
 
     @Test
     fun getFeaturePlaylist() = runTest {
         val playlists=networkRepository.getFeaturePlaylist()
-        assertEquals(2,playlists.size)
+        assertEquals(2,playlists.getOrNull()!!.size)
     }
 
     @Test
     fun getCategory() = runTest {
         val categories=networkRepository.getCategory()
-        assertEquals(20,categories.size)
+        assertEquals(20,categories.getOrNull()!!.size)
     }
 
     @Test
     fun getArtiste() = runTest {
         val artist=networkRepository.getArtiste()
-        assertEquals(0,artist.size)
+        assertEquals(20,artist.getOrNull()!!.size)
     }
 
     @Test
     fun getNewRelease() = runTest {
         val album = networkRepository.getNewRelease()
-        assertEquals(20,album.size)
+        assertEquals(20,album.getOrNull()!!.size)
     }
 }

@@ -1,10 +1,12 @@
 package com.mshdabiola.data.model
 
 import com.mshdabiola.model.Album
+import com.mshdabiola.model.Artist
 import com.mshdabiola.model.Category
 import com.mshdabiola.model.Playlist
 import com.mshdabiola.model.Track
 import com.mshdabiola.network.model.comp.NetworkAlbum
+import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkCategory
 import com.mshdabiola.network.model.comp.NetworkPlaylist
 import com.mshdabiola.network.model.comp.NetworkTrack
@@ -38,3 +40,6 @@ fun NetworkAlbum.asAlbum()=Album(
 )
 
 fun NetworkCategory.asCategory()=Category(name,id,icons.first().url)
+
+
+fun NetworkArtist.asArtiste()=Artist(id = id, name = name, image = images.first().url,type)
