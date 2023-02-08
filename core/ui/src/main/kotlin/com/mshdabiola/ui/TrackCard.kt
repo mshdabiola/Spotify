@@ -15,12 +15,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.mshdabiola.ui.data.AlbumUiState
+import com.mshdabiola.ui.data.TrackUiState
 
 @Composable
-fun AlbumCard(track: AlbumUiState) {
+fun TrackCard(track: TrackUiState) {
 
     SquareCard(
-        image = track.imageUri,
+        image = track.image,
         title = track.name,
         subTitle = "${track.type} ● ${track.artist}"
     )
@@ -28,17 +29,18 @@ fun AlbumCard(track: AlbumUiState) {
 
 @Preview(showBackground = true)
 @Composable
-fun AlbumCardPreview() {
+fun TrackCardPreview() {
 
-    AlbumCard(
-        track = AlbumUiState(
-            id = "12",
-            name = "Yoga",
-            artist = "Asake",
-            imageUri = "",
-            type = "Single",
-            releaseDate = "Jocob",
-            albumType = "Nickie"
+    TrackCard(
+        track = TrackUiState(
+            id = "Deshon",
+            name = "Irvin",
+            artist = "Esther",
+            duration = 3772,
+            image = "Joselyn",
+            previewUri = "Lyndee",
+            type = "Anil"
+
         )
     )
 }
