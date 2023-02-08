@@ -43,4 +43,13 @@ class MainViewModelTest {
                 assertEquals("1",awaitItem().featurePlaylist.first().id)
             }
     }
+
+    @Test
+    fun getRelatedArtists()= runTest(){
+        mainViewModel
+            .mainState
+            .test {
+                assertEquals(20,awaitItem().relatedArtiste.size)
+            }
+    }
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.mshdabiola.data.repository.ModelRepository
 import com.mshdabiola.data.repository.NetworkRepository
 import com.mshdabiola.ui.data.toAlbumUiState
+import com.mshdabiola.ui.data.toArtistUiState
 import com.mshdabiola.ui.data.toCategoryUiState
 import com.mshdabiola.ui.data.toPlaylistUiState
 import com.mshdabiola.ui.data.toTrackUiState
@@ -96,6 +97,16 @@ class MainViewModel
                 }
                 .onFailure {
                     Timber.e(it)
+                }
+        }
+
+        viewModelScope.launch {
+            networkRepository
+                .getArtiste()
+                .onSuccess { artists ->
+                    _mainState.update {
+                        it.copy(relatedArtiste =artists.map { it.toArtistUiState() }.toImmutableList())
+                    }
                 }
         }
     }

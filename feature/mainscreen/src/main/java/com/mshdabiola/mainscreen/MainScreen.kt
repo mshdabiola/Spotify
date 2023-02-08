@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.ui.AlbumCard
+import com.mshdabiola.ui.ArtistCard
 import com.mshdabiola.ui.PlaylistCard
 import com.mshdabiola.ui.TrackCard
 import com.mshdabiola.ui.data.AlbumUiState
@@ -40,7 +43,11 @@ internal fun MainScreen(
     mainState: MainState = MainState(),
     back: () -> Unit = {},
 ) {
-    Column(Modifier.fillMaxSize()) {
+    val scrollState= rememberScrollState()
+    Column(Modifier
+        .fillMaxSize()
+        .verticalScroll(scrollState)
+    ) {
         Text(
             text = "New Release",
             style = MaterialTheme.typography.titleLarge,
@@ -74,6 +81,19 @@ internal fun MainScreen(
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             items(items = mainState.featurePlaylist, key = {it.id}) {
                 PlaylistCard(playlist = it)
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = "Artists",
+            style = MaterialTheme.typography.titleLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            items(items = mainState.relatedArtiste, key = {it.id}) {
+                ArtistCard(artist = it)
             }
         }
 
