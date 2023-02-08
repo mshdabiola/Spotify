@@ -3,11 +3,11 @@ package com.mshdabiola.network.model.comp
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Playlist(
+data class NetworkPlaylist(
 	val images: List<ImagesItem>,
 	val description: String,
 	val type: String,
-	//val tracks: Tracks,
+	//val networkTracks: NetworkTracks,
 	val name: String,
 	val id: String,
 )

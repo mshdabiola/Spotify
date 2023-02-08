@@ -6,9 +6,8 @@ import com.mshdabiola.network.model.Recommendation
 import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
-import com.mshdabiola.network.model.comp.Playlists
-import com.mshdabiola.network.model.comp.Track
-import com.mshdabiola.network.model.comp.Tracks
+import com.mshdabiola.network.model.comp.NetworkPlaylists
+import com.mshdabiola.network.model.comp.NetworkTrack
 import com.mshdabiola.network.request.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -19,7 +18,7 @@ class INetworkDataSource @Inject constructor(
     private val httpClient: HttpClient,
 ) : NetworkDataSource {
 
-    override suspend fun getRecommendation(): List<Track> {
+    override suspend fun getRecommendation(): List<NetworkTrack> {
         val recommendation: Recommendation = httpClient.get(
             Request.Recommendations(
                 limit = "10",
@@ -44,7 +43,7 @@ class INetworkDataSource @Inject constructor(
     }
 
 
-    override suspend fun getFeaturePlaylist(): Playlists {
+    override suspend fun getFeaturePlaylist(): NetworkPlaylists {
         val feature:Feature= httpClient.get(Request.Browse.FeaturedPlaylist(
             country = "NG",
             locale = "yo_NG",

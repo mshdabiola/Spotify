@@ -3,7 +3,7 @@ package com.mshdabiola.network.model.comp
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ArtistsItem(
+data class NetworkArtistsItem(
 	val name: String,
 	val id: String,
 )

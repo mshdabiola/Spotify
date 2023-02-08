@@ -16,7 +16,7 @@ class AlbumTest{
             type = "Teryn",
             artist = "Bernadette",
             imageUri = "Yomaira",
-            tracks = listOf()
+
         )
 
         assertEquals("Yoba",album.name)

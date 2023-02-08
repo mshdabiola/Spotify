@@ -8,5 +8,5 @@ data class Album(
     val type:String,
     val artist:String,
     val imageUri : String,
-    val tracks :List<Track>
+   // val tracks :List<Track>
     )

@@ -12,7 +12,8 @@ class PlaylistTest{
             name = "Kade",
             description = "Jarryd",
             image = "Alessandra",
-            tracks = listOf())
+        //    tracks = listOf()
+                )
 
         assertEquals("Kade",playlist.name)
     }

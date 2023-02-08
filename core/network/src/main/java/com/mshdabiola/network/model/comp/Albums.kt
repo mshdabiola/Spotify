@@ -10,5 +10,5 @@ data class Albums(
 	val previous: String?=null,
 	val limit: Int,
 	val href: String,
-	val items: List<Album>
+	val items: List<NetworkAlbum>
 )

@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Feature(
-	val playlists: Playlists,
+	val playlists: NetworkPlaylists,
 	val message: String
 )

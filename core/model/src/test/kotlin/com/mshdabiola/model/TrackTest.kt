@@ -12,7 +12,7 @@ class TrackTest{
             id = "Ahmed",
             name = "Thera",
             artist = "Tonika",
-            duration = "Anselmo",
+            duration = 4,
             image = "Forest",
             previewUri = "Jorel",
             type = "Charlette"

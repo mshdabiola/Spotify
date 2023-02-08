@@ -10,5 +10,5 @@ data class Categories(
 	val previous: String?=null,
 	val limit: Int,
 	val href: String,
-	val items: List<Category>
+	val items: List<NetworkCategory>
 )

@@ -10,5 +10,5 @@ data class Artists(
 	val previous: String,
 	val limit: Int,
 	val href: String,
-	val items: List<Artist>
+	val items: List<NetworkArtist>
 )
