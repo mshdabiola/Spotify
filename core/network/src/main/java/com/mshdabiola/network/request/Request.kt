@@ -67,4 +67,22 @@ class Request {
         @Resource("tracks")
         class Tracks(val me: Me=Me())
     }
+
+    @Resource("albums")
+    class Albums(val request: Request= Request()){
+        @Resource("{id}")
+        class Id(val albums: Albums= Albums(), val id : String)
+    }
+
+    @Resource("tracks")
+    class Tracks(val request: Request= Request()){
+        @Resource("{id}")
+        class Id(val albums: Tracks=Tracks(), val id : String)
+    }
+
+    @Resource("playlists")
+    class Playlists(val request: Request= Request()){
+        @Resource("{id}")
+        class Id(val playlists: Playlists=Playlists(), val id : String)
+    }
 }

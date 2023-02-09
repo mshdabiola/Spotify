@@ -11,6 +11,7 @@ import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
 import com.mshdabiola.network.model.comp.NetworkAlbum
 import com.mshdabiola.network.model.comp.NetworkArtist
+import com.mshdabiola.network.model.comp.NetworkPlaylist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
 import com.mshdabiola.network.model.comp.RelatedArtists
@@ -76,6 +77,30 @@ class FakeNetworkDataSource : NetworkDataSource {
         val jsonString= File(path,name).readText()
         val networkTracks:UserTracks= json.decodeFromString(jsonString)
         return networkTracks.items.map { it.track }
+    }
+
+    override suspend fun getTrack(id: String): NetworkTrack {
+        val name="track.json"
+        val jsonString= File(path,name).readText()
+        return json.decodeFromString(jsonString)
+    }
+
+    override suspend fun getAlbum(id: String): NetworkAlbum {
+        val name="albumm.json"
+        val jsonString= File(path,name).readText()
+        return json.decodeFromString(jsonString)
+    }
+
+    override suspend fun getPlaylist(id: String): NetworkPlaylist {
+        val name = "playlistnew.json"
+        val jsonString = File(path, name).readText()
+        return json.decodeFromString(jsonString)
+    }
+
+    override suspend fun getArtist(id: String): NetworkArtist {
+        val name="artist.json"
+        val jsonString= File(path,name).readText()
+        return json.decodeFromString(jsonString)
     }
 
 }

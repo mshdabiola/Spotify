@@ -25,6 +25,10 @@ class INetworkDataSourceTest {
 
         val engine = MockEngine() { re ->
             val name=when{
+                re.url.encodedPath.contains("artists/io")-> "artist"
+                re.url.encodedPath.contains("albums/io")-> "albumm"
+                re.url.encodedPath.contains("playlists/io")-> "playlistnew"
+                re.url.encodedPath.contains("tracks/io")-> "track"
                 re.url.encodedPath.contains("available")-> "available_genre"
                 re.url.encodedPath.contains("recommendations")-> "recommendations"
                 re.url.encodedPath.contains("new")-> "new_release"
@@ -103,5 +107,25 @@ class INetworkDataSourceTest {
         val tracks=networkDataSource.getUserTracks()
 //
         assertEquals(2,tracks.size)
+    }
+
+    @Test
+    fun getTrack() = runTest{
+        val track=networkDataSource.getTrack("io")
+    }
+
+    @Test
+    fun getAlbum()  = runTest{
+        val track=networkDataSource.getAlbum("io")
+    }
+
+    @Test
+    fun getPlaylist()  = runTest{
+        val track=networkDataSource.getPlaylist("io")
+    }
+
+    @Test
+    fun getArtist()  = runTest{
+        val track=networkDataSource.getArtist("io")
     }
 }

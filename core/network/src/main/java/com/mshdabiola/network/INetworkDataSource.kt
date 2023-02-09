@@ -12,6 +12,7 @@ import com.mshdabiola.network.model.comp.Feature
 import com.mshdabiola.network.model.comp.Message
 import com.mshdabiola.network.model.comp.NetworkAlbum
 import com.mshdabiola.network.model.comp.NetworkArtist
+import com.mshdabiola.network.model.comp.NetworkPlaylist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
 import com.mshdabiola.network.model.comp.RelatedArtists
@@ -19,6 +20,7 @@ import com.mshdabiola.network.request.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.resources.get
+import io.ktor.client.statement.HttpResponse
 import io.ktor.http.HttpStatusCode
 import javax.inject.Inject
 
@@ -56,12 +58,7 @@ class INetworkDataSource @Inject constructor(
             limit = "10",
             offset = "0"
         ))
-        val categoryItem:CategoryItem=if (response.status== HttpStatusCode.OK){
-            response.body()
-        }else{
-            val message:Message=response.body()
-            throw Exception(message.error.message)
-        }
+        val categoryItem:CategoryItem=getResult(response)
         return categoryItem.categories
     }
 
@@ -74,12 +71,7 @@ class INetworkDataSource @Inject constructor(
             offset = "0"
         ))
 
-        val feature:Feature=if(response.status== HttpStatusCode.OK){
-            response.body()
-        }else{
-            val message:Message=response.body()
-            throw Exception(message.error.message)
-        }
+        val feature:Feature=getResult(response)
 
         return feature.playlists
     }
@@ -92,12 +84,7 @@ class INetworkDataSource @Inject constructor(
             offset = "0"
         )
         )
-        val newRelease: PagingNetworkAlbums = if (response.status== HttpStatusCode.OK){
-            response.body()
-        }else{
-            val message:Message=response.body()
-            throw Exception(message.error.message)
-        }
+        val newRelease: PagingNetworkAlbums = getResult(response)
         return newRelease.albums
     }
 
@@ -105,25 +92,14 @@ class INetworkDataSource @Inject constructor(
         val response=httpClient.get(Request.Artist.Id.RelatedArtists(
             Request.Artist.Id(id="1E5hfn5BduN2nnoZCJmUVG")))
 
-        val relatedArtists: RelatedArtists=if(response.status==HttpStatusCode.OK){
-            response.body()
-        }else{
-            val message:Message=response.body()
-            throw Exception(message.error.message)
-        }
+        val relatedArtists: RelatedArtists=getResult(response)
         return relatedArtists.artists
     }
 
     override suspend fun search(query: String, type: String): List<NetworkTrack> {
        val response=httpClient.get(Request.Search(q=query, type = type, offset = "0", limit = "10"))
 
-        val netWorkTracks: Search= if (response.status== HttpStatusCode.OK){
-            response.body()
-        }else
-        {
-            val message :Message=response.body()
-            throw Exception(message.error.message)
-        }
+        val netWorkTracks: Search= getResult(response)
 
 
         return netWorkTracks.tracks.items
@@ -132,26 +108,47 @@ class INetworkDataSource @Inject constructor(
     override suspend fun getUserAlbum(): List<NetworkAlbum> {
         val response=httpClient.get(Request.Me.Album())
 
-        val userAlbums:UserAlbums=if (response.status== HttpStatusCode.OK){
-            response.body()
-        }else{
-            val message:Message=response.body()
-            throw Exception(message.error.message)
-        }
+        val userAlbums:UserAlbums=getResult(response)
         return userAlbums.items.map { it.album }
     }
 
     override suspend fun getUserTracks(): List<NetworkTrack> {
         val response=httpClient.get(Request.Me.Tracks())
 
-        val userTracks : UserTracks =if (response.status== HttpStatusCode.OK){
+        val userTracks : UserTracks = getResult(response)
+        return userTracks.items.map { it.track }
+    }
+
+    override suspend fun getTrack(id: String): NetworkTrack {
+        val response=httpClient.get(Request.Tracks.Id(id = id))
+       return getResult(response)
+    }
+
+    override suspend fun getAlbum(id: String): NetworkAlbum {
+        val response=httpClient.get(Request.Albums.Id(id = id))
+        return getResult(response)
+    }
+
+    override suspend fun getPlaylist(id: String): NetworkPlaylist {
+        val response=httpClient.get(Request.Playlists.Id(id = id))
+        return getResult(response)
+    }
+
+    override suspend fun getArtist(id: String): NetworkArtist {
+        val response=httpClient.get(Request.Artist.Id(id = id))
+        return getResult(response)
+    }
+
+    suspend inline fun <reified T>getResult(response: HttpResponse):T{
+        return if (response.status== HttpStatusCode.OK){
             response.body()
         }else{
             val message:Message=response.body()
             throw Exception(message.error.message)
         }
-        return userTracks.items.map { it.track }
+
     }
+
 
 }
 
