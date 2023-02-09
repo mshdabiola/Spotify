@@ -67,4 +67,20 @@ class INetworkRepository @Inject constructor(
 
     }
 
+    override suspend fun getUserAlbums(): Result<List<Album>> {
+        return try {
+            Result.success(networkDataSource.getUserAlbum().map { it.asAlbum() })
+        }catch (e : Exception){
+            Result.failure(e)
+        }
+    }
+
+    override suspend fun getUserTracks(): Result<List<Track>> {
+        return try {
+            Result.success(networkDataSource.getUserTracks().map { it.asTrack() })
+        }catch (e : Exception){
+            Result.failure(e)
+        }
+    }
+
 }

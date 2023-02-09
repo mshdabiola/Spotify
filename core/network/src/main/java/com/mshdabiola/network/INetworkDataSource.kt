@@ -1,17 +1,19 @@
 package com.mshdabiola.network
 
 import com.mshdabiola.network.model.CategoryItem
-import com.mshdabiola.network.model.NetworkAlbums
-import com.mshdabiola.network.model.NetWorkTracks
+import com.mshdabiola.network.model.PagingNetworkAlbums
+import com.mshdabiola.network.model.PagingNetWorkTracks
 import com.mshdabiola.network.model.Search
-import com.mshdabiola.network.model.comp.Albums
+import com.mshdabiola.network.model.UserAlbums
+import com.mshdabiola.network.model.UserTracks
+import com.mshdabiola.network.model.comp.NetworkAlbums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
 import com.mshdabiola.network.model.comp.Message
+import com.mshdabiola.network.model.comp.NetworkAlbum
 import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
-import com.mshdabiola.network.model.comp.NetworkTracks2
 import com.mshdabiola.network.model.comp.RelatedArtists
 import com.mshdabiola.network.request.Request
 import io.ktor.client.HttpClient
@@ -34,7 +36,7 @@ class INetworkDataSource @Inject constructor(
                 seed_tracks = "0c6xIDDpzE81m2q797ordA"
             )
         )
-        val netWorkTracks: NetWorkTracks= if (response.status== HttpStatusCode.OK){
+        val netWorkTracks: PagingNetWorkTracks= if (response.status== HttpStatusCode.OK){
             response.body()
         }else
         {
@@ -82,7 +84,7 @@ class INetworkDataSource @Inject constructor(
         return feature.playlists
     }
 
-    override suspend fun getNewRelease(): Albums {
+    override suspend fun getNewRelease(): NetworkAlbums {
         val response=httpClient.get(
         Request.Browse.NewReleases(
             limit = "10",
@@ -90,7 +92,7 @@ class INetworkDataSource @Inject constructor(
             offset = "0"
         )
         )
-        val newRelease: NetworkAlbums = if (response.status== HttpStatusCode.OK){
+        val newRelease: PagingNetworkAlbums = if (response.status== HttpStatusCode.OK){
             response.body()
         }else{
             val message:Message=response.body()
@@ -125,6 +127,30 @@ class INetworkDataSource @Inject constructor(
 
 
         return netWorkTracks.tracks.items
+    }
+
+    override suspend fun getUserAlbum(): List<NetworkAlbum> {
+        val response=httpClient.get(Request.Me.Album())
+
+        val userAlbums:UserAlbums=if (response.status== HttpStatusCode.OK){
+            response.body()
+        }else{
+            val message:Message=response.body()
+            throw Exception(message.error.message)
+        }
+        return userAlbums.items.map { it.album }
+    }
+
+    override suspend fun getUserTracks(): List<NetworkTrack> {
+        val response=httpClient.get(Request.Me.Tracks())
+
+        val userTracks : UserTracks =if (response.status== HttpStatusCode.OK){
+            response.body()
+        }else{
+            val message:Message=response.body()
+            throw Exception(message.error.message)
+        }
+        return userTracks.items.map { it.track }
     }
 
 }

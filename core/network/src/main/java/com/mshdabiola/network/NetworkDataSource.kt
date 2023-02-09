@@ -1,11 +1,11 @@
 package com.mshdabiola.network
 
-import com.mshdabiola.network.model.comp.Albums
+import com.mshdabiola.network.model.comp.NetworkAlbums
 import com.mshdabiola.network.model.comp.Categories
+import com.mshdabiola.network.model.comp.NetworkAlbum
 import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
-import com.mshdabiola.network.model.comp.NetworkTracks2
 
 
 interface NetworkDataSource{
@@ -16,11 +16,15 @@ interface NetworkDataSource{
 
     suspend fun getFeaturePlaylist(): NetworkPlaylists
 
-    suspend fun getNewRelease(): Albums
+    suspend fun getNewRelease(): NetworkAlbums
 
     suspend fun getRelatedArtists():List<NetworkArtist>
 
     suspend fun search(query:String,type:String): List<NetworkTrack>
+
+    suspend fun getUserAlbum():List<NetworkAlbum>
+
+    suspend fun getUserTracks():List<NetworkTrack>
 }
 
 

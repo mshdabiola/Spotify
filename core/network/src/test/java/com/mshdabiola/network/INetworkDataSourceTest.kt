@@ -1,5 +1,6 @@
 package com.mshdabiola.network
 
+import com.mshdabiola.network.fake.FakeNetworkDataSource
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.http.HttpHeaders
@@ -32,6 +33,8 @@ class INetworkDataSourceTest {
                 re.url.encodedPath.contains("categories")-> "browse_category"
                 re.url.encodedPath.contains("artists")->"artists"
                 re.url.encodedPath.contains("search")->"search_track"
+                re.url.encodedPath.contains("albums")->"user_album"
+                re.url.encodedPath.contains("tracks")->"user_tracks"
                 else->""
             }
 
@@ -86,5 +89,19 @@ class INetworkDataSourceTest {
         val search= networkDataSource.search("wizkid","track")
 
         assertEquals(10,search.size)
+    }
+
+    @Test
+    fun getUserAlbum() = runTest{
+        val albums=networkDataSource.getUserAlbum()
+//
+        assertEquals(2,albums.size)
+    }
+
+    @Test
+    fun getUserTracks()= runTest() {
+        val tracks=networkDataSource.getUserTracks()
+//
+        assertEquals(2,tracks.size)
     }
 }

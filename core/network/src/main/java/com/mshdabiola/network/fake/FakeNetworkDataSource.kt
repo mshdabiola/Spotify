@@ -2,11 +2,14 @@ package com.mshdabiola.network.fake
 
 import com.mshdabiola.network.NetworkDataSource
 import com.mshdabiola.network.model.CategoryItem
-import com.mshdabiola.network.model.NetworkAlbums
-import com.mshdabiola.network.model.NetWorkTracks
-import com.mshdabiola.network.model.comp.Albums
+import com.mshdabiola.network.model.PagingNetworkAlbums
+import com.mshdabiola.network.model.PagingNetWorkTracks
+import com.mshdabiola.network.model.UserAlbums
+import com.mshdabiola.network.model.UserTracks
+import com.mshdabiola.network.model.comp.NetworkAlbums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
+import com.mshdabiola.network.model.comp.NetworkAlbum
 import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
@@ -22,7 +25,7 @@ class FakeNetworkDataSource : NetworkDataSource {
     override suspend fun getRecommendation(): List<NetworkTrack> {
         val name="recommendations.json"
         val jsonString= File(path,name).readText()
-        val recommendation : NetWorkTracks= json.decodeFromString(jsonString)
+        val recommendation : PagingNetWorkTracks= json.decodeFromString(jsonString)
         return recommendation.tracks
     }
 
@@ -40,10 +43,10 @@ class FakeNetworkDataSource : NetworkDataSource {
         return feature.playlists
     }
 
-    override suspend fun getNewRelease(): Albums {
+    override suspend fun getNewRelease(): NetworkAlbums {
         val name="new_release.json"
         val jsonString= File(path,name).readText()
-        val newRelease : NetworkAlbums=json.decodeFromString(jsonString)
+        val newRelease : PagingNetworkAlbums=json.decodeFromString(jsonString)
         return newRelease.albums
     }
 
@@ -57,8 +60,22 @@ class FakeNetworkDataSource : NetworkDataSource {
     override suspend fun search(query: String, type: String): List<NetworkTrack> {
         val name="recommendations.json"
         val jsonString= File(path,name).readText()
-        val recommendation : NetWorkTracks= json.decodeFromString(jsonString)
+        val recommendation : PagingNetWorkTracks= json.decodeFromString(jsonString)
         return recommendation.tracks
+    }
+
+    override suspend fun getUserAlbum(): List<NetworkAlbum> {
+        val name="user_album.json"
+        val jsonString= File(path,name).readText()
+        val userAlbums:UserAlbums= json.decodeFromString(jsonString)
+        return userAlbums.items.map { it.album }
+    }
+
+    override suspend fun getUserTracks(): List<NetworkTrack> {
+        val name="user_tracks.json"
+        val jsonString= File(path,name).readText()
+        val networkTracks:UserTracks= json.decodeFromString(jsonString)
+        return networkTracks.items.map { it.track }
     }
 
 }

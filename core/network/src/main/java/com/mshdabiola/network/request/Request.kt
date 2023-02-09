@@ -53,10 +53,18 @@ class Request {
 
     @Resource("search")
     class Search(
-        val request: Request=Request(),
+        val request: Request= Request(),
         val q: String,
         val type: String,
         val offset: String,
         val limit: String
     )
+
+    @Resource("me")
+    class Me(val request: Request= Request()){
+        @Resource("albums")
+        class Album(val me: Me=Me())
+        @Resource("tracks")
+        class Tracks(val me: Me=Me())
+    }
 }

@@ -283,4 +283,12 @@ class FakeNetworkRepository : NetworkRepository {
             )
         ))
     }
+
+    override suspend fun getUserAlbums(): Result<List<Album>> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getUserTracks(): Result<List<Track>> {
+        TODO("Not yet implemented")
+    }
 }

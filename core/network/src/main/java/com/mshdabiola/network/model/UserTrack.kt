@@ -4,7 +4,7 @@ import com.mshdabiola.network.model.comp.NetworkTrack
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class NetWorkTracks(
-//	val seeds: List<Seed>,
-	val tracks: List<NetworkTrack>
+data class UserTrack(
+	val addedAt: String?=null,
+	val track: NetworkTrack
 )
