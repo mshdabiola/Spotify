@@ -2,18 +2,38 @@ package com.mshdabiola.mainscreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.outlined.Alarm
+import androidx.compose.material.icons.outlined.Notifications
+import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.ShoppingCart
+import androidx.compose.material3.AssistChip
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
+import androidx.compose.material3.TimePicker
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -37,21 +57,47 @@ internal fun MainScreen(viewModel: MainViewModel = hiltViewModel(), onBack: () -
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 internal fun MainScreen(
     mainState: MainState = MainState(),
     back: () -> Unit = {},
 ) {
     val scrollState= rememberScrollState()
-    Column(Modifier
-        .fillMaxSize()
-        .verticalScroll(scrollState)
+    Column(
+        Modifier
+            .fillMaxSize()
+            .padding(horizontal = 8.dp)
+            .verticalScroll(scrollState)
     ) {
+
+
+        Row (verticalAlignment = Alignment.CenterVertically){
+            Text(
+                modifier = Modifier.weight(1f),
+                text = "Good Morning",
+                style = MaterialTheme.typography.titleLarge
+                )
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(imageVector = Icons.Outlined.Notifications, contentDescription = "notification")
+            }
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(imageVector = Icons.Outlined.Alarm, contentDescription = "notification")
+            }
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(imageVector = Icons.Outlined.Settings, contentDescription = "notification")
+            }
+        }
+        FlowRow(
+            horizontalArrangement =Arrangement.spacedBy(8.dp),
+        ) {
+            AssistChip(onClick = { /*TODO*/ }, label = { Text(text = "Music")})
+            AssistChip(onClick = { /*TODO*/ }, label = { Text(text = "Podcasts & Shows")})
+        }
+
         Text(
             text = "New Release",
             style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -63,7 +109,6 @@ internal fun MainScreen(
         Text(
             text = "Recommendations",
             style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -75,7 +120,6 @@ internal fun MainScreen(
         Text(
             text = "Editor's Pick",
             style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -87,8 +131,7 @@ internal fun MainScreen(
         Spacer(modifier = Modifier.height(16.dp))
         Text(
             text = "Artists",
-            style = MaterialTheme.typography.titleLarge,
-            color = MaterialTheme.colorScheme.primary
+            style = MaterialTheme.typography.titleLarge
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -129,6 +172,8 @@ fun MainRow(
     title: String,
     tracks: ImmutableList<AlbumUiState>
 ) {
+
+
     Text(
         text = title,
         style = MaterialTheme.typography.titleLarge,
