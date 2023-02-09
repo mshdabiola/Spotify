@@ -9,4 +9,4 @@ data class Album(
     val artist:String,
     val imageUri : String,
    // val tracks :List<Track>
-    )
+    ) :Music

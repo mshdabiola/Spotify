@@ -10,7 +10,6 @@ import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkCategory
 import com.mshdabiola.network.model.comp.NetworkPlaylist
 import com.mshdabiola.network.model.comp.NetworkTrack
-import com.mshdabiola.network.model.comp.NetworkTracks
 
 
 fun NetworkTrack.asTrack()=Track(

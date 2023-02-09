@@ -50,4 +50,13 @@ class Request {
             class RelatedArtists(val id: Id)
         }
     }
+
+    @Resource("search")
+    class Search(
+        val request: Request=Request(),
+        val q: String,
+        val type: String,
+        val offset: String,
+        val limit: String
+    )
 }

@@ -16,5 +16,7 @@ interface NetworkRepository {
 
     suspend fun getArtiste():Result<List<Artist>>
 
+    suspend fun search(query:String, type:String):Result<List<Track>>
+
     suspend fun getNewRelease():Result<List<Album>>
 }

@@ -47,4 +47,11 @@ class INetworkRepositoryTest {
         val album = networkRepository.getNewRelease()
         assertEquals(20,album.getOrNull()!!.size)
     }
+
+    @Test
+    fun search()= runTest {
+        val tracks= networkRepository.search("wo","ei")
+
+        assertEquals(10,tracks.getOrNull()?.size)
+    }
 }

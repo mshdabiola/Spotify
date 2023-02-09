@@ -8,4 +8,4 @@ data class Track(
     val image : String,
     val previewUri : String,
     val type : String
-)
+) :Music

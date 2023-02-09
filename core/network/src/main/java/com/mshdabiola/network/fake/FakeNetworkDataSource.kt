@@ -2,8 +2,8 @@ package com.mshdabiola.network.fake
 
 import com.mshdabiola.network.NetworkDataSource
 import com.mshdabiola.network.model.CategoryItem
-import com.mshdabiola.network.model.NewRelease
-import com.mshdabiola.network.model.Recommendation
+import com.mshdabiola.network.model.NetworkAlbums
+import com.mshdabiola.network.model.NetWorkTracks
 import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
@@ -22,7 +22,7 @@ class FakeNetworkDataSource : NetworkDataSource {
     override suspend fun getRecommendation(): List<NetworkTrack> {
         val name="recommendations.json"
         val jsonString= File(path,name).readText()
-        val recommendation : Recommendation= json.decodeFromString(jsonString)
+        val recommendation : NetWorkTracks= json.decodeFromString(jsonString)
         return recommendation.tracks
     }
 
@@ -43,7 +43,7 @@ class FakeNetworkDataSource : NetworkDataSource {
     override suspend fun getNewRelease(): Albums {
         val name="new_release.json"
         val jsonString= File(path,name).readText()
-        val newRelease : NewRelease=json.decodeFromString(jsonString)
+        val newRelease : NetworkAlbums=json.decodeFromString(jsonString)
         return newRelease.albums
     }
 
@@ -52,6 +52,13 @@ class FakeNetworkDataSource : NetworkDataSource {
         val jsonString= File(path,name).readText()
         val relatedArtists:RelatedArtists=json.decodeFromString(jsonString)
         return relatedArtists.artists
+    }
+
+    override suspend fun search(query: String, type: String): List<NetworkTrack> {
+        val name="recommendations.json"
+        val jsonString= File(path,name).readText()
+        val recommendation : NetWorkTracks= json.decodeFromString(jsonString)
+        return recommendation.tracks
     }
 
 }

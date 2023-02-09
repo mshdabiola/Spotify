@@ -3,26 +3,30 @@ package com.mshdabiola.searchscreen
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.mshdabiola.data.repository.NetworkRepository
 import com.mshdabiola.ui.data.GenreUiState
+import com.mshdabiola.ui.data.toTrackUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 import kotlin.random.Random
 
 @HiltViewModel
 class SearchViewModel @Inject constructor(
-    private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle,
+    private val networkRepository: NetworkRepository
 ) : ViewModel() {
 
     private val _searchUiState= MutableStateFlow(SearchUiState())
      val searchUiState = _searchUiState.asStateFlow()
 
-
-
+    private var job:Job?=null
 
     init {
         viewModelScope.launch {
@@ -170,4 +174,25 @@ class SearchViewModel @Inject constructor(
         }
     }
 
+
+    fun search(query : String){
+
+        if (query.length>3) {
+            job?.cancel()
+            job = viewModelScope.launch {
+                networkRepository.search(query, "track")
+                    .onSuccess { list ->
+                        _searchUiState.update { searchUiState1 ->
+                            searchUiState1.copy(tracks = list.map { it.toTrackUiState() }
+                                .toImmutableList())
+                        }
+                    }
+                    .onFailure {
+                        Timber.e(it)
+                    }
+
+
+            }
+        }
+    }
 }

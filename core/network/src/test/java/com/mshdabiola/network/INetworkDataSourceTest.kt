@@ -31,6 +31,7 @@ class INetworkDataSourceTest {
                 re.url.encodedPath.contains("playlist")-> "browse_category_id_playlist"
                 re.url.encodedPath.contains("categories")-> "browse_category"
                 re.url.encodedPath.contains("artists")->"artists"
+                re.url.encodedPath.contains("search")->"search_track"
                 else->""
             }
 
@@ -77,6 +78,13 @@ class INetworkDataSourceTest {
     @Test
     fun getRelatedArtists()= runTest {
         val artists=networkDataSource.getRelatedArtists()
-        assertEquals(10,artists.size)
+        assertEquals(20,artists.size)
+    }
+
+    @Test
+    fun search()= runTest {
+        val search= networkDataSource.search("wizkid","track")
+
+        assertEquals(10,search.size)
     }
 }

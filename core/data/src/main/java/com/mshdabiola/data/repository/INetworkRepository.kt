@@ -50,6 +50,14 @@ class INetworkRepository @Inject constructor(
         }
     }
 
+    override suspend fun search(query: String, type: String): Result<List<Track>> {
+        return try {
+            Result.success(networkDataSource.search(query, type).map { it.asTrack() })
+        }catch (e:Exception){
+            Result.failure(e)
+        }
+    }
+
     override suspend fun getNewRelease(): Result<List<Album>> {
         return try {
             Result.success(networkDataSource.getNewRelease().items.map { it.asAlbum() })

@@ -1,9 +1,9 @@
 package com.mshdabiola.network
 
 import com.mshdabiola.network.model.CategoryItem
-import com.mshdabiola.network.model.HttpError
-import com.mshdabiola.network.model.NewRelease
-import com.mshdabiola.network.model.Recommendation
+import com.mshdabiola.network.model.NetworkAlbums
+import com.mshdabiola.network.model.NetWorkTracks
+import com.mshdabiola.network.model.Search
 import com.mshdabiola.network.model.comp.Albums
 import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
@@ -11,6 +11,7 @@ import com.mshdabiola.network.model.comp.Message
 import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
+import com.mshdabiola.network.model.comp.NetworkTracks2
 import com.mshdabiola.network.model.comp.RelatedArtists
 import com.mshdabiola.network.request.Request
 import io.ktor.client.HttpClient
@@ -33,7 +34,7 @@ class INetworkDataSource @Inject constructor(
                 seed_tracks = "0c6xIDDpzE81m2q797ordA"
             )
         )
-        val recommendation: Recommendation= if (response.status== HttpStatusCode.OK){
+        val netWorkTracks: NetWorkTracks= if (response.status== HttpStatusCode.OK){
             response.body()
         }else
         {
@@ -42,7 +43,7 @@ class INetworkDataSource @Inject constructor(
         }
 
 
-        return recommendation.tracks
+        return netWorkTracks.tracks
     }
 
     override suspend fun getCategory(): Categories {
@@ -89,7 +90,7 @@ class INetworkDataSource @Inject constructor(
             offset = "0"
         )
         )
-        val newRelease: NewRelease = if (response.status== HttpStatusCode.OK){
+        val newRelease: NetworkAlbums = if (response.status== HttpStatusCode.OK){
             response.body()
         }else{
             val message:Message=response.body()
@@ -109,6 +110,21 @@ class INetworkDataSource @Inject constructor(
             throw Exception(message.error.message)
         }
         return relatedArtists.artists
+    }
+
+    override suspend fun search(query: String, type: String): List<NetworkTrack> {
+       val response=httpClient.get(Request.Search(q=query, type = type, offset = "0", limit = "10"))
+
+        val netWorkTracks: Search= if (response.status== HttpStatusCode.OK){
+            response.body()
+        }else
+        {
+            val message :Message=response.body()
+            throw Exception(message.error.message)
+        }
+
+
+        return netWorkTracks.tracks.items
     }
 
 }
