@@ -5,6 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import com.mshdabiola.detailscreen.detailScreen
+import com.mshdabiola.detailscreen.navigateToDetail
 import com.mshdabiola.libraryscreen.libraryScreen
 import com.mshdabiola.mainscreen.mainNavigationRoute
 import com.mshdabiola.mainscreen.mainScreen
@@ -17,9 +19,12 @@ fun SpotifyAppNavHost(
     startDestination: String = mainNavigationRoute,
 ) {
     NavHost(modifier=modifier,navController = navController, startDestination = startDestination) {
-        mainScreen(onBack = {})
-        searchScreen({})
-        libraryScreen ({})
+        mainScreen(
+            onNavigateToDetail = navController::navigateToDetail
+        )
+        searchScreen( onNavigateToDetail = navController::navigateToDetail)
+        libraryScreen ( onNavigateToDetail = navController::navigateToDetail)
+        detailScreen { navController.popBackStack() }
 
 
     }

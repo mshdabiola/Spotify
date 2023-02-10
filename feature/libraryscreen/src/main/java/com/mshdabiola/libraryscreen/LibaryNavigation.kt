@@ -8,11 +8,11 @@ import androidx.navigation.compose.composable
 
 const val libraryRoute = "library_route"
 
-fun NavGraphBuilder.libraryScreen(onBack: () -> Unit) {
+fun NavGraphBuilder.libraryScreen( onNavigateToDetail : (String,String)->Unit={_,_->}) {
     composable(
         route = libraryRoute
     ) {
-        LibraryScreen(onBack = onBack)
+        LibraryScreen(onNavigateToDetail=onNavigateToDetail)
     }
 }
 

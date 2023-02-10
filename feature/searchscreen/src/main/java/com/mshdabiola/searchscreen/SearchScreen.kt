@@ -42,10 +42,12 @@ import com.mshdabiola.ui.TrackCard
 
 
 @Composable
-internal fun SearchScreen(searchViewModel: SearchViewModel = hiltViewModel(), onBack: () -> Unit) {
+internal fun SearchScreen(
+    searchViewModel: SearchViewModel = hiltViewModel(),
+    onNavigateToDetail : (String,String)->Unit={_,_->}
+) {
     val searchUiState = searchViewModel.searchUiState.collectAsState()
     SearchScreen(
-        back = onBack,
         searchUiState.value,
         onSearch = searchViewModel::search
     )
@@ -54,7 +56,6 @@ internal fun SearchScreen(searchViewModel: SearchViewModel = hiltViewModel(), on
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun SearchScreen(
-    back: () -> Unit = {},
     searchUiState: SearchUiState,
     onSearch: (String)->Unit={}
 ) {

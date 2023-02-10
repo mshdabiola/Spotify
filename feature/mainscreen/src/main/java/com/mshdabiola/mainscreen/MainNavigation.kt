@@ -9,11 +9,13 @@ const val mainNavigationRoute = "main_route"
 
 const val mainRoute = "main_route"
 
-fun NavGraphBuilder.mainScreen(onBack: () -> Unit) {
+fun NavGraphBuilder.mainScreen(
+    onNavigateToDetail : (String,String)->Unit={_,_->}
+) {
     composable(
         route = mainRoute,
     ) {
-        MainScreen(onBack = onBack)
+        MainScreen(onNavigateToDetail = onNavigateToDetail)
     }
 }
 

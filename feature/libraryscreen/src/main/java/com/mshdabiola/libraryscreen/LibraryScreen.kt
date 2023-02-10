@@ -40,11 +40,10 @@ import com.mshdabiola.ui.TrackCard
 @Composable
 internal fun LibraryScreen(
     libraryViewModel: LibraryViewModel = hiltViewModel(),
-    onBack: () -> Unit
+    onNavigateToDetail : (String,String)->Unit={_,_->}
 ) {
     val libraryUiState=libraryViewModel.libraryUiState.collectAsStateWithLifecycle()
     LibraryScreen(
-        back = onBack,
         libraryUiState = libraryUiState.value
     )
 }
@@ -52,7 +51,6 @@ internal fun LibraryScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun LibraryScreen(
-    back: () -> Unit = {},
     libraryUiState: LibraryUiState= LibraryUiState()
 ) {
     Column {

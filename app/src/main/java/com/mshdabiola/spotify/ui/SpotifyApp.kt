@@ -3,7 +3,6 @@ package com.mshdabiola.spotify.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -16,10 +15,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
+import com.mshdabiola.libraryscreen.libraryRoute
+import com.mshdabiola.mainscreen.mainRoute
+import com.mshdabiola.searchscreen.searchRoute
 import com.mshdabiola.spotify.navigation.SpotifyAppNavHost
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -39,7 +40,7 @@ fun SpotifyApp(
                     modifier = Modifier.align(Alignment.BottomCenter),
                     topLevelDestinations = noteAppState.listOfDestination,
                     onNavigateToTopNav = noteAppState::navigateToTopLevel,
-                    currentDestination = noteAppState.currentTopDestination
+                    currentDestination = noteAppState.currentDestination
                 )
             }
         }
@@ -54,7 +55,7 @@ fun SpotifyBottomNavBar(
     modifier: Modifier,
     topLevelDestinations: List<TopLevelDestination>,
     onNavigateToTopNav : (TopLevelDestination)->Unit,
-    currentDestination : TopLevelDestination?
+    currentDestination : NavDestination?
 ) {
     NavigationBar(
         modifier=modifier.background(Brush.verticalGradient(0f to Color.Transparent,0.8f to Color.Black)),
@@ -62,7 +63,7 @@ fun SpotifyBottomNavBar(
         contentColor = Color.Yellow
     ) {
         topLevelDestinations.forEach {
-            val isSelected=currentDestination==it
+            val isSelected=currentDestination?.isTop(it) ?:false
             NavigationBarItem(
                 modifier = Modifier.background(Color.Transparent),
                 colors=NavigationBarItemDefaults.colors(
@@ -80,5 +81,8 @@ fun SpotifyBottomNavBar(
 
 }
 
+//Todo("incorrect nav bar after to detail")
 fun NavDestination?.isTop(destination: TopLevelDestination)=
-    this?.hierarchy?.any { it.route?.contains(destination.name) ?:false} ?:false
+    this?.hierarchy?.any { it.route?.contains(routeArray[destination.ordinal]) ?:false} ?:false
+
+val routeArray= arrayOf(mainRoute, searchRoute, libraryRoute)

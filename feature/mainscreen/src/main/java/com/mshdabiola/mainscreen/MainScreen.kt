@@ -14,23 +14,14 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.outlined.Alarm
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.AssistChip
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
-import androidx.compose.material3.TimePicker
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -48,22 +39,25 @@ import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 
 @Composable
-internal fun MainScreen(viewModel: MainViewModel = hiltViewModel(), onBack: () -> Unit) {
+internal fun MainScreen(
+    viewModel: MainViewModel = hiltViewModel(),
+    onNavigateToDetail: (String, String) -> Unit = { _, _ -> }
+) {
     val mainState = viewModel.mainState.collectAsState()
     MainScreen(
-        back = onBack,
-        mainState = mainState.value
+        mainState = mainState.value,
+        onNavigateToDetail = onNavigateToDetail
 
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun MainScreen(
-    mainState: MainState = MainState(),
-    back: () -> Unit = {},
+    mainState: MainState ,
+    onNavigateToDetail: (String, String) -> Unit = { _, _ -> }
 ) {
-    val scrollState= rememberScrollState()
+    val scrollState = rememberScrollState()
     Column(
         Modifier
             .fillMaxSize()
@@ -72,14 +66,17 @@ internal fun MainScreen(
     ) {
 
 
-        Row (verticalAlignment = Alignment.CenterVertically){
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 modifier = Modifier.weight(1f),
                 text = "Good Morning",
                 style = MaterialTheme.typography.titleLarge
+            )
+            IconButton(onClick = { onNavigateToDetail("383838", "track") }) {
+                Icon(
+                    imageVector = Icons.Outlined.Notifications,
+                    contentDescription = "notification"
                 )
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(imageVector = Icons.Outlined.Notifications, contentDescription = "notification")
             }
             IconButton(onClick = { /*TODO*/ }) {
                 Icon(imageVector = Icons.Outlined.Alarm, contentDescription = "notification")
@@ -89,10 +86,10 @@ internal fun MainScreen(
             }
         }
         FlowRow(
-            horizontalArrangement =Arrangement.spacedBy(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            AssistChip(onClick = { /*TODO*/ }, label = { Text(text = "Music")})
-            AssistChip(onClick = { /*TODO*/ }, label = { Text(text = "Podcasts & Shows")})
+            AssistChip(onClick = { /*TODO*/ }, label = { Text(text = "Music") })
+            AssistChip(onClick = { /*TODO*/ }, label = { Text(text = "Podcasts & Shows") })
         }
 
         Text(
@@ -101,7 +98,7 @@ internal fun MainScreen(
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(items = mainState.newRelease, key = {it.id}) {
+            items(items = mainState.newRelease, key = { it.id }) {
                 AlbumCard(track = it)
             }
         }
@@ -112,7 +109,7 @@ internal fun MainScreen(
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(items = mainState.recommendations, key = {it.id}) {
+            items(items = mainState.recommendations, key = { it.id }) {
                 TrackCard(track = it)
             }
         }
@@ -123,7 +120,7 @@ internal fun MainScreen(
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(items = mainState.featurePlaylist, key = {it.id}) {
+            items(items = mainState.featurePlaylist, key = { it.id }) {
                 PlaylistCard(playlist = it)
             }
         }
@@ -135,11 +132,10 @@ internal fun MainScreen(
         )
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(items = mainState.relatedArtiste, key = {it.id}) {
+            items(items = mainState.relatedArtiste, key = { it.id }) {
                 ArtistCard(artist = it)
             }
         }
-
 
 
     }
@@ -150,16 +146,18 @@ internal fun MainScreen(
 @Composable
 fun MainScreenPreview() {
     val release = (1..5)
-        .map { AlbumUiState(
-            id = "Arya$it",
-            name = "Nada",
-            releaseDate = "Millicent",
-            albumType = "Deanthony",
-            type = "Maribel",
-            artist = "Dennison",
-            imageUri = "Dru"
+        .map {
+            AlbumUiState(
+                id = "Arya$it",
+                name = "Nada",
+                releaseDate = "Millicent",
+                albumType = "Deanthony",
+                type = "Maribel",
+                artist = "Dennison",
+                imageUri = "Dru"
 
-        ) }
+            )
+        }
         .toImmutableList()
     SpotifyAppTheme {
         MainScreen(mainState = MainState(newRelease = release))

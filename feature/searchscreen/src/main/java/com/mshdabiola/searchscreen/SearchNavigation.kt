@@ -8,11 +8,11 @@ import androidx.navigation.compose.composable
 
 const val searchRoute = "search_route"
 
-fun NavGraphBuilder.searchScreen(onBack: () -> Unit) {
+fun NavGraphBuilder.searchScreen( onNavigateToDetail : (String,String)->Unit={_,_->}) {
     composable(
         route = searchRoute
     ) {
-        SearchScreen(onBack = onBack)
+        SearchScreen(onNavigateToDetail=onNavigateToDetail)
     }
 }
 
