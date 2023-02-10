@@ -3,14 +3,10 @@ plugins {
 }
 
 android {
-    namespace = "com.mshdabiola.mainscreen"
+    namespace = "com.mshdabiola.detailscreen"
     buildTypes {
         create("benchmark") {
             matchingFallbacks += listOf("release")
         }
     }
 }
-//
-//dependencies{
-//    implementation(project(":core:ui"))
-//}
