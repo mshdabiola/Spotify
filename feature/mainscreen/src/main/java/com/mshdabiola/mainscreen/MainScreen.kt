@@ -35,6 +35,7 @@ import com.mshdabiola.ui.ArtistCard
 import com.mshdabiola.ui.PlaylistCard
 import com.mshdabiola.ui.TrackCard
 import com.mshdabiola.ui.data.AlbumUiState
+import com.mshdabiola.ui.data.ArtistUiState
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 
@@ -162,7 +163,13 @@ fun MainScreenPreview() {
                 releaseDate = 87,
                 albumType = "Deanthony",
                 type = "Maribel",
-                artist = "Dennison",
+                artist = listOf(
+                    ArtistUiState(
+                    id = "Mallory",
+                    name = "Scot",
+                    image = "Edric",
+                    type = "Bridget")
+                ).toImmutableList(),
                 imageUri = "Dru"
 
             )

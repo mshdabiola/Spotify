@@ -4,7 +4,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.mshdabiola.ui.data.ArtistUiState
 import com.mshdabiola.ui.data.TrackUiState
+import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 fun TrackCard(
@@ -18,7 +20,7 @@ fun TrackCard(
         },
         image = track.image,
         title = track.name,
-        subTitle = "${track.type} ● ${track.artist}",
+        subTitle = "${track.type} ● ${track.artist.joinToString { it.name }}",
 
     )
 }
@@ -31,7 +33,13 @@ fun TrackCardPreview() {
         track = TrackUiState(
             id = "Deshon",
             name = "Irvin",
-            artist = "Esther",
+            artist =listOf(
+                ArtistUiState(
+                id = "Mallory",
+                name = "Scot",
+                image = "Edric",
+                type = "Bridget")
+            ).toImmutableList(),
             duration = 3772,
             image = "Joselyn",
             previewUri = "Lyndee",

@@ -57,9 +57,13 @@ internal fun DetailScreen(
     back: () -> Unit = {},
     detailState: DetailState = DetailState()
 ) {
-    Scaffold { paddingValues ->
+    Scaffold(
+    ) { paddingValues ->
         LazyColumn(
-            modifier = Modifier.padding(paddingValues),
+            modifier = Modifier
+                .padding(paddingValues)
+                .padding(horizontal = 16.dp)
+            ,
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             item {
@@ -145,7 +149,7 @@ internal fun DetailScreen(
                 Text(text = "You might also like")
             }
             item {
-                LazyRow(){
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)){
                     items(detailState.playList,key = {it.id}){
                         PlaylistCard(playlist = it)
                     }

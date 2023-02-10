@@ -20,14 +20,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.mshdabiola.ui.data.AlbumUiState
+import com.mshdabiola.ui.data.ArtistUiState
 import com.mshdabiola.ui.data.TrackUiState
+import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 fun TrackList(track: TrackUiState) {
 
     ListItem(
         headlineText = { Text(text = track.name) },
-        supportingText = { Text(text = track.artist)},
+        supportingText = { Text(text = track.artist.joinToString { it.name })},
         trailingContent = {
             IconButton(onClick = { /*TODO*/ }) {
                 Icon(imageVector = Icons.Default.MoreVert, contentDescription = "more")
@@ -44,7 +46,13 @@ fun TrackListPreview() {
         track = TrackUiState(
             id = "Deshon",
             name = "Irvin",
-            artist = "Esther",
+            artist = listOf(
+                ArtistUiState(
+                id = "Mallory",
+                name = "Scot",
+                image = "Edric",
+                type = "Bridget")
+            ).toImmutableList(),
             duration = 3772,
             image = "Joselyn",
             previewUri = "Lyndee",

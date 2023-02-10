@@ -42,7 +42,7 @@ import java.net.URL
 import java.util.logging.Logger
 import javax.inject.Singleton
 
-const val code="BQDDpPn91IdfYCkRc_UyUE12qlDXXY54L1W6cLVqqJbwY2DgFqKAdR7DsiMb9E6zK3QOkwwiIk4aRYLZK5Zsy_-7-U7yTe6uTDPBsEtJ9bSk-QQMLhBfcTo4R13bFbaPJKs5Z4Ftr34cR3pDOkCDdm39eQQm0B_hu0IHZIr45WvZ65_9ZyLLxXlQmgCu9vn5ZHb3ztn1iEFcdbrIfxZpZNip6i0q"
+const val code="BQB3z0aaWPPOUI3speFna7Qoga-AdOw7mtIh2HTEBvMlsE9VHD57h0HmfQKWXv5lHmkQL4ckB6xkAIsWOE9f4SL9X_UuLp6lCrRo40Y6wGtB6fpMuhEZurL-BXBJKgWS5dZDpEJDr98HcfTzGm30hVvwOpmaJisq3b1Dhic7wqah8p2CUjSSuwf97LU3kyluH--k"
 @InstallIn(SingletonComponent::class)
 @Module
 object NetworkModule {

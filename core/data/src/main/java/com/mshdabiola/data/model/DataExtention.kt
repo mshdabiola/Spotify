@@ -16,7 +16,7 @@ fun NetworkTrack.asTrack()=Track(
     id=id,
     name=name,
     duration = durationMs?:0,
-    artist = artists.joinToString { it.name },
+    artist = artists.map { it.asArtiste() },
     image = album?.images?.first()?.url?:"",
     previewUri = previewUrl?:"",
     type = type,
@@ -36,11 +36,11 @@ fun NetworkAlbum.asAlbum()=Album(
     type=type,
     albumType = albumType?:"",
     imageUri = images.first().url,
-    artist = artists.joinToString { it.name },
+    artist = artists.map { it.asArtiste() },
     tracks = tracks?.items?.map { it.asTrack() }?: emptyList()
 )
 
 fun NetworkCategory.asCategory()=Category(name,id,icons.first().url)
 
 
-fun NetworkArtist.asArtiste()=Artist(id = id, name = name, image = images.first().url,type)
+fun NetworkArtist.asArtiste()=Artist(id = id, name = name, image = images?.first()?.url?:"",type)

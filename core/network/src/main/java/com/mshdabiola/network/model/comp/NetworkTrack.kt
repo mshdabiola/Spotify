@@ -8,7 +8,7 @@ data class NetworkTrack(
     val type: String,
     val durationMs: Int?=null,
     val isPlayable: Boolean?=null,
-    val artists: List<NetworkArtistsItem>,
+    val artists: List<NetworkArtist>,
     val previewUrl: String?=null,
     val name: String,
     val href: String,

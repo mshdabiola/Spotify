@@ -5,6 +5,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.mshdabiola.ui.data.AlbumUiState
+import com.mshdabiola.ui.data.ArtistUiState
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableSet
 
 @Composable
 fun AlbumCard(
@@ -18,7 +21,7 @@ fun AlbumCard(
         },
         image = albumUiState.imageUri,
         title = albumUiState.name,
-        subTitle = "${albumUiState.type} ● ${albumUiState.artist}",
+        subTitle = "${albumUiState.type} ● ${albumUiState.artist.joinToString { it.name }}",
     )
 }
 
@@ -30,7 +33,12 @@ fun AlbumCardPreview() {
         albumUiState = AlbumUiState(
             id = "12",
             name = "Yoga",
-            artist = "Asake",
+            artist = listOf(ArtistUiState(
+                id = "Mallory",
+                name = "Scot",
+                image = "Edric",
+                type = "Bridget")
+            ).toImmutableList(),
             imageUri = "",
             type = "Single",
             releaseDate = 636,

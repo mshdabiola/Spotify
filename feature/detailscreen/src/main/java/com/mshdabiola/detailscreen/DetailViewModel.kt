@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mshdabiola.data.repository.NetworkRepository
 import com.mshdabiola.ui.data.ArtistUiState
+import com.mshdabiola.ui.data.toArtistUiState
 import com.mshdabiola.ui.data.toPlaylistUiState
 import com.mshdabiola.ui.data.toTrackUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -52,7 +53,7 @@ import javax.inject.Inject
                               det.copy(
                                   image = it.image,
                                   title = it.name,
-
+                                  artists = it.artist.map { it.toArtistUiState() }.toImmutableList(),
                                   subTitle = "Single * ${time.year}",
                                   date = "${time.month.name} ${time.dayOfMonth}, ${time.year}",
                                   trackList = listOf(it.toTrackUiState()).toImmutableList()
@@ -75,6 +76,7 @@ import javax.inject.Inject
                                 det.copy(
                                     image = it.imageUri,
                                     title = it.name,
+                                    artists = it.artist.map { it.toArtistUiState() }.toImmutableList(),
                                     subTitle = "Single * ${time.year}",
                                     date = "${time.month.name} ${time.dayOfMonth}, ${time.year}",
                                     trackList = it.tracks.map { it.toTrackUiState() }.toImmutableList()

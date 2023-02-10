@@ -14,7 +14,7 @@ class FakeNetworkRepository : NetworkRepository {
                 Track(
                     id = "Cherrelle",
                     name = "Cheryl",
-                    artist = "Corri",
+                    artist = listOf(),
                     duration = 4063,
                     image = "Jantzen",
                     previewUri = "Casaundra",
@@ -23,102 +23,13 @@ class FakeNetworkRepository : NetworkRepository {
                 Track(
                     id = "Lamonica",
                     name = "Ross",
-                    artist = "Dionte",
+                    artist = listOf(),
                     duration = 9541,
                     image = "Bobbijo",
                     previewUri = "Jona",
                     type = "Seanna", releaseDate = 9864L
                 ),
-                Track(
-                    id = "Delores",
-                    name = "Monica",
-                    artist = "Mandi",
-                    duration = 7739,
-                    image = "Rayna",
-                    previewUri = "Ericca",
-                    type = "Devin", releaseDate = 527L
-                ),
-                Track(
-                    id = "Reilly",
-                    name = "Manuela",
-                    artist = "Shaylee",
-                    duration = 3524,
-                    image = "Erich",
-                    previewUri = "Shekia",
-                    type = "Terah", releaseDate = 527L
-                ),
-                Track(
-                    id = "Jacky",
-                    name = "Tyree",
-                    artist = "Cora",
-                    duration = 209,
-                    image = "Axel",
-                    previewUri = "Shalina",
-                    type = "Indra", releaseDate = 527L
-                ),
-                Track(
-                    id = "Basilio",
-                    name = "Linda",
-                    artist = "Kasheena",
-                    duration = 3678,
-                    image = "Valeen",
-                    previewUri = "Richele",
-                    type = "Joleen", releaseDate = 527L
-                ),
-                Track(
-                    id = "Tomika",
-                    name = "Lorien",
-                    artist = "Jonita",
-                    duration = 6679,
-                    image = "Nils",
-                    previewUri = "Valeria",
-                    type = "Dagoberto", releaseDate = 527L
-                ),
-                Track(
-                    id = "Rafeal",
-                    name = "Deontae",
-                    artist = "Margo",
-                    duration = 2519,
-                    image = "Jahmel",
-                    previewUri = "Homer",
-                    type = "Maximillian", releaseDate = 527L
-                ),
-                Track(
-                    id = "Shifra",
-                    name = "Arminda",
-                    artist = "Tito",
-                    duration = 3595,
-                    image = "Krystan",
-                    previewUri = "Ieasha",
-                    type = "Jenee", releaseDate = 527L
-                ),
-                Track(
-                    id = "Serge",
-                    name = "Tanya",
-                    artist = "Ismail",
-                    duration = 526,
-                    image = "Appollonia",
-                    previewUri = "Capri",
-                    type = "Montel", releaseDate = 527L
-                ),
-                Track(
-                    id = "Judith",
-                    name = "Jamaine",
-                    artist = "Randi",
-                    duration = 4473,
-                    image = "Porchia",
-                    previewUri = "Sidra",
-                    type = "Shemika", releaseDate = 527L
-                ),
-                Track(
-                    id = "Gabriela",
-                    name = "Raheem",
-                    artist = "Janette",
-                    duration = 4705,
-                    image = "Zenia",
-                    previewUri = "Rodney",
-                    type = "Spring", releaseDate = 527L
-                )
+
             )
         )
 
@@ -152,7 +63,7 @@ class FakeNetworkRepository : NetworkRepository {
                 Track(
                     id = "Cherrelle",
                     name = "Cheryl",
-                    artist = "Corri",
+                    artist = listOf(),
                     duration = 4063,
                     image = "Jantzen",
                     previewUri = "Casaundra",
@@ -161,102 +72,13 @@ class FakeNetworkRepository : NetworkRepository {
                 Track(
                     id = "Lamonica",
                     name = "Ross",
-                    artist = "Dionte",
+                    artist = listOf(),
                     duration = 9541,
                     image = "Bobbijo",
                     previewUri = "Jona",
                     type = "Seanna", releaseDate = 527L
                 ),
-                Track(
-                    id = "Delores",
-                    name = "Monica",
-                    artist = "Mandi",
-                    duration = 7739,
-                    image = "Rayna",
-                    previewUri = "Ericca",
-                    type = "Devin", releaseDate = 527L
-                ),
-                Track(
-                    id = "Reilly",
-                    name = "Manuela",
-                    artist = "Shaylee",
-                    duration = 3524,
-                    image = "Erich",
-                    previewUri = "Shekia",
-                    type = "Terah", releaseDate = 527L
-                ),
-                Track(
-                    id = "Jacky",
-                    name = "Tyree",
-                    artist = "Cora",
-                    duration = 209,
-                    image = "Axel",
-                    previewUri = "Shalina",
-                    type = "Indra", releaseDate = 527L
-                ),
-                Track(
-                    id = "Basilio",
-                    name = "Linda",
-                    artist = "Kasheena",
-                    duration = 3678,
-                    image = "Valeen",
-                    previewUri = "Richele",
-                    type = "Joleen", releaseDate = 527L
-                ),
-                Track(
-                    id = "Tomika",
-                    name = "Lorien",
-                    artist = "Jonita",
-                    duration = 6679,
-                    image = "Nils",
-                    previewUri = "Valeria",
-                    type = "Dagoberto", releaseDate = 527L
-                ),
-                Track(
-                    id = "Rafeal",
-                    name = "Deontae",
-                    artist = "Margo",
-                    duration = 2519,
-                    image = "Jahmel",
-                    previewUri = "Homer",
-                    type = "Maximillian", releaseDate = 527L
-                ),
-                Track(
-                    id = "Shifra",
-                    name = "Arminda",
-                    artist = "Tito",
-                    duration = 3595,
-                    image = "Krystan",
-                    previewUri = "Ieasha",
-                    type = "Jenee", releaseDate = 527L
-                ),
-                Track(
-                    id = "Serge",
-                    name = "Tanya",
-                    artist = "Ismail",
-                    duration = 526,
-                    image = "Appollonia",
-                    previewUri = "Capri",
-                    type = "Montel", releaseDate = 527L
-                ),
-                Track(
-                    id = "Judith",
-                    name = "Jamaine",
-                    artist = "Randi",
-                    duration = 4473,
-                    image = "Porchia",
-                    previewUri = "Sidra",
-                    type = "Shemika", releaseDate = 527L
-                ),
-                Track(
-                    id = "Gabriela",
-                    name = "Raheem",
-                    artist = "Janette",
-                    duration = 4705,
-                    image = "Zenia",
-                    previewUri = "Rodney",
-                    type = "Spring", releaseDate = 527L
-                )
+
             )
         )
     }
@@ -269,7 +91,7 @@ class FakeNetworkRepository : NetworkRepository {
                 releaseDate = 0,
                 albumType = "Shontay",
                 type = "Travon",
-                artist = "Katharina",
+                artist = listOf(),
                 imageUri = "Dajuan", tracks = listOf()
             ),
             Album(
@@ -278,7 +100,7 @@ class FakeNetworkRepository : NetworkRepository {
                 releaseDate = 0,
                 albumType = "Dontrell",
                 type = "Marlen",
-                artist = "Julietta",
+                artist = listOf(),
                 imageUri = "Alon", tracks = listOf()
             )
         ))
@@ -292,7 +114,7 @@ class FakeNetworkRepository : NetworkRepository {
                 releaseDate = 78,
                 albumType = "Shontay",
                 type = "Travon",
-                artist = "Katharina",
+                artist = listOf(),
                 imageUri = "Dajuan", tracks = listOf()
             ),
             Album(
@@ -301,7 +123,7 @@ class FakeNetworkRepository : NetworkRepository {
                 releaseDate = 89,
                 albumType = "Dontrell",
                 type = "Marlen",
-                artist = "Julietta",
+                artist = listOf(),
                 imageUri = "Alon", tracks = listOf()
             )
         ))
@@ -313,7 +135,7 @@ class FakeNetworkRepository : NetworkRepository {
                 Track(
                     id = "Cherrelle",
                     name = "Cheryl",
-                    artist = "Corri",
+                    artist = listOf(),
                     duration = 4063,
                     image = "Jantzen",
                     previewUri = "Casaundra",
@@ -322,7 +144,7 @@ class FakeNetworkRepository : NetworkRepository {
                 Track(
                     id = "Lamonica",
                     name = "Ross",
-                    artist = "Dionte",
+                    artist = listOf(),
                     duration = 9541,
                     image = "Bobbijo",
                     previewUri = "Jona",
@@ -331,93 +153,13 @@ class FakeNetworkRepository : NetworkRepository {
                 Track(
                     id = "Delores",
                     name = "Monica",
-                    artist = "Mandi",
+                    artist = listOf(),
                     duration = 7739,
                     image = "Rayna",
                     previewUri = "Ericca",
                     type = "Devin", releaseDate = 527L
                 ),
-                Track(
-                    id = "Reilly",
-                    name = "Manuela",
-                    artist = "Shaylee",
-                    duration = 3524,
-                    image = "Erich",
-                    previewUri = "Shekia",
-                    type = "Terah", releaseDate = 527L
-                ),
-                Track(
-                    id = "Jacky",
-                    name = "Tyree",
-                    artist = "Cora",
-                    duration = 209,
-                    image = "Axel",
-                    previewUri = "Shalina",
-                    type = "Indra", releaseDate = 527L
-                ),
-                Track(
-                    id = "Basilio",
-                    name = "Linda",
-                    artist = "Kasheena",
-                    duration = 3678,
-                    image = "Valeen",
-                    previewUri = "Richele",
-                    type = "Joleen", releaseDate = 527L
-                ),
-                Track(
-                    id = "Tomika",
-                    name = "Lorien",
-                    artist = "Jonita",
-                    duration = 6679,
-                    image = "Nils",
-                    previewUri = "Valeria",
-                    type = "Dagoberto", releaseDate = 527L
-                ),
-                Track(
-                    id = "Rafeal",
-                    name = "Deontae",
-                    artist = "Margo",
-                    duration = 2519,
-                    image = "Jahmel",
-                    previewUri = "Homer",
-                    type = "Maximillian", releaseDate = 527L
-                ),
-                Track(
-                    id = "Shifra",
-                    name = "Arminda",
-                    artist = "Tito",
-                    duration = 3595,
-                    image = "Krystan",
-                    previewUri = "Ieasha",
-                    type = "Jenee", releaseDate = 527L
-                ),
-                Track(
-                    id = "Serge",
-                    name = "Tanya",
-                    artist = "Ismail",
-                    duration = 526,
-                    image = "Appollonia",
-                    previewUri = "Capri",
-                    type = "Montel", releaseDate = 527L
-                ),
-                Track(
-                    id = "Judith",
-                    name = "Jamaine",
-                    artist = "Randi",
-                    duration = 4473,
-                    image = "Porchia",
-                    previewUri = "Sidra",
-                    type = "Shemika", releaseDate = 527L
-                ),
-                Track(
-                    id = "Gabriela",
-                    name = "Raheem",
-                    artist = "Janette",
-                    duration = 4705,
-                    image = "Zenia",
-                    previewUri = "Rodney",
-                    type = "Spring", releaseDate = 527L
-                )
+
             )
         )
     }
@@ -427,7 +169,7 @@ class FakeNetworkRepository : NetworkRepository {
             Track(
                 id = "Yalitza",
                 name = "Nadir",
-                artist = "Jamelle",
+                artist =listOf(),
                 duration = 4872,
                 image = "Vincenzo",
                 previewUri = "Sophia",
@@ -444,7 +186,7 @@ class FakeNetworkRepository : NetworkRepository {
                 releaseDate =89,
                 albumType = "Eliyahu",
                 type = "Amee",
-                artist = "Marylou",
+                artist = listOf(),
                 imageUri = "Ali", tracks = listOf(),
             )
         )
