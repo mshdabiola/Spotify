@@ -1,9 +1,14 @@
 package com.mshdabiola.searchscreen
 
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -14,7 +19,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SearchBar
+import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
@@ -30,6 +37,7 @@ import com.mshdabiola.ui.data.GenreUiState
 import kotlinx.collections.immutable.toImmutableList
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.Color
 import com.mshdabiola.ui.TrackCard
 
 
@@ -89,7 +97,9 @@ internal fun SearchScreen(
                         leadingIcon = { Icon(
                             imageVector = Icons.Default.Search,
                             contentDescription = "search"
-                        )}
+                        )
+                        },
+                        //colors = SearchBarDefaults.colors(containerColor = Color.White, inputFieldColors = TextFieldDefaults.textFieldColors())
                     ) {
                     }
 
@@ -114,6 +124,11 @@ internal fun SearchScreen(
                 items(searchUiState.tracks,key = {it.id}) {
                     TrackCard(track = it)
                 }
+            }
+            item(span = { GridItemSpan(2) }) {
+                Box(modifier = Modifier
+                    //.background(Color.Blue)
+                    .size(88.dp))
             }
 
         }
