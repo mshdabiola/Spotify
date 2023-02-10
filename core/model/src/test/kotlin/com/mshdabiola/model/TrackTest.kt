@@ -15,7 +15,9 @@ class TrackTest{
             duration = 4,
             image = "Forest",
             previewUri = "Jorel",
-            type = "Charlette"
+            type = "Charlette",
+            releaseDate = 7522L
+
         )
         assertEquals("Ahmed",track.id)
     }

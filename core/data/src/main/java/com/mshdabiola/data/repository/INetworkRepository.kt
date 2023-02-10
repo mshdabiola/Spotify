@@ -83,4 +83,35 @@ class INetworkRepository @Inject constructor(
         }
     }
 
+    override suspend fun getTrack(id: String): Result<Track> {
+        return try {
+            Result.success(networkDataSource.getTrack(id).asTrack())
+        }catch (e:Exception){
+            Result.failure(e)
+        }
+    }
+
+    override suspend fun getAlbum(id: String): Result<Album> {
+        return try {
+            Result.success(networkDataSource.getAlbum(id).asAlbum())
+        }catch (e:Exception){
+            Result.failure(e)
+        }
+    }
+
+    override suspend fun getPlaylist(id: String): Result<Playlist> {
+        return try {
+            Result.success(networkDataSource.getPlaylist(id).asPlaylist())
+        }catch (e:Exception){
+            Result.failure(e)
+        }
+    }
+
+    override suspend fun getArtist(id: String): Result<Artist> {
+        return try {
+            Result.success(networkDataSource.getArtist(id).asArtiste())
+        }catch (e:Exception){
+            Result.failure(e)
+        }
+    }
 }

@@ -99,7 +99,10 @@ internal fun MainScreen(
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             items(items = mainState.newRelease, key = { it.id }) {
-                AlbumCard(track = it)
+                AlbumCard(
+                    albumUiState = it,
+                    onClick = onNavigateToDetail
+                )
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
@@ -110,7 +113,10 @@ internal fun MainScreen(
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             items(items = mainState.recommendations, key = { it.id }) {
-                TrackCard(track = it)
+                TrackCard(
+                    track = it,
+                    onClick = onNavigateToDetail
+                )
             }
         }
         Spacer(modifier = Modifier.height(16.dp))
@@ -121,7 +127,10 @@ internal fun MainScreen(
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             items(items = mainState.featurePlaylist, key = { it.id }) {
-                PlaylistCard(playlist = it)
+                PlaylistCard(
+                    playlist = it,
+                    onClick = onNavigateToDetail
+                )
             }
         }
 
@@ -150,7 +159,7 @@ fun MainScreenPreview() {
             AlbumUiState(
                 id = "Arya$it",
                 name = "Nada",
-                releaseDate = "Millicent",
+                releaseDate = 87,
                 albumType = "Deanthony",
                 type = "Maribel",
                 artist = "Dennison",
@@ -180,7 +189,7 @@ fun MainRow(
     Spacer(modifier = Modifier.height(8.dp))
     LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         items(items = tracks) {
-            AlbumCard(track = it)
+            AlbumCard(albumUiState = it)
         }
     }
 }

@@ -16,16 +16,20 @@ import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.ShuffleOn
 import androidx.compose.material.icons.outlined.Favorite
+import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -71,17 +75,34 @@ internal fun DetailScreen(
 
             }
 
-            item { Text(text = detailState.title) }
+            item {
+                Text(
+                    text = detailState.title,
+                    style = MaterialTheme.typography.titleMedium
+                )
+            }
             item {
                 val artistSize = detailState.artists.size
                 val size = if (artistSize > 1) "+${artistSize - 1}" else ""
-                Text(text = "${detailState.artists.first().name} $size")
+                Text(
+                    text = "${detailState.artists.first().name} $size",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.alpha(0.7f)
+                )
+            }
+            item {
+                Text(
+                    text = detailState.subTitle,
+                    style = MaterialTheme.typography.bodySmall,
+                    modifier = Modifier.alpha(0.5f)
+                )
             }
             item {
                 Row(Modifier.fillMaxWidth()) {
                     IconButton(onClick = { /*TODO*/ }) {
                         Icon(
-                            imageVector = Icons.Outlined.Favorite,
+                            imageVector = Icons.Outlined.FavoriteBorder,
                             contentDescription = "favorite"
                         )
                     }
@@ -107,7 +128,7 @@ internal fun DetailScreen(
                 TrackList(track = it)
             }
             item {
-                Text(text = "February 2, 2023")
+                Text(text = detailState.date)
             }
             items(detailState.artists, key = { it.id }) {
                 ListItem(
@@ -130,7 +151,7 @@ internal fun DetailScreen(
                     }
                 }
             }
-            item { Text(text = "© ℗ Abiola") }
+            item { Text(text = "© ℗ ${detailState.artists.first().name}") }
             item{
                 Box(modifier = Modifier.size(80.dp))
             }

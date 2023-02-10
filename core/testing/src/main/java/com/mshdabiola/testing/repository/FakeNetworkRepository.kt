@@ -18,7 +18,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 4063,
                     image = "Jantzen",
                     previewUri = "Casaundra",
-                    type = "Osman"
+                    type = "Osman", releaseDate = 1442L
                 ),
                 Track(
                     id = "Lamonica",
@@ -27,7 +27,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 9541,
                     image = "Bobbijo",
                     previewUri = "Jona",
-                    type = "Seanna"
+                    type = "Seanna", releaseDate = 9864L
                 ),
                 Track(
                     id = "Delores",
@@ -36,7 +36,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 7739,
                     image = "Rayna",
                     previewUri = "Ericca",
-                    type = "Devin"
+                    type = "Devin", releaseDate = 527L
                 ),
                 Track(
                     id = "Reilly",
@@ -45,7 +45,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 3524,
                     image = "Erich",
                     previewUri = "Shekia",
-                    type = "Terah"
+                    type = "Terah", releaseDate = 527L
                 ),
                 Track(
                     id = "Jacky",
@@ -54,7 +54,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 209,
                     image = "Axel",
                     previewUri = "Shalina",
-                    type = "Indra"
+                    type = "Indra", releaseDate = 527L
                 ),
                 Track(
                     id = "Basilio",
@@ -63,7 +63,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 3678,
                     image = "Valeen",
                     previewUri = "Richele",
-                    type = "Joleen"
+                    type = "Joleen", releaseDate = 527L
                 ),
                 Track(
                     id = "Tomika",
@@ -72,7 +72,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 6679,
                     image = "Nils",
                     previewUri = "Valeria",
-                    type = "Dagoberto"
+                    type = "Dagoberto", releaseDate = 527L
                 ),
                 Track(
                     id = "Rafeal",
@@ -81,7 +81,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 2519,
                     image = "Jahmel",
                     previewUri = "Homer",
-                    type = "Maximillian"
+                    type = "Maximillian", releaseDate = 527L
                 ),
                 Track(
                     id = "Shifra",
@@ -90,7 +90,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 3595,
                     image = "Krystan",
                     previewUri = "Ieasha",
-                    type = "Jenee"
+                    type = "Jenee", releaseDate = 527L
                 ),
                 Track(
                     id = "Serge",
@@ -99,7 +99,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 526,
                     image = "Appollonia",
                     previewUri = "Capri",
-                    type = "Montel"
+                    type = "Montel", releaseDate = 527L
                 ),
                 Track(
                     id = "Judith",
@@ -108,7 +108,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 4473,
                     image = "Porchia",
                     previewUri = "Sidra",
-                    type = "Shemika"
+                    type = "Shemika", releaseDate = 527L
                 ),
                 Track(
                     id = "Gabriela",
@@ -117,7 +117,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 4705,
                     image = "Zenia",
                     previewUri = "Rodney",
-                    type = "Spring"
+                    type = "Spring", releaseDate = 527L
                 )
             )
         )
@@ -156,7 +156,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 4063,
                     image = "Jantzen",
                     previewUri = "Casaundra",
-                    type = "Osman"
+                    type = "Osman", releaseDate = 527L
                 ),
                 Track(
                     id = "Lamonica",
@@ -165,7 +165,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 9541,
                     image = "Bobbijo",
                     previewUri = "Jona",
-                    type = "Seanna"
+                    type = "Seanna", releaseDate = 527L
                 ),
                 Track(
                     id = "Delores",
@@ -174,7 +174,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 7739,
                     image = "Rayna",
                     previewUri = "Ericca",
-                    type = "Devin"
+                    type = "Devin", releaseDate = 527L
                 ),
                 Track(
                     id = "Reilly",
@@ -183,7 +183,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 3524,
                     image = "Erich",
                     previewUri = "Shekia",
-                    type = "Terah"
+                    type = "Terah", releaseDate = 527L
                 ),
                 Track(
                     id = "Jacky",
@@ -192,7 +192,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 209,
                     image = "Axel",
                     previewUri = "Shalina",
-                    type = "Indra"
+                    type = "Indra", releaseDate = 527L
                 ),
                 Track(
                     id = "Basilio",
@@ -201,7 +201,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 3678,
                     image = "Valeen",
                     previewUri = "Richele",
-                    type = "Joleen"
+                    type = "Joleen", releaseDate = 527L
                 ),
                 Track(
                     id = "Tomika",
@@ -210,7 +210,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 6679,
                     image = "Nils",
                     previewUri = "Valeria",
-                    type = "Dagoberto"
+                    type = "Dagoberto", releaseDate = 527L
                 ),
                 Track(
                     id = "Rafeal",
@@ -219,7 +219,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 2519,
                     image = "Jahmel",
                     previewUri = "Homer",
-                    type = "Maximillian"
+                    type = "Maximillian", releaseDate = 527L
                 ),
                 Track(
                     id = "Shifra",
@@ -228,7 +228,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 3595,
                     image = "Krystan",
                     previewUri = "Ieasha",
-                    type = "Jenee"
+                    type = "Jenee", releaseDate = 527L
                 ),
                 Track(
                     id = "Serge",
@@ -237,7 +237,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 526,
                     image = "Appollonia",
                     previewUri = "Capri",
-                    type = "Montel"
+                    type = "Montel", releaseDate = 527L
                 ),
                 Track(
                     id = "Judith",
@@ -246,7 +246,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 4473,
                     image = "Porchia",
                     previewUri = "Sidra",
-                    type = "Shemika"
+                    type = "Shemika", releaseDate = 527L
                 ),
                 Track(
                     id = "Gabriela",
@@ -255,7 +255,7 @@ class FakeNetworkRepository : NetworkRepository {
                     duration = 4705,
                     image = "Zenia",
                     previewUri = "Rodney",
-                    type = "Spring"
+                    type = "Spring", releaseDate = 527L
                 )
             )
         )
@@ -266,29 +266,202 @@ class FakeNetworkRepository : NetworkRepository {
             Album(
                 id = "Loyd",
                 name = "Soloman",
-                releaseDate = "Ainsley",
+                releaseDate = 0,
                 albumType = "Shontay",
                 type = "Travon",
                 artist = "Katharina",
-                imageUri = "Dajuan"
+                imageUri = "Dajuan", tracks = listOf()
             ),
             Album(
                 id = "Cindy",
                 name = "Mallori",
-                releaseDate = "Jennalee",
+                releaseDate = 0,
                 albumType = "Dontrell",
                 type = "Marlen",
                 artist = "Julietta",
-                imageUri = "Alon"
+                imageUri = "Alon", tracks = listOf()
             )
         ))
     }
 
     override suspend fun getUserAlbums(): Result<List<Album>> {
-        TODO("Not yet implemented")
+        return Result.success(listOf(
+            Album(
+                id = "Loyd",
+                name = "Soloman",
+                releaseDate = 78,
+                albumType = "Shontay",
+                type = "Travon",
+                artist = "Katharina",
+                imageUri = "Dajuan", tracks = listOf()
+            ),
+            Album(
+                id = "Cindy",
+                name = "Mallori",
+                releaseDate = 89,
+                albumType = "Dontrell",
+                type = "Marlen",
+                artist = "Julietta",
+                imageUri = "Alon", tracks = listOf()
+            )
+        ))
     }
 
     override suspend fun getUserTracks(): Result<List<Track>> {
-        TODO("Not yet implemented")
+        return Result.success(
+            listOf(
+                Track(
+                    id = "Cherrelle",
+                    name = "Cheryl",
+                    artist = "Corri",
+                    duration = 4063,
+                    image = "Jantzen",
+                    previewUri = "Casaundra",
+                    type = "Osman", releaseDate = 5338L
+                ),
+                Track(
+                    id = "Lamonica",
+                    name = "Ross",
+                    artist = "Dionte",
+                    duration = 9541,
+                    image = "Bobbijo",
+                    previewUri = "Jona",
+                    type = "Seanna", releaseDate = 9864L
+                ),
+                Track(
+                    id = "Delores",
+                    name = "Monica",
+                    artist = "Mandi",
+                    duration = 7739,
+                    image = "Rayna",
+                    previewUri = "Ericca",
+                    type = "Devin", releaseDate = 527L
+                ),
+                Track(
+                    id = "Reilly",
+                    name = "Manuela",
+                    artist = "Shaylee",
+                    duration = 3524,
+                    image = "Erich",
+                    previewUri = "Shekia",
+                    type = "Terah", releaseDate = 527L
+                ),
+                Track(
+                    id = "Jacky",
+                    name = "Tyree",
+                    artist = "Cora",
+                    duration = 209,
+                    image = "Axel",
+                    previewUri = "Shalina",
+                    type = "Indra", releaseDate = 527L
+                ),
+                Track(
+                    id = "Basilio",
+                    name = "Linda",
+                    artist = "Kasheena",
+                    duration = 3678,
+                    image = "Valeen",
+                    previewUri = "Richele",
+                    type = "Joleen", releaseDate = 527L
+                ),
+                Track(
+                    id = "Tomika",
+                    name = "Lorien",
+                    artist = "Jonita",
+                    duration = 6679,
+                    image = "Nils",
+                    previewUri = "Valeria",
+                    type = "Dagoberto", releaseDate = 527L
+                ),
+                Track(
+                    id = "Rafeal",
+                    name = "Deontae",
+                    artist = "Margo",
+                    duration = 2519,
+                    image = "Jahmel",
+                    previewUri = "Homer",
+                    type = "Maximillian", releaseDate = 527L
+                ),
+                Track(
+                    id = "Shifra",
+                    name = "Arminda",
+                    artist = "Tito",
+                    duration = 3595,
+                    image = "Krystan",
+                    previewUri = "Ieasha",
+                    type = "Jenee", releaseDate = 527L
+                ),
+                Track(
+                    id = "Serge",
+                    name = "Tanya",
+                    artist = "Ismail",
+                    duration = 526,
+                    image = "Appollonia",
+                    previewUri = "Capri",
+                    type = "Montel", releaseDate = 527L
+                ),
+                Track(
+                    id = "Judith",
+                    name = "Jamaine",
+                    artist = "Randi",
+                    duration = 4473,
+                    image = "Porchia",
+                    previewUri = "Sidra",
+                    type = "Shemika", releaseDate = 527L
+                ),
+                Track(
+                    id = "Gabriela",
+                    name = "Raheem",
+                    artist = "Janette",
+                    duration = 4705,
+                    image = "Zenia",
+                    previewUri = "Rodney",
+                    type = "Spring", releaseDate = 527L
+                )
+            )
+        )
+    }
+
+    override suspend fun getTrack(id: String): Result<Track> {
+        return Result.success(
+            Track(
+                id = "Yalitza",
+                name = "Nadir",
+                artist = "Jamelle",
+                duration = 4872,
+                image = "Vincenzo",
+                previewUri = "Sophia",
+                type = "Steffani", releaseDate = 527L
+            )
+        )
+    }
+
+    override suspend fun getAlbum(id: String): Result<Album> {
+        return Result.success(
+            Album(
+                id = "Miquel",
+                name = "Aliesha",
+                releaseDate =89,
+                albumType = "Eliyahu",
+                type = "Amee",
+                artist = "Marylou",
+                imageUri = "Ali", tracks = listOf(),
+            )
+        )
+
+    }
+
+    override suspend fun getPlaylist(id: String): Result<Playlist> {
+        return Result.success(
+            Playlist(id = "Cinthia", name = "Ashia", description = "Yee", image = "Marley")
+        )
+
+    }
+
+    override suspend fun getArtist(id: String): Result<Artist> {
+        return Result.success(
+            Artist(id = "Meera", name = "Rondale", image = "Zandra", type = "Bruno")
+        )
+
     }
 }

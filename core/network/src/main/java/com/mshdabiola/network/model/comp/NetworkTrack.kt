@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class NetworkTrack(
-    val album: NetworkAlbum,
+    val album: NetworkAlbum?=null,
     val type: String,
     val durationMs: Int?=null,
     val isPlayable: Boolean?=null,

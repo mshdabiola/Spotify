@@ -5,6 +5,10 @@ import com.mshdabiola.model.Artist
 import com.mshdabiola.model.Category
 import com.mshdabiola.model.Playlist
 import com.mshdabiola.model.Track
+import com.mshdabiola.network.model.comp.NetworkAlbum
+import com.mshdabiola.network.model.comp.NetworkArtist
+import com.mshdabiola.network.model.comp.NetworkPlaylist
+import com.mshdabiola.network.model.comp.NetworkTrack
 
 interface NetworkRepository {
 
@@ -23,4 +27,12 @@ interface NetworkRepository {
     suspend fun getUserAlbums():Result<List<Album>>
 
     suspend fun getUserTracks():Result<List<Track>>
+
+    suspend fun getTrack(id : String): Result<Track>
+
+    suspend fun getAlbum(id : String): Result<Album>
+
+    suspend fun getPlaylist(id : String): Result<Playlist>
+
+    suspend fun getArtist(id : String): Result<Artist>
 }

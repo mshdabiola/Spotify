@@ -1,5 +1,7 @@
 package com.mshdabiola.network.model.comp
 
+import com.mshdabiola.network.model.PagingNetWorkTracks
+import com.mshdabiola.network.model.Tracks
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -11,4 +13,5 @@ data class NetworkAlbum(
 	val name: String,
 	val albumType: String?=null,
 	val id: String,
+	val tracks: NetworkTracks?=null,
 )

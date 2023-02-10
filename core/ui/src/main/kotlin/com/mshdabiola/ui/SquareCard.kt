@@ -1,5 +1,6 @@
 package com.mshdabiola.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.width
@@ -17,14 +18,15 @@ import coil.compose.AsyncImage
 
 @Composable
 internal fun SquareCard(
-     image:String,
-     title: String?=null,
-     subTitle:String
-) {
+    modifier: Modifier=Modifier,
+    image: String,
+    title: String? = null,
+    subTitle: String,
+    ) {
 
     Column(
         modifier =
-        Modifier
+        modifier
             .width(150.dp)
             .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp))
 

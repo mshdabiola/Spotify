@@ -11,11 +11,12 @@ class AlbumTest{
         val album=Album(
             id = "Lyndi",
             name = "Yoba",
-            releaseDate = "Alessandra",
+            releaseDate = 78,
             albumType = "Nathaniel",
             type = "Teryn",
             artist = "Bernadette",
             imageUri = "Yomaira",
+            tracks = listOf()
 
         )
 

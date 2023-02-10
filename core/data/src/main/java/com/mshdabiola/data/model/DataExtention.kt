@@ -17,9 +17,10 @@ fun NetworkTrack.asTrack()=Track(
     name=name,
     duration = durationMs?:0,
     artist = artists.joinToString { it.name },
-    image = album.images.first().url,
+    image = album?.images?.first()?.url?:"",
     previewUri = previewUrl?:"",
-    type = type
+    type = type,
+    releaseDate = album?.releaseDate?.toLong()?:System.currentTimeMillis()
 )
 fun NetworkPlaylist.asPlaylist()=Playlist(
     id = id,
@@ -31,11 +32,12 @@ fun NetworkPlaylist.asPlaylist()=Playlist(
 fun NetworkAlbum.asAlbum()=Album(
     id = id,
     name=name,
-    releaseDate = releaseDate?:"",
+    releaseDate = releaseDate?.toLong()?:0,
     type=type,
     albumType = albumType?:"",
     imageUri = images.first().url,
     artist = artists.joinToString { it.name },
+    tracks = tracks?.items?.map { it.asTrack() }?: emptyList()
 )
 
 fun NetworkCategory.asCategory()=Category(name,id,icons.first().url)

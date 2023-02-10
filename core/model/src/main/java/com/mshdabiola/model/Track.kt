@@ -7,5 +7,6 @@ data class Track(
     val duration : Int,
     val image : String,
     val previewUri : String,
-    val type : String
-) :Music
+    val type : String,
+    val releaseDate : Long
+)

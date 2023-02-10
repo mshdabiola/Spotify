@@ -1,16 +1,24 @@
 package com.mshdabiola.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.mshdabiola.ui.data.AlbumUiState
 
 @Composable
-fun AlbumCard(track: AlbumUiState) {
+fun AlbumCard(
+    albumUiState: AlbumUiState,
+    onClick: (String, String) -> Unit = { _, _ -> }
+) {
 
     SquareCard(
-        image = track.imageUri,
-        title = track.name,
-        subTitle = "${track.type} ● ${track.artist}"
+        modifier = Modifier.clickable {
+            onClick(albumUiState.id, "album")
+        },
+        image = albumUiState.imageUri,
+        title = albumUiState.name,
+        subTitle = "${albumUiState.type} ● ${albumUiState.artist}",
     )
 }
 
@@ -19,13 +27,13 @@ fun AlbumCard(track: AlbumUiState) {
 fun AlbumCardPreview() {
 
     AlbumCard(
-        track = AlbumUiState(
+        albumUiState = AlbumUiState(
             id = "12",
             name = "Yoga",
             artist = "Asake",
             imageUri = "",
             type = "Single",
-            releaseDate = "Jocob",
+            releaseDate = 636,
             albumType = "Nickie"
         )
     )
