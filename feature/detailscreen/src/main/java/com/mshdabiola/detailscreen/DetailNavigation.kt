@@ -28,4 +28,5 @@ fun NavGraphBuilder.detailScreen(onBack: () -> Unit) {
 
 fun NavController.navigateToDetail(id: String,type: String) {
     navigate(route = "$detailRoute/$id/$type")
+
 }

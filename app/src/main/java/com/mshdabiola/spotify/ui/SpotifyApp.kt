@@ -22,6 +22,7 @@ import com.mshdabiola.libraryscreen.libraryRoute
 import com.mshdabiola.mainscreen.mainRoute
 import com.mshdabiola.searchscreen.searchRoute
 import com.mshdabiola.spotify.navigation.SpotifyAppNavHost
+import timber.log.Timber
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
