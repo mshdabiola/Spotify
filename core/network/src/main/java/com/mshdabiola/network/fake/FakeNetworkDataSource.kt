@@ -4,6 +4,7 @@ import com.mshdabiola.network.NetworkDataSource
 import com.mshdabiola.network.model.CategoryItem
 import com.mshdabiola.network.model.PagingNetworkAlbums
 import com.mshdabiola.network.model.PagingNetWorkTracks
+import com.mshdabiola.network.model.OnePlaylist
 import com.mshdabiola.network.model.UserAlbums
 import com.mshdabiola.network.model.UserTracks
 import com.mshdabiola.network.model.comp.NetworkAlbums
@@ -11,7 +12,6 @@ import com.mshdabiola.network.model.comp.Categories
 import com.mshdabiola.network.model.comp.Feature
 import com.mshdabiola.network.model.comp.NetworkAlbum
 import com.mshdabiola.network.model.comp.NetworkArtist
-import com.mshdabiola.network.model.comp.NetworkPlaylist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
 import com.mshdabiola.network.model.comp.RelatedArtists
@@ -91,7 +91,7 @@ class FakeNetworkDataSource : NetworkDataSource {
         return json.decodeFromString(jsonString)
     }
 
-    override suspend fun getPlaylist(id: String): NetworkPlaylist {
+    override suspend fun getPlaylist(id: String): OnePlaylist {
         val name = "playlistnew.json"
         val jsonString = File(path, name).readText()
         return json.decodeFromString(jsonString)

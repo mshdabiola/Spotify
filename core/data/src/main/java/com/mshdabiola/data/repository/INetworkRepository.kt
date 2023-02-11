@@ -100,11 +100,21 @@ class INetworkRepository @Inject constructor(
     }
 
     override suspend fun getPlaylist(id: String): Result<Playlist> {
-        return try {
-            Result.success(networkDataSource.getPlaylist(id).asPlaylist())
+
+            return try {
+                val playlist=networkDataSource.getPlaylist(id)
+                val play=Playlist(
+                    playlist.id,
+                    playlist.name,
+                    playlist.description,
+                    playlist.images.first().url,
+                    playlist.tracks.items.map { it.track.asTrack() }
+                    )
+            Result.success(play)
         }catch (e:Exception){
             Result.failure(e)
         }
+        TODO()
     }
 
     override suspend fun getArtist(id: String): Result<Artist> {

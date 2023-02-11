@@ -1,7 +1,6 @@
 package com.mshdabiola.network.model.comp
 
-import com.mshdabiola.network.model.PagingNetWorkTracks
-import com.mshdabiola.network.model.Tracks
+
 import kotlinx.serialization.Serializable
 
 @Serializable
