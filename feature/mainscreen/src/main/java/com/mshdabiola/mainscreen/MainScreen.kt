@@ -79,7 +79,9 @@ internal fun MainScreen(
                     contentDescription = "notification"
                 )
             }
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = {
+
+            }) {
                 Icon(imageVector = Icons.Outlined.Alarm, contentDescription = "notification")
             }
             IconButton(onClick = { /*TODO*/ }) {

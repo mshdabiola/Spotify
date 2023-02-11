@@ -63,6 +63,7 @@ dependencies {
     implementation (project(":feature:searchscreen"))
     implementation (project(":feature:libraryscreen"))
     implementation(project(":feature:detailscreen"))
+    implementation(project(":core:common"))
     implementation(libs.androidx.profileinstaller)
     //implementation(libs.kotlinx.collection.immutable)
     implementation(libs.androidx.core.splashscreen)
@@ -74,5 +75,10 @@ dependencies {
     //testImplementation (libs.junit4)
     //androidTestImplementation (libs.bundles.android.test.bundle)
     //debugImplementation (libs.bundles.compose.debug.bundle)
+
+    // For media playback using ExoPlayer
+    implementation(libs.androidx.media3.exoplayer)
+    // For exposing and controlling media sessions
+    implementation(libs.androidx.media3.session)
 
 }
