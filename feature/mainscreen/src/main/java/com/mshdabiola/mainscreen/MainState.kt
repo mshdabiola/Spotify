@@ -10,7 +10,7 @@ import kotlinx.collections.immutable.toImmutableList
 
 
 data class MainState(
-    val showLogin : Boolean=false,
+    val showLogin : Boolean=true,
     val newRelease : ImmutableList<AlbumUiState> = emptyList<AlbumUiState>().toImmutableList(),
     val recommendations : ImmutableList<TrackUiState> = emptyList<TrackUiState>().toImmutableList(),
     val featurePlaylist : ImmutableList<PlaylistUiState> = emptyList<PlaylistUiState>().toImmutableList(),

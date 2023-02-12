@@ -15,6 +15,8 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
+import androidx.media3.common.Player
+import androidx.media3.common.Tracks
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.session.MediaController
 import androidx.media3.session.MediaSession
@@ -60,10 +62,10 @@ class MainActivity : ComponentActivity() {
     override fun onStart() {
         super.onStart()
 
-        val sessionToken = SessionToken(this, ComponentName(this, PlayMediaService::class.java))
-
-        listener = MediaController.Builder(this, sessionToken)
-            .buildAsync()
+//        val sessionToken = SessionToken(this, ComponentName(this, PlayMediaService::class.java))
+//
+//        listener = MediaController.Builder(this, sessionToken)
+//            .buildAsync()
 
         val mediaItem2 = MediaItem.Builder()
             .setMediaId("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
@@ -108,6 +110,7 @@ class MainActivity : ComponentActivity() {
                },
                MoreExecutors.directExecutor()
            )
+        mediaController?.currentMediaItemIndex
 
     }
 

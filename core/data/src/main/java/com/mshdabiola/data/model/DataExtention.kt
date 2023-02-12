@@ -18,7 +18,7 @@ fun NetworkTrack.asTrack()=Track(
     duration = durationMs?:0,
     artist = artists.map { it.asArtiste() },
     image = album?.images?.first()?.url?:"",
-    previewUri = previewUrl?:"",
+    previewUri = previewUrl,
     type = type,
     releaseDate = album?.releaseDate?.toLong()?:System.currentTimeMillis()
 )
@@ -37,7 +37,7 @@ fun NetworkAlbum.asAlbum()=Album(
     albumType = albumType?:"",
     imageUri = images.first().url,
     artist = artists.map { it.asArtiste() },
-    tracks = tracks?.items?.map { it.asTrack() }?: emptyList()
+    tracks = tracks?.items?.map { it.asTrack().copy(image = images.first().url) }?: emptyList()
 )
 
 fun NetworkCategory.asCategory()=Category(name,id,icons.first().url)

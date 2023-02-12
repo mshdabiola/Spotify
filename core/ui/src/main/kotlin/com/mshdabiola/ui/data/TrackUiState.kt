@@ -8,6 +8,6 @@ data class TrackUiState(
     val artist: ImmutableList<ArtistUiState>,
     val duration : Int,
     val image : String,
-    val previewUri : String,
+    val previewUri : String?,
     val type : String
 )

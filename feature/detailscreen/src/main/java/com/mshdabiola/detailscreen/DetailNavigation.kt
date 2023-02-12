@@ -7,6 +7,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.mshdabiola.ui.data.TrackUiState
 
 const val detailRoute = "detail_route"
 const val detail_id = "detail_id"
@@ -18,11 +19,17 @@ internal class DetailArg(val id:String,val type:String){
         checkNotNull( savedStateHandle[detail_type]))
 }
 
-fun NavGraphBuilder.detailScreen(onBack: () -> Unit) {
+fun NavGraphBuilder.detailScreen(
+    onBack: () -> Unit,
+    onMediaItems: (List<TrackUiState>)->Unit={}
+) {
     composable(
         route = "$detailRoute/{$detail_id}/{$detail_type}"
     ) {
-        DetailScreen(onBack = onBack)
+        DetailScreen(
+            onBack = onBack,
+            onMediaItems = onMediaItems
+        )
     }
 }
 

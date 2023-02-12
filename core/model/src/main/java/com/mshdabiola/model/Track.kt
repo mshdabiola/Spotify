@@ -6,7 +6,7 @@ data class Track(
     val artist: List<Artist>,
     val duration : Int,
     val image : String,
-    val previewUri : String,
+    val previewUri : String?,
     val type : String,
     val releaseDate : Long
 )

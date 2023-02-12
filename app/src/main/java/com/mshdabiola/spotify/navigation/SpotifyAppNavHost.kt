@@ -17,6 +17,7 @@ import com.mshdabiola.libraryscreen.libraryScreen
 import com.mshdabiola.mainscreen.mainNavigationRoute
 import com.mshdabiola.mainscreen.mainScreen
 import com.mshdabiola.searchscreen.searchScreen
+import com.mshdabiola.ui.data.TrackUiState
 
 @Composable
 fun SpotifyAppNavHost(
@@ -24,6 +25,8 @@ fun SpotifyAppNavHost(
     showNavBar : (Boolean)->Unit={},
     navController: NavHostController,
     startDestination: String = mainNavigationRoute,
+            onMediaItems: (List<TrackUiState>)->Unit={}
+    ,
 
 ) {
     NavHost(modifier=modifier,navController = navController, startDestination = startDestination) {
@@ -33,6 +36,6 @@ fun SpotifyAppNavHost(
         )
         searchScreen( onNavigateToDetail = navController::navigateToDetail)
         libraryScreen ( onNavigateToDetail = navController::navigateToDetail)
-        detailScreen { navController.popBackStack() }
+        detailScreen (onBack = { navController.popBackStack() } ,onMediaItems)
     }
 }

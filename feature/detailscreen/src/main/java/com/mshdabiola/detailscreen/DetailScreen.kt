@@ -39,15 +39,20 @@ import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.ui.PlaylistCard
 import com.mshdabiola.ui.TrackList
 import com.mshdabiola.ui.data.ArtistUiState
+import com.mshdabiola.ui.data.TrackUiState
 import kotlinx.collections.immutable.toImmutableList
 
 
 @Composable
-internal fun DetailScreen(viewModel: DetailViewModel = hiltViewModel(), onBack: () -> Unit) {
+internal fun DetailScreen(viewModel: DetailViewModel = hiltViewModel(),
+                          onBack: () -> Unit,
+                          onMediaItems: (List<TrackUiState>)->Unit={}
+) {
     val detailState = viewModel.detailState.collectAsStateWithLifecycle()
     DetailScreen(
         back = onBack,
-        detailState = detailState.value
+        detailState = detailState.value,
+        onMediaItems=onMediaItems
     )
 }
 
@@ -55,7 +60,8 @@ internal fun DetailScreen(viewModel: DetailViewModel = hiltViewModel(), onBack: 
 @Composable
 internal fun DetailScreen(
     back: () -> Unit = {},
-    detailState: DetailState = DetailState()
+    detailState: DetailState = DetailState(),
+    onMediaItems: (List<TrackUiState>)->Unit={}
 ) {
     Scaffold(
     ) { paddingValues ->
@@ -123,7 +129,7 @@ internal fun DetailScreen(
                             contentDescription = "shuffle"
                         )
                     }
-                    FilledIconButton(onClick = { /*TODO*/ }) {
+                    FilledIconButton(onClick = { onMediaItems(detailState.trackList) }) {
                         Icon(imageVector = Icons.Default.PlayArrow, contentDescription = "play")
                     }
                 }

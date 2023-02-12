@@ -64,6 +64,7 @@ dependencies {
     implementation (project(":feature:libraryscreen"))
     implementation(project(":feature:detailscreen"))
     implementation(project(":core:common"))
+    implementation(project(":core:ui"))
     implementation(libs.androidx.profileinstaller)
     //implementation(libs.kotlinx.collection.immutable)
     implementation(libs.androidx.core.splashscreen)
@@ -81,5 +82,8 @@ dependencies {
     // For exposing and controlling media sessions
     implementation(libs.androidx.media3.session)
     implementation ("com.spotify.android:auth:1.2.5")
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.compose)
+    implementation(libs.kotlinx.collection.immutable)
 
 }
