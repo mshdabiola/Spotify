@@ -35,4 +35,6 @@ interface NetworkRepository {
     suspend fun getPlaylist(id : String): Result<Playlist>
 
     suspend fun getArtist(id : String): Result<Artist>
+
+    suspend fun setUp()
 }

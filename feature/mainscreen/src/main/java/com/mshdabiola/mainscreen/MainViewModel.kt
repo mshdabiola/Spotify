@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mshdabiola.data.repository.ModelRepository
 import com.mshdabiola.data.repository.NetworkRepository
+import com.mshdabiola.data.repository.UserDataRepository
 import com.mshdabiola.ui.data.toAlbumUiState
 import com.mshdabiola.ui.data.toArtistUiState
 import com.mshdabiola.ui.data.toCategoryUiState
@@ -12,6 +13,7 @@ import com.mshdabiola.ui.data.toPlaylistUiState
 import com.mshdabiola.ui.data.toTrackUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -24,30 +26,54 @@ class MainViewModel
 @Inject constructor(
     //private val savedStateHandle: SavedStateHandle,
    // private val modelRepository: ModelRepository,
-    private val networkRepository: NetworkRepository
+    private val networkRepository: NetworkRepository,
+    private val userDataRepository: UserDataRepository
 ) : ViewModel() {
 
     private val _mainState= MutableStateFlow(MainState())
     val mainState=_mainState.asStateFlow()
     init {
         viewModelScope.launch {
+            networkRepository.setUp()
+            loadData()
+        }
+
+    }
+
+
+    fun setToken(token :String){
+        viewModelScope.launch (Dispatchers.IO){
+            userDataRepository.setToken(token)
+            networkRepository.setUp()
+            loadData()
+        }
+
+    }
+
+    private  fun loadData(){
+        viewModelScope.launch {
 
             networkRepository
                 .getNewRelease()
-               .onSuccess { albumList ->
-                   val value=  albumList.map { it.toAlbumUiState() }
-               .toImmutableList()
-            Timber.e(albumList.joinToString())
-            _mainState.update {
+                .onSuccess { albumList ->
+                    val value=  albumList.map { it.toAlbumUiState() }
+                        .toImmutableList()
+                    Timber.e(albumList.joinToString())
+                    _mainState.update {
 
-                it.copy(newRelease = value)
-            }
-               }
-               .onFailure {
+                        it.copy(newRelease = value, showLogin = false)
+                    }
+                }
+                .onFailure { throwable ->
 
-                   Timber.e(t = it,message = "failure")
+                    Timber.e(t = throwable,message = "failure")
+                    if (throwable.message?.contains("acess")==true){
+                        _mainState.update {
+                            it.copy(showLogin = true)
+                        }
+                    }
 
-               }
+                }
 
 //
         }
@@ -78,9 +104,9 @@ class MainViewModel
             networkRepository
                 .getCategory()
                 .onSuccess { list->
-                   _mainState.update { mainState1 ->
-                       mainState1.copy(category = list.map { it.toCategoryUiState() }.toImmutableList())
-                   }
+                    _mainState.update { mainState1 ->
+                        mainState1.copy(category = list.map { it.toCategoryUiState() }.toImmutableList())
+                    }
                 }
                 .onFailure {
                     Timber.e(it)

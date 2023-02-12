@@ -4,6 +4,8 @@ import com.mshdabiola.data.repository.ModelRepository
 import com.mshdabiola.data.repository.NetworkRepository
 import com.mshdabiola.data.repository.RealModelRepository
 import com.mshdabiola.data.repository.INetworkRepository
+import com.mshdabiola.data.repository.RealUserDataRepository
+import com.mshdabiola.data.repository.UserDataRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,4 +20,7 @@ interface DataModule {
 
     @Binds
     fun bindNetworkRepository(iNetworkRepository: INetworkRepository):NetworkRepository
+
+    @Binds
+    fun bindUserDataRepository(realUserDataRepository: RealUserDataRepository):UserDataRepository
 }

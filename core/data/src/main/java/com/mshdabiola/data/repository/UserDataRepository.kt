@@ -1,8 +1,11 @@
 package com.mshdabiola.data.repository
 
+import com.mshdabiola.model.UserData
+import kotlinx.coroutines.flow.Flow
+
 interface UserDataRepository {
 
-    suspend fun setTopic(id: Int)
+    val data:Flow<UserData>
+    suspend fun setToken(token: String)
 
-    suspend fun remove(id: Int)
 }

@@ -10,7 +10,8 @@ android {
         }
     }
 }
-//
-//dependencies{
+
+dependencies{
 //    implementation(project(":core:ui"))
-//}
+    implementation ("com.spotify.android:auth:1.2.5")
+}

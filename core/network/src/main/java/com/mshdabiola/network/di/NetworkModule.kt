@@ -1,5 +1,6 @@
 package com.mshdabiola.network.di
 
+import com.mshdabiola.network.Config
 import com.mshdabiola.network.INetworkDataSource
 import com.mshdabiola.network.NetworkDataSource
 import dagger.Binds
@@ -42,7 +43,7 @@ import java.net.URL
 import java.util.logging.Logger
 import javax.inject.Singleton
 
-const val code="BQBCCR8thMKqtxNd-hl4bD5OKB-WF_JH7fTdU_8OMuMHhpPmDkxcCoBwPc2eGeI-3lLmUW4QnXCOkfIjP-TwmF06vnjTwZ03598lC_TsM1gt-MCv-nwRL2QJj1Ix3h4hWnvj7qhGYcygsxpg3Ws9h_g7heqII8SIQE7GZHAMxEUP27j1OZdFoIGGPdJ6Y39y9T_e"
+
 @InstallIn(SingletonComponent::class)
 @Module
 object NetworkModule {
@@ -52,7 +53,7 @@ object NetworkModule {
         defaultRequest {
 
             headers {
-                this[HttpHeaders.Authorization]="Bearer $code"
+                this[HttpHeaders.Authorization]="Bearer ${Config.token}"
                 this[HttpHeaders.Accept]="application/json"
                 this[HttpHeaders.ContentType]="application/json"
             }

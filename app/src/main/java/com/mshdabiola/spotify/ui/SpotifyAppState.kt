@@ -24,6 +24,7 @@ data class SpotifyAppState(
     val navHostController: NavHostController,
 ){
     val listOfDestination=TopLevelDestination.values().toList()
+    val showBar = mutableStateOf(true)
     val currentDestination
        @Composable get() = navHostController.currentBackStackEntryAsState().value?.destination
 
@@ -39,6 +40,10 @@ data class SpotifyAppState(
 //    @Composable ge()=when{
 //        currenDestnation?.
 //    }
+
+    fun setShowBar(show:Boolean){
+        showBar.value=show
+    }
 
     fun navigateToTopLevel(destination: TopLevelDestination){
 

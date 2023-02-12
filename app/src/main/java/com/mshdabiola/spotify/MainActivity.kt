@@ -1,6 +1,7 @@
 package com.mshdabiola.spotify
 
 import android.content.ComponentName
+import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -23,6 +24,7 @@ import com.google.common.util.concurrent.MoreExecutors
 import com.mshdabiola.common.media.PlayMediaService
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.spotify.ui.SpotifyApp
+import com.spotify.sdk.android.auth.AuthorizationResponse
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -40,7 +42,7 @@ class MainActivity : ComponentActivity() {
     private var listener: ListenableFuture<MediaController>? = null
 
 
-    @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3WindowSizeClassApi::class)
+    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
@@ -58,7 +60,6 @@ class MainActivity : ComponentActivity() {
     override fun onStart() {
         super.onStart()
 
-        val player = ExoPlayer.Builder(this).build()
         val sessionToken = SessionToken(this, ComponentName(this, PlayMediaService::class.java))
 
         listener = MediaController.Builder(this, sessionToken)
@@ -87,8 +88,7 @@ class MainActivity : ComponentActivity() {
                     .build()
             )
             .build()
-        val uri =
-            Uri.parse("android.resource://$packageName/${com.mshdabiola.mainscreen.R.raw.applause}")
+
         val mediaItem = MediaItem
             .Builder()
             .setMediaId("android.resource://$packageName/${com.mshdabiola.mainscreen.R.raw.applause}")
@@ -102,24 +102,22 @@ class MainActivity : ComponentActivity() {
                    mediaController!!.addMediaItem(mediaItem)
                    mediaController!!.addMediaItem(mediaItem3)
                    mediaController!!.addMediaItem(mediaItem2)
-                   mediaController!!.prepare()
-                   mediaController!!.play()
+//                   mediaController!!.prepare()
+//                   mediaController!!.play()
                    Timber.e("isconnected ${mediaController!!.isConnected}")
                },
                MoreExecutors.directExecutor()
            )
 
-
-
-
-
-
     }
 
     override fun onDestroy() {
         super.onDestroy()
+        mediaController?.release()
 
     }
+
+
 
 
 }

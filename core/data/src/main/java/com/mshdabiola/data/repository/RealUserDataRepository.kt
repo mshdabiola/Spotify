@@ -1,16 +1,23 @@
 package com.mshdabiola.data.repository
 
-import com.mshdabiola.datastore.UserPreferenceDataSource
+import com.mshdabiola.datastore.IUserPreferenceDataSource
+import com.mshdabiola.datastore.UserPreferenceDatasource
+import com.mshdabiola.model.UserData
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class RealUserDataRepository @Inject constructor(
-    private val userPreference: UserPreferenceDataSource,
+    private val userPreference: UserPreferenceDatasource,
 ) : UserDataRepository {
-    override suspend fun setTopic(id: Int) {
-        userPreference.addTopic(id)
+
+    override val data: Flow<UserData>
+        get() = userPreference.userData
+
+
+    override suspend fun setToken(token: String) {
+        userPreference.setToken(token)
     }
 
-    override suspend fun remove(id: Int) {
-        userPreference.remove(id)
-    }
+
+
 }

@@ -3,6 +3,9 @@ package com.mshdabiola.spotify.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -29,20 +32,28 @@ import timber.log.Timber
 fun SpotifyApp(
     windowSizeClass: WindowSizeClass,
     noteAppState: SpotifyAppState = rememberSpotifyAppState(windowSizeClass = windowSizeClass),
+
 ) {
     SpotifyAppTheme {
         Surface() {
-            Box (Modifier.fillMaxHeight()){
+            Box (Modifier
+                .statusBarsPadding()
+                .fillMaxHeight()){
 
                 SpotifyAppNavHost(
                     Modifier,//.padding(bottom = 80.dp),
-                    navController = noteAppState.navHostController)
-                SpotifyBottomNavBar(
-                    modifier = Modifier.align(Alignment.BottomCenter),
-                    topLevelDestinations = noteAppState.listOfDestination,
-                    onNavigateToTopNav = noteAppState::navigateToTopLevel,
-                    currentDestination = noteAppState.currentDestination
-                )
+                    navController = noteAppState.navHostController,
+                    showNavBar = noteAppState::setShowBar
+                    )
+
+                if (noteAppState.showBar.value) {
+                    SpotifyBottomNavBar(
+                        modifier = Modifier.align(Alignment.BottomCenter),
+                        topLevelDestinations = noteAppState.listOfDestination,
+                        onNavigateToTopNav = noteAppState::navigateToTopLevel,
+                        currentDestination = noteAppState.currentDestination
+                    )
+                }
             }
         }
 

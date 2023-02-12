@@ -5,17 +5,26 @@ import com.mshdabiola.data.model.asArtiste
 import com.mshdabiola.data.model.asCategory
 import com.mshdabiola.data.model.asPlaylist
 import com.mshdabiola.data.model.asTrack
+import com.mshdabiola.datastore.UserPreferenceDatasource
 import com.mshdabiola.model.Album
 import com.mshdabiola.model.Artist
 import com.mshdabiola.model.Category
 import com.mshdabiola.model.Playlist
 import com.mshdabiola.model.Track
+import com.mshdabiola.network.Config
 import com.mshdabiola.network.NetworkDataSource
+import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 
 class INetworkRepository @Inject constructor(
     private val networkDataSource: NetworkDataSource,
+    private val userPreferenceDatasource: UserPreferenceDatasource
 ) : NetworkRepository {
+
+    override suspend fun setUp() {
+        Config.token=userPreferenceDatasource.userData.first().token
+    }
+
     override suspend fun getRecommendation(): Result<List<Track>> {
         return try {
            Result.success(networkDataSource.getRecommendation().map { it.asTrack() })
@@ -114,7 +123,7 @@ class INetworkRepository @Inject constructor(
         }catch (e:Exception){
             Result.failure(e)
         }
-        TODO()
+
     }
 
     override suspend fun getArtist(id: String): Result<Artist> {
@@ -124,4 +133,6 @@ class INetworkRepository @Inject constructor(
             Result.failure(e)
         }
     }
+
+
 }

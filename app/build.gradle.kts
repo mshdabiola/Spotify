@@ -80,5 +80,6 @@ dependencies {
     implementation(libs.androidx.media3.exoplayer)
     // For exposing and controlling media sessions
     implementation(libs.androidx.media3.session)
+    implementation ("com.spotify.android:auth:1.2.5")
 
 }
