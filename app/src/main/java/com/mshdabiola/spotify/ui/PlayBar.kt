@@ -83,7 +83,7 @@ fun PlayerBar(
 
         override fun onPause(owner: LifecycleOwner) {
             super.onPause(owner)
-           mediaController?.release()
+//           mediaController?.release()
         }
     }
     DisposableEffect(key1 = lifecycle.lifecycle, effect = {
