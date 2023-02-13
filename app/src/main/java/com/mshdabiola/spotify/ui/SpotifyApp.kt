@@ -1,6 +1,5 @@
 package com.mshdabiola.spotify.ui
 
-import android.content.ComponentName
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,29 +13,18 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.media3.session.MediaController
-import androidx.media3.session.SessionToken
+import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
-import com.google.common.util.concurrent.MoreExecutors
-import com.mshdabiola.common.media.PlayMediaService
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.libraryscreen.libraryRoute
 import com.mshdabiola.mainscreen.mainRoute
 import com.mshdabiola.searchscreen.searchRoute
 import com.mshdabiola.spotify.navigation.SpotifyAppNavHost
-import kotlinx.coroutines.delay
-import timber.log.Timber
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,7 +50,9 @@ fun SpotifyApp(
 
                 if (noteAppState.showBar.value) {
                     Column(Modifier.align(Alignment.BottomCenter)) {
-                        PlayerBar(tracks = noteAppState.tracks.value)
+                      //  if (noteAppState.tracks.value.isNotEmpty()) {
+                            PlayerBar(tracks = noteAppState.tracks.value)
+                     //   }
                         SpotifyBottomNavBar(
                             modifier = Modifier,
                             topLevelDestinations = noteAppState.listOfDestination,
@@ -105,7 +95,7 @@ fun SpotifyBottomNavBar(
                 ),
                 selected = isSelected,
                 onClick = { onNavigateToTopNav(it) },
-                icon = { Icon(imageVector = if (isSelected)it.selectIcon else it.unSelectIcon, contentDescription = "") })
+                icon = { Icon(painter = painterResource(id =if (isSelected)it.selectIcon else it.unSelectIcon), contentDescription = "") })
         }
     }
 

@@ -100,6 +100,7 @@ internal fun MainScreen(
                     modifier = Modifier.align(Alignment.Center),
                     onClick = {
                         val buider= AuthorizationRequest.Builder("84dfa73aba8e432eb321426804a69fb1",AuthorizationResponse.Type.TOKEN,"http://callback.com")
+                            .setScopes(arrayOf("user-library-read"))
                             .build()
                         val intent= AuthorizationClient.createLoginActivityIntent(context as Activity,buider)
                         //context.startActivityForResult(intent,100)

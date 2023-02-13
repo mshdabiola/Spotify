@@ -37,8 +37,9 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import coil.compose.AsyncImage
+import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
-import com.mshdabiola.common.media.PlayMediaService
+import com.mshdabiola.spotify.PlayMediaService
 import com.mshdabiola.ui.data.ArtistUiState
 import com.mshdabiola.ui.data.TrackUiState
 import kotlinx.collections.immutable.ImmutableList
@@ -48,15 +49,19 @@ import timber.log.Timber
 
 @Composable
 fun PlayerBar(
-    modifier: Modifier=Modifier,
+    modifier: Modifier = Modifier,
     tracks: ImmutableList<TrackUiState>,
 
-) {
+    ) {
+    //if (tracks.isNotEmpty()) {
     var currIndex by remember {
         mutableStateOf<Int?>(null)
     }
     var progress by remember {
         mutableStateOf(0f)
+    }
+    var future by remember {
+        mutableStateOf<ListenableFuture<MediaController>?>(null)
     }
     var mediaController by remember {
         mutableStateOf<MediaController?>(null)
@@ -64,18 +69,24 @@ fun PlayerBar(
     var isPlaying by remember {
         mutableStateOf(false)
     }
-    val lifecycle= LocalLifecycleOwner.current
-    val context= LocalContext.current
+    val lifecycle = LocalLifecycleOwner.current
+    val context = LocalContext.current
 
     val observer = object : DefaultLifecycleObserver {
         override fun onStart(owner: LifecycleOwner) {
             super.onStart(owner)
-            val sessionToken=
+            val sessionToken =
                 SessionToken(context, ComponentName(context, PlayMediaService::class.java))
-            val future=MediaController.Builder(context,sessionToken)
-                .buildAsync()
-            future.addListener({
-                mediaController=future.get()
+            try {
+                future = MediaController.Builder(context, sessionToken)
+                    .buildAsync()
+            }catch (e : Exception){
+                Timber.e(e)
+            }
+
+
+            future?.addListener({
+                mediaController = future?.get()
                 Timber.e("Set Mediacontroller")
 
             }, MoreExecutors.directExecutor())
@@ -83,30 +94,33 @@ fun PlayerBar(
 
         override fun onPause(owner: LifecycleOwner) {
             super.onPause(owner)
-//           mediaController?.release()
+            Timber.e("on Pause")
+            mediaController?.release()
+            future?.cancel(true)
+
         }
     }
     DisposableEffect(key1 = lifecycle.lifecycle, effect = {
         lifecycle.lifecycle.addObserver(observer)
         onDispose { lifecycle.lifecycle.removeObserver(observer) }
     })
-    LaunchedEffect(key1 =isPlaying , block ={
-        if (isPlaying){
-            while (true){
+    LaunchedEffect(key1 = isPlaying, block = {
+        if (isPlaying) {
+            while (true) {
                 delay(1000)
                 mediaController?.apply {
-                    if (currIndex!=currentMediaItemIndex){
-                        currIndex=currentMediaItemIndex
+                    if (currIndex != currentMediaItemIndex) {
+                        currIndex = currentMediaItemIndex
                     }
-                    progress=(currentPosition/duration.toFloat())
+                    progress = (currentPosition / duration.toFloat())
                     Timber.e("curren $currentPosition $duration")
-                    if (!isLoading&&!isPlaying()){
-                        isPlaying=false
+                    if (!isLoading && !isPlaying()) {
+                        isPlaying = false
                     }
                 }
             }
         }
-    } )
+    })
     LaunchedEffect(key1 = tracks, block = {
         if (tracks.isNotEmpty()) {
             Timber.e(tracks.joinToString())
@@ -114,13 +128,13 @@ fun PlayerBar(
                 setMediaItems(tracks.map { it.toMediaItem() })
                 prepare()
                 play()
-               // currIndex=0
+                // currIndex=0
                 isPlaying = true
             }
         }
     })
+    if ((currIndex != null) && (currIndex!! > (-1))) {
 
-    currIndex?.let{index->
         Box(modifier) {
             ListItem(
                 modifier = Modifier.clip(RoundedCornerShape(8.dp)),
@@ -128,14 +142,19 @@ fun PlayerBar(
                     AsyncImage(
                         modifier = Modifier
                             .size(44.dp),
-                        model = tracks[index].image,
+                        model = tracks[currIndex!!].image,
                         contentDescription = "image"
                     )
                 },
                 headlineText = {
-                    Text(text = tracks[index].name, maxLines = 1)
+                    Text(text = tracks[currIndex!!].name, maxLines = 1)
                 },
-                supportingText = { Text(text =tracks[index].artist.joinToString { it.name }, maxLines = 1) },
+                supportingText = {
+                    Text(
+                        text = tracks[currIndex!!].artist.joinToString { it.name },
+                        maxLines = 1
+                    )
+                },
                 trailingContent = {
                     Row {
                         IconButton(onClick = { /*TODO*/ }) {
@@ -154,10 +173,13 @@ fun PlayerBar(
                             mediaController?.apply {
                                 this.seekTo(0)
                                 play()
-                                isPlaying=true
+                                isPlaying = true
                             }
                         }) {
-                            Icon(imageVector = Icons.Default.PlayArrow, contentDescription = "play")
+                            Icon(
+                                imageVector = Icons.Default.PlayArrow,
+                                contentDescription = "play"
+                            )
                         }
                     }
                 },
@@ -171,20 +193,25 @@ fun PlayerBar(
                 progress = progress
             )
         }
-    }
 
+    }
+    // }
 }
 
 @Preview
 @Composable
 fun PlayerBarPreview() {
-    PlayerBar(tracks = listOf( TrackUiState(
-        id = "Kalina",
-        name = "Doron",
-        artist = emptyList<ArtistUiState>().toImmutableList(),
-        duration = 3180,
-        image = "Delvin",
-        previewUri = "Kalah",
-        type = "Lakeysha"
-    )).toImmutableList())
+    PlayerBar(
+        tracks = listOf(
+            TrackUiState(
+                id = "Kalina",
+                name = "Doron",
+                artist = emptyList<ArtistUiState>().toImmutableList(),
+                duration = 3180,
+                image = "Delvin",
+                previewUri = "Kalah",
+                type = "Lakeysha"
+            )
+        ).toImmutableList()
+    )
 }

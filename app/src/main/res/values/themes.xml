@@ -19,8 +19,8 @@
     <!-- Allows us to override night specific attributes in the
          values-night folder. -->
     <style name="NightAdjusted.Theme.App" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowLightStatusBar" >true</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:windowLightStatusBar" >false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
     </style>
 
     <!-- Allows us to override platform level specific attributes in their
@@ -40,6 +40,8 @@
 
     <style name="Theme.App.Splash" parent="NightAdjusted.Theme.Splash">
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenIconBackgroundColor">#232725</item>
+        <item name="windowSplashScreenBackground">#232725</item>
         <item name="postSplashScreenTheme">@style/Theme.App</item>
     </style>
 

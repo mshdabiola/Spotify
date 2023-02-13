@@ -8,14 +8,15 @@ import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.LibraryBooks
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.mshdabiola.spotify.R
 
 
 enum class TopLevelDestination(
-    val selectIcon : ImageVector,
-    val unSelectIcon:ImageVector,
+    val selectIcon : Int,
+    val unSelectIcon:Int,
     val text : String
 ) {
-    HOME(selectIcon = Icons.Default.Home, unSelectIcon = Icons.Outlined.Home, text="Home"),
-    SEARCH(selectIcon = Icons.Default.Search, unSelectIcon = Icons.Outlined.Search, text = "Search"),
-    LIBRARY(selectIcon = Icons.Default.LibraryBooks, unSelectIcon = Icons.Outlined.LibraryBooks, text = "Library")
+    HOME(selectIcon = R.drawable.home_select, unSelectIcon = R.drawable.home, text="Home"),
+    SEARCH(selectIcon = R.drawable.search_select, unSelectIcon = R.drawable.search, text = "Search"),
+    LIBRARY(selectIcon = R.drawable.library_select, unSelectIcon = R.drawable.library, text = "Library")
 }

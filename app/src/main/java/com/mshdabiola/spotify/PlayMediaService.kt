@@ -1,4 +1,4 @@
-package com.mshdabiola.common.media
+package com.mshdabiola.spotify
 
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
@@ -32,6 +32,7 @@ class PlayMediaService :MediaSessionService() ,MediaSession.Callback {
         super.onDestroy()
         player.release()
         session.release()
+
     }
 
     override fun onAddMediaItems(

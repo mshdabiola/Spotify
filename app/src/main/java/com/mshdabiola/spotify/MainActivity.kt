@@ -1,47 +1,27 @@
 package com.mshdabiola.spotify
 
-import android.content.ComponentName
-import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
-import androidx.media3.common.Player
-import androidx.media3.common.Tracks
-import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.session.MediaController
-import androidx.media3.session.MediaSession
-import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
-import com.mshdabiola.common.media.PlayMediaService
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.spotify.ui.SpotifyApp
-import com.spotify.sdk.android.auth.AuthorizationResponse
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import timber.log.Timber
-import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    private var mediaController: MediaController? = null
-
-    private var listener: ListenableFuture<MediaController>? = null
 
 
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
@@ -98,25 +78,25 @@ class MainActivity : ComponentActivity() {
 
 
 
-           listener?.addListener(
-               {
-               mediaController=listener?.get()
-                   mediaController!!.addMediaItem(mediaItem)
-                   mediaController!!.addMediaItem(mediaItem3)
-                   mediaController!!.addMediaItem(mediaItem2)
-//                   mediaController!!.prepare()
-//                   mediaController!!.play()
-                   Timber.e("isconnected ${mediaController!!.isConnected}")
-               },
-               MoreExecutors.directExecutor()
-           )
-        mediaController?.currentMediaItemIndex
+//           listener?.addListener(
+//               {
+//               mediaController=listener?.get()
+//                   mediaController!!.addMediaItem(mediaItem)
+//                   mediaController!!.addMediaItem(mediaItem3)
+//                   mediaController!!.addMediaItem(mediaItem2)
+////                   mediaController!!.prepare()
+////                   mediaController!!.play()
+//                   Timber.e("isconnected ${mediaController!!.isConnected}")
+//               },
+//               MoreExecutors.directExecutor()
+//           )
+//        mediaController?.currentMediaItemIndex
 
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        mediaController?.release()
+//        mediaController?.release()
 
     }
 
