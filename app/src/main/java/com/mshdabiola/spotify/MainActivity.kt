@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
@@ -19,33 +20,35 @@ import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.spotify.ui.SpotifyApp
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
+    val mainViewModel by  viewModels<MainViewModel>()
 
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+
         setContent {
             WindowCompat.setDecorFitsSystemWindows(window, false)
             SpotifyAppTheme() {
                 // A surface container using the 'background' color from the theme
-                SpotifyApp(windowSizeClass = calculateWindowSizeClass(activity = this))
+                SpotifyApp(
+                    windowSizeClass = calculateWindowSizeClass(activity = this),
+                    mainViewModel=mainViewModel
+                    )
             }
         }
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.P)
     override fun onStart() {
         super.onStart()
 
-//        val sessionToken = SessionToken(this, ComponentName(this, PlayMediaService::class.java))
-//
-//        listener = MediaController.Builder(this, sessionToken)
-//            .buildAsync()
+
 
         val mediaItem2 = MediaItem.Builder()
             .setMediaId("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")

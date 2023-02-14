@@ -22,7 +22,7 @@ fun TrackUiState.toMediaItem() =
 //        .build()
     MediaItem
     .Builder()
-        .setMediaId(previewUri?:"https://p.scdn.co/mp3-preview/facd9e5b75514daefb81d6492da242068873fe93?cid=774b29d4f13844c495f206cafdad9c86")
+        .setMediaId(previewUri?:"android.resource://com.mshdabiola.spotify.debug/${com.mshdabiola.mainscreen.R.raw.applause}")
         .setMediaMetadata(
             MediaMetadata.Builder()
                 .setFolderType(MediaMetadata.FOLDER_TYPE_ALBUMS)

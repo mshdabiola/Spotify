@@ -4,13 +4,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,21 +21,28 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.libraryscreen.libraryRoute
 import com.mshdabiola.mainscreen.mainRoute
 import com.mshdabiola.searchscreen.searchRoute
+import com.mshdabiola.spotify.MainViewModel
 import com.mshdabiola.spotify.navigation.SpotifyAppNavHost
+import com.mshdabiola.ui.data.ArtistUiState
+import com.mshdabiola.ui.data.TrackUiState
+import kotlinx.collections.immutable.toImmutableList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SpotifyApp(
     windowSizeClass: WindowSizeClass,
     noteAppState: SpotifyAppState = rememberSpotifyAppState(windowSizeClass = windowSizeClass),
-
+    mainViewModel: MainViewModel
 ) {
+    val mediaData = mainViewModel.mediaData.collectAsStateWithLifecycle()
 
     SpotifyAppTheme {
         Surface {
@@ -45,14 +55,18 @@ fun SpotifyApp(
                     Modifier,//.padding(bottom = 80.dp),
                     navController = noteAppState.navHostController,
                     showNavBar = noteAppState::setShowBar,
-                    onMediaItems = noteAppState::setTracks
+                    onMediaItems = mainViewModel::setMediaItems
                     )
 
                 if (noteAppState.showBar.value) {
                     Column(Modifier.align(Alignment.BottomCenter)) {
-                      //  if (noteAppState.tracks.value.isNotEmpty()) {
-                            PlayerBar(tracks = noteAppState.tracks.value)
-                     //   }
+
+                            PlayerBar(
+                                modifier=Modifier.padding(horizontal = 16.dp),
+                                mediaData = mediaData.value,
+                                onPlay = mainViewModel::onPlay
+                            )
+
                         SpotifyBottomNavBar(
                             modifier = Modifier,
                             topLevelDestinations = noteAppState.listOfDestination,

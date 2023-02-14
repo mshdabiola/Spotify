@@ -31,7 +31,7 @@ data class SpotifyAppState(
     val listOfDestination = TopLevelDestination.values().toList()
     val showBar = mutableStateOf(true)
 
-    val tracks = mutableStateOf(emptyList<TrackUiState>().toImmutableList())
+
 
     val currentDestination
         @Composable get() = navHostController.currentBackStackEntryAsState().value?.destination
@@ -62,8 +62,6 @@ data class SpotifyAppState(
                     .build()
             )
             .build()
-        tracks.value = trackList.toImmutableList()
-
 
 
     }

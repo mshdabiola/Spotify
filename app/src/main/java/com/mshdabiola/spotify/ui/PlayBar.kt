@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Speaker
 import androidx.compose.material3.Icon
@@ -39,6 +40,7 @@ import androidx.media3.session.SessionToken
 import coil.compose.AsyncImage
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
+import com.mshdabiola.spotify.MediaData
 import com.mshdabiola.spotify.PlayMediaService
 import com.mshdabiola.ui.data.ArtistUiState
 import com.mshdabiola.ui.data.TrackUiState
@@ -50,90 +52,11 @@ import timber.log.Timber
 @Composable
 fun PlayerBar(
     modifier: Modifier = Modifier,
-    tracks: ImmutableList<TrackUiState>,
-
+    mediaData: MediaData,
+    onPlay : ()->Unit={}
     ) {
-    //if (tracks.isNotEmpty()) {
-    var currIndex by remember {
-        mutableStateOf<Int?>(null)
-    }
-    var progress by remember {
-        mutableStateOf(0f)
-    }
-    var future by remember {
-        mutableStateOf<ListenableFuture<MediaController>?>(null)
-    }
-    var mediaController by remember {
-        mutableStateOf<MediaController?>(null)
-    }
-    var isPlaying by remember {
-        mutableStateOf(false)
-    }
-    val lifecycle = LocalLifecycleOwner.current
-    val context = LocalContext.current
 
-    val observer = object : DefaultLifecycleObserver {
-        override fun onStart(owner: LifecycleOwner) {
-            super.onStart(owner)
-            val sessionToken =
-                SessionToken(context, ComponentName(context, PlayMediaService::class.java))
-            try {
-                future = MediaController.Builder(context, sessionToken)
-                    .buildAsync()
-            }catch (e : Exception){
-                Timber.e(e)
-            }
-
-
-            future?.addListener({
-                mediaController = future?.get()
-                Timber.e("Set Mediacontroller")
-
-            }, MoreExecutors.directExecutor())
-        }
-
-        override fun onPause(owner: LifecycleOwner) {
-            super.onPause(owner)
-            Timber.e("on Pause")
-            mediaController?.release()
-            future?.cancel(true)
-
-        }
-    }
-    DisposableEffect(key1 = lifecycle.lifecycle, effect = {
-        lifecycle.lifecycle.addObserver(observer)
-        onDispose { lifecycle.lifecycle.removeObserver(observer) }
-    })
-    LaunchedEffect(key1 = isPlaying, block = {
-        if (isPlaying) {
-            while (true) {
-                delay(1000)
-                mediaController?.apply {
-                    if (currIndex != currentMediaItemIndex) {
-                        currIndex = currentMediaItemIndex
-                    }
-                    progress = (currentPosition / duration.toFloat())
-                    Timber.e("curren $currentPosition $duration")
-                    if (!isLoading && !isPlaying()) {
-                        isPlaying = false
-                    }
-                }
-            }
-        }
-    })
-    LaunchedEffect(key1 = tracks, block = {
-        if (tracks.isNotEmpty()) {
-            Timber.e(tracks.joinToString())
-            mediaController?.apply {
-                setMediaItems(tracks.map { it.toMediaItem() })
-                prepare()
-                play()
-                // currIndex=0
-                isPlaying = true
-            }
-        }
-    })
-    if ((currIndex != null) && (currIndex!! > (-1))) {
+    if (mediaData.showPlayer) {
 
         Box(modifier) {
             ListItem(
@@ -142,16 +65,16 @@ fun PlayerBar(
                     AsyncImage(
                         modifier = Modifier
                             .size(44.dp),
-                        model = tracks[currIndex!!].image,
+                        model = mediaData.image,
                         contentDescription = "image"
                     )
                 },
                 headlineText = {
-                    Text(text = tracks[currIndex!!].name, maxLines = 1)
+                    Text(text = mediaData.title?:"", maxLines = 1)
                 },
                 supportingText = {
                     Text(
-                        text = tracks[currIndex!!].artist.joinToString { it.name },
+                        text = mediaData.artists ?:"",
                         maxLines = 1
                     )
                 },
@@ -169,15 +92,9 @@ fun PlayerBar(
                                 contentDescription = "favorite"
                             )
                         }
-                        IconButton(onClick = {
-                            mediaController?.apply {
-                                this.seekTo(0)
-                                play()
-                                isPlaying = true
-                            }
-                        }) {
+                        IconButton(onClick = onPlay) {
                             Icon(
-                                imageVector = Icons.Default.PlayArrow,
+                                imageVector = if (mediaData.isPlaying)Icons.Default.Pause else Icons.Default.PlayArrow,
                                 contentDescription = "play"
                             )
                         }
@@ -190,7 +107,7 @@ fun PlayerBar(
                     .align(Alignment.BottomCenter)
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp),
-                progress = progress
+                progress = mediaData.progress
             )
         }
 
@@ -202,16 +119,6 @@ fun PlayerBar(
 @Composable
 fun PlayerBarPreview() {
     PlayerBar(
-        tracks = listOf(
-            TrackUiState(
-                id = "Kalina",
-                name = "Doron",
-                artist = emptyList<ArtistUiState>().toImmutableList(),
-                duration = 3180,
-                image = "Delvin",
-                previewUri = "Kalah",
-                type = "Lakeysha"
-            )
-        ).toImmutableList()
+      mediaData = MediaData()
     )
 }

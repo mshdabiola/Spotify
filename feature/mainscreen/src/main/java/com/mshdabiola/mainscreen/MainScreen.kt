@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
@@ -203,6 +204,9 @@ internal fun MainScreen(
                         ArtistCard(artist = it)
                     }
                 }
+                Box(modifier = Modifier
+                    .fillMaxWidth()
+                    .height(168.dp))
 
 
             }

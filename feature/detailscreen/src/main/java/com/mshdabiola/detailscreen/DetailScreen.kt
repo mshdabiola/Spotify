@@ -15,7 +15,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.ShuffleOn
-import androidx.compose.material.icons.outlined.Favorite
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledIconButton
@@ -35,7 +34,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
-import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.ui.PlaylistCard
 import com.mshdabiola.ui.TrackList
 import com.mshdabiola.ui.data.ArtistUiState
@@ -44,15 +42,16 @@ import kotlinx.collections.immutable.toImmutableList
 
 
 @Composable
-internal fun DetailScreen(viewModel: DetailViewModel = hiltViewModel(),
-                          onBack: () -> Unit,
-                          onMediaItems: (List<TrackUiState>)->Unit={}
+internal fun DetailScreen(
+    viewModel: DetailViewModel = hiltViewModel(),
+    onBack: () -> Unit,
+    onMediaItems: (List<TrackUiState>) -> Unit = {}
 ) {
     val detailState = viewModel.detailState.collectAsStateWithLifecycle()
     DetailScreen(
         back = onBack,
         detailState = detailState.value,
-        onMediaItems=onMediaItems
+        onMediaItems = onMediaItems
     )
 }
 
@@ -61,15 +60,14 @@ internal fun DetailScreen(viewModel: DetailViewModel = hiltViewModel(),
 internal fun DetailScreen(
     back: () -> Unit = {},
     detailState: DetailState = DetailState(),
-    onMediaItems: (List<TrackUiState>)->Unit={}
+    onMediaItems: (List<TrackUiState>) -> Unit = {}
 ) {
     Scaffold(
     ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                 .padding(paddingValues)
-                .padding(horizontal = 16.dp)
-            ,
+                .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             item {
@@ -155,14 +153,14 @@ internal fun DetailScreen(
                 Text(text = "You might also like")
             }
             item {
-                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)){
-                    items(detailState.playList,key = {it.id}){
+                LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    items(detailState.playList, key = { it.id }) {
                         PlaylistCard(playlist = it)
                     }
                 }
             }
             item { Text(text = "© ℗ ${detailState.artists.first().name}") }
-            item{
+            item {
                 Box(modifier = Modifier.size(80.dp))
             }
         }
@@ -172,18 +170,18 @@ internal fun DetailScreen(
 @Preview
 @Composable
 fun DetailScreenPreview() {
-   // SpotifyAppTheme {
-        DetailScreen(
-            detailState = DetailState(
-                image = "",
-                artists = listOf(
-                    ArtistUiState("1", "Abiola", "", ""),
-                    ArtistUiState("2", "Moshood", "", "")
+    // SpotifyAppTheme {
+    DetailScreen(
+        detailState = DetailState(
+            image = "",
+            artists = listOf(
+                ArtistUiState("1", "Abiola", "", ""),
+                ArtistUiState("2", "Moshood", "", "")
 
-                ).toImmutableList()
-            )
+            ).toImmutableList()
         )
-  //  }
+    )
+    //  }
 
 
 }
