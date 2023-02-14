@@ -97,9 +97,9 @@ internal fun MainScreen(
 
     Crossfade(targetState = mainState.showLogin) {
         if (it) {
-            Box(modifier = Modifier.fillMaxSize()) {
+            Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(
-                    modifier = Modifier.align(Alignment.Center),
+                    modifier = Modifier,
                     onClick = {
                         val buider = AuthorizationRequest.Builder(
                             "84dfa73aba8e432eb321426804a69fb1",
@@ -114,10 +114,18 @@ internal fun MainScreen(
                         )
                         //context.startActivityForResult(intent,100)
                         AuthorizationClient.openLoginInBrowser(context, buider)
-                    }
+                    },
+                    enabled = mainState.isConnected
                 ) {
                     Text(text = "Get token")
                 }
+                Text(
+                    text = if (mainState.isConnected)
+                        "Network is available"
+                    else
+                        "Network is not available",
+                    style = MaterialTheme.typography.titleMedium
+                    )
             }
         } else {
             Column(

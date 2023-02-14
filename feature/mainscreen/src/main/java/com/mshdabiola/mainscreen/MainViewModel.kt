@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mshdabiola.data.repository.NetworkRepository
 import com.mshdabiola.data.repository.UserDataRepository
+import com.mshdabiola.data.util.NetworkMonitor
 import com.mshdabiola.ui.data.toAlbumUiState
 import com.mshdabiola.ui.data.toArtistUiState
 import com.mshdabiola.ui.data.toCategoryUiState
@@ -14,6 +15,8 @@ import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -25,13 +28,23 @@ class MainViewModel
     //private val savedStateHandle: SavedStateHandle,
     // private val modelRepository: ModelRepository,
     private val networkRepository: NetworkRepository,
-    private val userDataRepository: UserDataRepository
+    private val userDataRepository: UserDataRepository,
+    private val networkMonitor: NetworkMonitor
 ) : ViewModel() {
 
     private val _mainState = MutableStateFlow(MainState())
     val mainState = _mainState.asStateFlow()
 
     init {
+        viewModelScope.launch {
+            networkMonitor.isOnline.distinctUntilChanged()
+                .collectLatest {
+                    _mainState.update { main->
+                        main.copy(isConnected = it)
+                    }
+                }
+        }
+
         viewModelScope.launch {
             networkRepository.setUp()
             loadData()
