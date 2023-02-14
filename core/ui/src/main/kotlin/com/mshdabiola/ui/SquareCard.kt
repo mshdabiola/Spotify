@@ -1,6 +1,5 @@
 package com.mshdabiola.ui
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.width
@@ -18,11 +17,11 @@ import coil.compose.AsyncImage
 
 @Composable
 internal fun SquareCard(
-    modifier: Modifier=Modifier,
+    modifier: Modifier = Modifier,
     image: String,
     title: String? = null,
     subTitle: String,
-    ) {
+) {
 
     Column(
         modifier =
@@ -37,7 +36,7 @@ internal fun SquareCard(
             contentDescription = "track",
             //  placeholder = painterResource(id = R.drawable.btn_star)
         )
-        if (title!=null) {
+        if (title != null) {
             Text(
                 text = title,
                 style = MaterialTheme.typography.titleSmall,

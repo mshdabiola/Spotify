@@ -1,9 +1,7 @@
 package com.mshdabiola.mainscreen
 
-import androidx.lifecycle.SavedStateHandle
 import app.cash.turbine.test
 import com.mshdabiola.data.repository.ModelRepository
-import com.mshdabiola.model.Model
 import com.mshdabiola.testing.MainDispatcherRule
 import com.mshdabiola.testing.repository.FakeNetworkRepository
 import com.mshdabiola.testing.repository.TestModelRepository
@@ -35,21 +33,22 @@ class MainViewModelTest {
     @Test
     fun getMainState() {
     }
+
     @Test
-    fun getPlaylist()= runTest{
+    fun getPlaylist() = runTest {
         mainViewModel
             .mainState
             .test {
-                assertEquals("1",awaitItem().featurePlaylist.first().id)
+                assertEquals("1", awaitItem().featurePlaylist.first().id)
             }
     }
 
     @Test
-    fun getRelatedArtists()= runTest(){
+    fun getRelatedArtists() = runTest {
         mainViewModel
             .mainState
             .test {
-                assertEquals(20,awaitItem().relatedArtiste.size)
+                assertEquals(20, awaitItem().relatedArtiste.size)
             }
     }
 }

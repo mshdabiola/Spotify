@@ -24,13 +24,13 @@ object Client {
         defaultRequest {
 
             headers {
-                this[HttpHeaders.Authorization]="Bearer $code"
-                this[HttpHeaders.Accept]="application/json"
-                this[HttpHeaders.ContentType]="application/json"
+                this[HttpHeaders.Authorization] = "Bearer $code"
+                this[HttpHeaders.Accept] = "application/json"
+                this[HttpHeaders.ContentType] = "application/json"
             }
             url {
-                host="api.spotify.com"
-                protocol= URLProtocol.HTTPS
+                host = "api.spotify.com"
+                protocol = URLProtocol.HTTPS
             }
         }
         install(Resources)
@@ -44,7 +44,7 @@ object Client {
 
         install(ContentNegotiation) {
             json(Json {
-                this.ignoreUnknownKeys=true
+                this.ignoreUnknownKeys = true
             })
         }
 

@@ -16,6 +16,7 @@ fun Exception.toCustomExceptions() = when (this) {
             404 -> HttpErrorNotFound(this)
             else -> HttpError(this)
         }
+
     is RedirectResponseException -> HttpError(this)
     else -> GenericError(this)
 }

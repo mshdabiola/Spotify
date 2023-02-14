@@ -62,8 +62,7 @@ internal fun DetailScreen(
     detailState: DetailState = DetailState(),
     onMediaItems: (List<TrackUiState>) -> Unit = {}
 ) {
-    Scaffold(
-    ) { paddingValues ->
+    Scaffold { paddingValues ->
         LazyColumn(
             modifier = Modifier
                 .padding(paddingValues)

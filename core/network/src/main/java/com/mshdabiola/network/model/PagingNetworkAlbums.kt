@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class PagingNetworkAlbums(
-	val albums: NetworkAlbums
+    val albums: NetworkAlbums
 )

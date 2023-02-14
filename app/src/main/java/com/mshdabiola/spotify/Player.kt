@@ -9,14 +9,13 @@ import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.MoreExecutors
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class MPlayer @Inject constructor(
     @ApplicationContext val context: Context,
 ) {
     private var mediaController: MediaController? = null
-    var listener : Listener?=null
+    var listener: Listener? = null
 
     init {
         val sessionToken =
@@ -55,9 +54,9 @@ class MPlayer @Inject constructor(
     }
 
 
-    fun getProgress()=mediaController?.getProgress()
+    fun getProgress() = mediaController?.getProgress()
 
-    fun onClear(){
+    fun onClear() {
         mediaController?.release()
     }
 
@@ -65,8 +64,8 @@ class MPlayer @Inject constructor(
         mediaController?.pause()
     }
 
-    interface Listener{
-        fun onIsPlayingChanged(isPlay:Boolean)
+    interface Listener {
+        fun onIsPlayingChanged(isPlay: Boolean)
         fun onMetadataChanged(metadata: MediaMetadata)
     }
 

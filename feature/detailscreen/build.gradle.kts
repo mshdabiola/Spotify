@@ -1,5 +1,5 @@
 plugins {
-    id ("mshdabiola.android.feature")
+    id("mshdabiola.android.feature")
 }
 
 android {
@@ -10,6 +10,6 @@ android {
         }
     }
 }
-dependencies{
+dependencies {
     implementation(libs.kotlinx.datetime)
 }

@@ -5,6 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class UserTrack(
-	val addedAt: String?=null,
-	val track: NetworkTrack
+    val addedAt: String? = null,
+    val track: NetworkTrack
 )

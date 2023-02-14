@@ -1,4 +1,3 @@
 package com.mshdabiola.testing.repository
 
-class FakeNetworkSource {
-}
+class FakeNetworkSource

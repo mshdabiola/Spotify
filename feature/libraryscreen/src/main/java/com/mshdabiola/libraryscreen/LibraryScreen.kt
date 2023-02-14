@@ -37,9 +37,9 @@ import com.mshdabiola.ui.TrackCard
 @Composable
 internal fun LibraryScreen(
     libraryViewModel: LibraryViewModel = hiltViewModel(),
-    onNavigateToDetail : (String,String)->Unit={_,_->}
+    onNavigateToDetail: (String, String) -> Unit = { _, _ -> }
 ) {
-    val libraryUiState=libraryViewModel.libraryUiState.collectAsStateWithLifecycle()
+    val libraryUiState = libraryViewModel.libraryUiState.collectAsStateWithLifecycle()
     LibraryScreen(
         libraryUiState = libraryUiState.value
     )
@@ -48,7 +48,7 @@ internal fun LibraryScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun LibraryScreen(
-    libraryUiState: LibraryUiState= LibraryUiState()
+    libraryUiState: LibraryUiState = LibraryUiState()
 ) {
     Column {
         TopAppBar(
@@ -60,9 +60,9 @@ internal fun LibraryScreen(
                         .background(Color.Green)
                         .size(36.dp)
 
-                ){
+                ) {
                     Text(
-                    modifier = Modifier.align(Alignment.Center),
+                        modifier = Modifier.align(Alignment.Center),
                         text = "M",
                         color = Color.White,
                         style = MaterialTheme.typography.titleLarge
@@ -79,7 +79,7 @@ internal fun LibraryScreen(
                 }
             }
         )
-        Row (horizontalArrangement = Arrangement.spacedBy(8.dp)){
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             AssistChip(onClick = { /*TODO*/ }, label = {
                 Text(text = "Playlists")
             })
@@ -96,11 +96,11 @@ internal fun LibraryScreen(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
 
-        ){
-            items(libraryUiState.userAlbums, key = {it.id}){
+        ) {
+            items(libraryUiState.userAlbums, key = { it.id }) {
                 AlbumCard(albumUiState = it)
             }
-            items(libraryUiState.userTracks, key = {it.id}){
+            items(libraryUiState.userTracks, key = { it.id }) {
                 TrackCard(track = it)
             }
         }

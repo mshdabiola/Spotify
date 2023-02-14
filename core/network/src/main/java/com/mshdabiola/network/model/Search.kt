@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Search(
-	val tracks: NetworkTracks
+    val tracks: NetworkTracks
 )

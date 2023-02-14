@@ -1,6 +1,5 @@
 package com.mshdabiola.data.repository
 
-import com.mshdabiola.datastore.IUserPreferenceDataSource
 import com.mshdabiola.datastore.UserPreferenceDatasource
 import com.mshdabiola.model.UserData
 import kotlinx.coroutines.flow.Flow
@@ -17,7 +16,6 @@ class RealUserDataRepository @Inject constructor(
     override suspend fun setToken(token: String) {
         userPreference.setToken(token)
     }
-
 
 
 }

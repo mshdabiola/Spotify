@@ -18,18 +18,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val player : MPlayer
+    private val player: MPlayer
 ) : ViewModel() {
-   private val _mediaData = MutableStateFlow(MediaData())
-    val mediaData =_mediaData.asStateFlow()
-    var job : Job?=null
+    private val _mediaData = MutableStateFlow(MediaData())
+    val mediaData = _mediaData.asStateFlow()
+    var job: Job? = null
+
     init {
         viewModelScope.launch {
-            player.listener= object : MPlayer.Listener{
+            player.listener = object : MPlayer.Listener {
                 override fun onIsPlayingChanged(isPlay: Boolean) {
-                   _mediaData.update {
-                       it.copy(isPlaying=isPlay)
-                   }
+                    _mediaData.update {
+                        it.copy(isPlaying = isPlay)
+                    }
                 }
 
                 override fun onMetadataChanged(metadata: MediaMetadata) {
@@ -39,7 +40,7 @@ class MainViewModel @Inject constructor(
                             artists = metadata.artist?.toString(),
                             title = metadata.title?.toString(),
                             showPlayer = true
-                            )
+                        )
                     }
                 }
             }
@@ -50,24 +51,24 @@ class MainViewModel @Inject constructor(
                 .map { it.isPlaying }
                 .distinctUntilChanged()
                 .collectLatest { isPlaying ->
-                    if (isPlaying){
-                       job= launch {
-                            player.getProgress()?.collectLatest {p->
+                    if (isPlaying) {
+                        job = launch {
+                            player.getProgress()?.collectLatest { p ->
                                 _mediaData.update {
                                     it.copy(progress = p)
                                 }
                             }
                         }
 
-                    }else{
-                       job?.let { job1 ->
-                           job1.cancel()
-                           job=null
+                    } else {
+                        job?.let { job1 ->
+                            job1.cancel()
+                            job = null
 //                           _mediaData.update {
 //                               it.copy(progress = 1f)
 //                           }
 
-                       }
+                        }
 
                     }
                 }
@@ -75,15 +76,15 @@ class MainViewModel @Inject constructor(
     }
 
 
-    fun setMediaItems(tracks:List<TrackUiState>){
+    fun setMediaItems(tracks: List<TrackUiState>) {
         player.setMediaItem(tracks.map { it.toMediaItem() })
         player.play()
     }
 
-    fun onPlay(){
-        if (mediaData.value.isPlaying){
+    fun onPlay() {
+        if (mediaData.value.isPlaying) {
             player.pause()
-        }else{
+        } else {
             player.play()
         }
     }

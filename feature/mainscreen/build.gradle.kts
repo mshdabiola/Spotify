@@ -1,5 +1,5 @@
 plugins {
-    id ("mshdabiola.android.feature")
+    id("mshdabiola.android.feature")
 }
 
 android {
@@ -11,7 +11,7 @@ android {
     }
 }
 
-dependencies{
+dependencies {
 //    implementation(project(":core:ui"))
-    implementation ("com.spotify.android:auth:1.2.5")
+    implementation("com.spotify.android:auth:1.2.5")
 }

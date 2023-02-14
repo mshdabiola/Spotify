@@ -43,10 +43,10 @@ object DataStoreModule {
 
 @InstallIn(SingletonComponent::class)
 @Module
-interface DataModule2{
+interface DataModule2 {
 
     @Binds
     @Singleton
-    fun bindUserPreferencesDataSource(iUserPreferences: IUserPreferenceDataSource):UserPreferenceDatasource
+    fun bindUserPreferencesDataSource(iUserPreferences: IUserPreferenceDataSource): UserPreferenceDatasource
 
 }

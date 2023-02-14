@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CategoryItem(
-	val categories: Categories
+    val categories: Categories
 )

@@ -23,15 +23,15 @@ class SearchViewModel @Inject constructor(
     private val networkRepository: NetworkRepository
 ) : ViewModel() {
 
-    private val _searchUiState= MutableStateFlow(SearchUiState())
-     val searchUiState = _searchUiState.asStateFlow()
+    private val _searchUiState = MutableStateFlow(SearchUiState())
+    val searchUiState = _searchUiState.asStateFlow()
 
-    private var job:Job?=null
+    private var job: Job? = null
 
     init {
         viewModelScope.launch {
-            val rand= Random(4)
-            val genre= listOf(
+            val rand = Random(4)
+            val genre = listOf(
                 "acoustic",
                 "afrobeat",
                 "alt-rock",
@@ -162,12 +162,12 @@ class SearchViewModel @Inject constructor(
                 .shuffled()
                 .take(17)
                 .mapIndexed { index, s ->
-                    GenreUiState(id = index, color =rand.nextInt(4), name = s )
+                    GenreUiState(id = index, color = rand.nextInt(4), name = s)
                 }
                 .toImmutableList()
 
             _searchUiState.update {
-                it.copy(genres  =genre)
+                it.copy(genres = genre)
             }
 
 
@@ -175,9 +175,9 @@ class SearchViewModel @Inject constructor(
     }
 
 
-    fun search(query : String){
+    fun search(query: String) {
 
-        if (query.length>3) {
+        if (query.length > 3) {
             job?.cancel()
             job = viewModelScope.launch {
                 networkRepository.search(query, "track")

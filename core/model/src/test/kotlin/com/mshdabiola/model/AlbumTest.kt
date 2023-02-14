@@ -4,11 +4,11 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 
-class AlbumTest{
+class AlbumTest {
 
     @Test
-    fun createClass(){
-        val album=Album(
+    fun createClass() {
+        val album = Album(
             id = "Lyndi",
             name = "Yoba",
             releaseDate = 78,
@@ -20,6 +20,6 @@ class AlbumTest{
 
         )
 
-        assertEquals("Yoba",album.name)
+        assertEquals("Yoba", album.name)
     }
 }

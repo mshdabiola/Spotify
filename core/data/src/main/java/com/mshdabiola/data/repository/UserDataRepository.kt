@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserDataRepository {
 
-    val data:Flow<UserData>
+    val data: Flow<UserData>
     suspend fun setToken(token: String)
 
 }

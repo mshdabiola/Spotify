@@ -5,10 +5,10 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 
-fun MediaController.getProgress()= flow {
-    while (true){
+fun MediaController.getProgress() = flow {
+    while (true) {
         delay(1000)
-        val progressT=currentPosition/duration.toFloat()
+        val progressT = currentPosition / duration.toFloat()
         emit(progressT)
         Timber.e("Progress $progressT")
 

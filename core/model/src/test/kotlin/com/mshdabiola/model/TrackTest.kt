@@ -4,11 +4,11 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 
-class TrackTest{
+class TrackTest {
 
     @Test
-    fun create(){
-        val track=Track(
+    fun create() {
+        val track = Track(
             id = "Ahmed",
             name = "Thera",
             artist = "Tonika",
@@ -19,6 +19,6 @@ class TrackTest{
             releaseDate = 7522L
 
         )
-        assertEquals("Ahmed",track.id)
+        assertEquals("Ahmed", track.id)
     }
 }

@@ -1,7 +1,7 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("mshdabiola.android.library")
-    id ("mshdabiola.android.library.compose")
+    id("mshdabiola.android.library.compose")
     //alias(libs.plugins.google.services)
 }
 
@@ -20,6 +20,6 @@ dependencies {
 
     //implementation (project( ":model"))
 
-    testImplementation (libs.junit4)
+    testImplementation(libs.junit4)
 
 }

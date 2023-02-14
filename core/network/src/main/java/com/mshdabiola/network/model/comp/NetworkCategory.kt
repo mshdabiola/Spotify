@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class NetworkCategory(
-	val name: String,
-	val id: String,
-	val icons: List<ImagesItem>
+    val name: String,
+    val id: String,
+    val icons: List<ImagesItem>
 )

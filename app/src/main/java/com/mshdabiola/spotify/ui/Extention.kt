@@ -3,7 +3,6 @@ package com.mshdabiola.spotify.ui
 import android.net.Uri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
-import androidx.media3.common.MediaMetadata.FolderType
 import com.mshdabiola.ui.data.TrackUiState
 
 fun TrackUiState.toMediaItem() =
@@ -21,8 +20,11 @@ fun TrackUiState.toMediaItem() =
 //        )
 //        .build()
     MediaItem
-    .Builder()
-        .setMediaId(previewUri?:"android.resource://com.mshdabiola.spotify.debug/${com.mshdabiola.mainscreen.R.raw.applause}")
+        .Builder()
+        .setMediaId(
+            previewUri
+                ?: "android.resource://com.mshdabiola.spotify.debug/${com.mshdabiola.mainscreen.R.raw.applause}"
+        )
         .setMediaMetadata(
             MediaMetadata.Builder()
                 .setFolderType(MediaMetadata.FOLDER_TYPE_ALBUMS)

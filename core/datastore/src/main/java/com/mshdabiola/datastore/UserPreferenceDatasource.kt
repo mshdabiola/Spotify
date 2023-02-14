@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserPreferenceDatasource {
 
-    val userData : Flow<UserData>
-    suspend fun setToken(token:String)
+    val userData: Flow<UserData>
+    suspend fun setToken(token: String)
 
 }

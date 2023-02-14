@@ -8,20 +8,21 @@ import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import timber.log.Timber
 
-class PlayMediaService :MediaSessionService() ,MediaSession.Callback {
+class PlayMediaService : MediaSessionService(), MediaSession.Callback {
 
-    private lateinit var session : MediaSession
+    private lateinit var session: MediaSession
     private lateinit var player: ExoPlayer
     override fun onCreate() {
         super.onCreate()
         player = ExoPlayer.Builder(this)
             .build()
-        session=MediaSession.Builder(this,player)
+        session = MediaSession.Builder(this, player)
             .setCallback(this)
             .build()
 
         Timber.e("on create service")
     }
+
     override fun onGetSession(controllerInfo: MediaSession.ControllerInfo): MediaSession {
 
         Timber.e("package ${controllerInfo.packageName} ${controllerInfo.controllerVersion}")
@@ -40,9 +41,11 @@ class PlayMediaService :MediaSessionService() ,MediaSession.Callback {
         controller: MediaSession.ControllerInfo,
         mediaItems: MutableList<MediaItem>
     ): ListenableFuture<MutableList<MediaItem>> {
-        val updatedMediaitems=mediaItems
-            .map { it.buildUpon()
-                .setUri(it.mediaId).build() }
+        val updatedMediaitems = mediaItems
+            .map {
+                it.buildUpon()
+                    .setUri(it.mediaId).build()
+            }
 //            .map { it.buildUpon().build() }
             .toMutableList()
         return Futures.immediateFuture(updatedMediaitems)

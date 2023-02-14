@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ImagesItem(
-	val width: Int?=null,
-	val url: String,
-	val height: Int?=null
+    val width: Int? = null,
+    val url: String,
+    val height: Int? = null
 )

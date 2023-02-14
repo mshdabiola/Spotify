@@ -21,15 +21,15 @@ class LibraryViewModel @Inject constructor(
     private val networkRepository: NetworkRepository
 ) : ViewModel() {
 
-    private val _libraryUiState= MutableStateFlow(LibraryUiState())
-    val libraryUiState=_libraryUiState.asStateFlow()
+    private val _libraryUiState = MutableStateFlow(LibraryUiState())
+    val libraryUiState = _libraryUiState.asStateFlow()
 
 
     init {
         viewModelScope.launch {
             networkRepository
                 .getUserAlbums()
-                .onSuccess {list->
+                .onSuccess { list ->
                     _libraryUiState
                         .update {
                             it.copy(userAlbums = list.map { it.toAlbumUiState() }.toImmutableList())
@@ -43,7 +43,7 @@ class LibraryViewModel @Inject constructor(
         viewModelScope.launch {
             networkRepository
                 .getUserTracks()
-                .onSuccess {list->
+                .onSuccess { list ->
                     _libraryUiState
                         .update {
                             it.copy(userTracks = list.map { it.toTrackUiState() }.toImmutableList())

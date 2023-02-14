@@ -54,30 +54,31 @@ import timber.log.Timber
 internal fun MainScreen(
     viewModel: MainViewModel = hiltViewModel(),
     onNavigateToDetail: (String, String) -> Unit = { _, _ -> },
-    showNavBar : (Boolean)->Unit={}
+    showNavBar: (Boolean) -> Unit = {}
 ) {
     val mainState = viewModel.mainState.collectAsState()
     val context = LocalContext.current
-    LaunchedEffect(key1 = Unit, block ={
-        val activity= context as Activity
-        val uri=activity.intent?.data
-        if (uri!=null){
-            val response=AuthorizationResponse.fromUri(uri)
-            when(response.type){
-                AuthorizationResponse.Type.TOKEN->{
+    LaunchedEffect(key1 = Unit, block = {
+        val activity = context as Activity
+        val uri = activity.intent?.data
+        if (uri != null) {
+            val response = AuthorizationResponse.fromUri(uri)
+            when (response.type) {
+                AuthorizationResponse.Type.TOKEN -> {
                     Timber.e("access ${response.accessToken}")
                     Timber.e("expire ${response.expiresIn}")
                     viewModel.setToken(response.accessToken)
                 }
-                AuthorizationResponse.Type.ERROR->{}
-                else->{}
+
+                AuthorizationResponse.Type.ERROR -> {}
+                else -> {}
             }
         }
-    } )
-    LaunchedEffect(key1 = mainState.value.showLogin, block ={
+    })
+    LaunchedEffect(key1 = mainState.value.showLogin, block = {
         showNavBar(!mainState.value.showLogin)
 //        showNavBar(false)
-    } )
+    })
     MainScreen(
         mainState = mainState.value,
         onNavigateToDetail = onNavigateToDetail
@@ -88,30 +89,37 @@ internal fun MainScreen(
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 internal fun MainScreen(
-    mainState: MainState ,
+    mainState: MainState,
     onNavigateToDetail: (String, String) -> Unit = { _, _ -> }
 ) {
     val scrollState = rememberScrollState()
-    val context= LocalContext.current
+    val context = LocalContext.current
 
     Crossfade(targetState = mainState.showLogin) {
-        if (it){
-            Box(modifier = Modifier.fillMaxSize()){
+        if (it) {
+            Box(modifier = Modifier.fillMaxSize()) {
                 Button(
                     modifier = Modifier.align(Alignment.Center),
                     onClick = {
-                        val buider= AuthorizationRequest.Builder("84dfa73aba8e432eb321426804a69fb1",AuthorizationResponse.Type.TOKEN,"http://callback.com")
+                        val buider = AuthorizationRequest.Builder(
+                            "84dfa73aba8e432eb321426804a69fb1",
+                            AuthorizationResponse.Type.TOKEN,
+                            "http://callback.com"
+                        )
                             .setScopes(arrayOf("user-library-read"))
                             .build()
-                        val intent= AuthorizationClient.createLoginActivityIntent(context as Activity,buider)
+                        val intent = AuthorizationClient.createLoginActivityIntent(
+                            context as Activity,
+                            buider
+                        )
                         //context.startActivityForResult(intent,100)
-                        AuthorizationClient.openLoginInBrowser(context,buider)
+                        AuthorizationClient.openLoginInBrowser(context, buider)
                     }
                 ) {
                     Text(text = "Get token")
                 }
             }
-        }else{
+        } else {
             Column(
                 Modifier
                     .fillMaxSize()
@@ -136,10 +144,16 @@ internal fun MainScreen(
 
 
                     }) {
-                        Icon(imageVector = Icons.Outlined.Alarm, contentDescription = "notification")
+                        Icon(
+                            imageVector = Icons.Outlined.Alarm,
+                            contentDescription = "notification"
+                        )
                     }
                     IconButton(onClick = { /*TODO*/ }) {
-                        Icon(imageVector = Icons.Outlined.Settings, contentDescription = "notification")
+                        Icon(
+                            imageVector = Icons.Outlined.Settings,
+                            contentDescription = "notification"
+                        )
                     }
                 }
                 FlowRow(
@@ -204,15 +218,16 @@ internal fun MainScreen(
                         ArtistCard(artist = it)
                     }
                 }
-                Box(modifier = Modifier
-                    .fillMaxWidth()
-                    .height(168.dp))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(168.dp)
+                )
 
 
             }
         }
     }
-
 
 
 }
@@ -231,10 +246,11 @@ fun MainScreenPreview() {
                 type = "Maribel",
                 artist = listOf(
                     ArtistUiState(
-                    id = "Mallory",
-                    name = "Scot",
-                    image = "Edric",
-                    type = "Bridget")
+                        id = "Mallory",
+                        name = "Scot",
+                        image = "Edric",
+                        type = "Bridget"
+                    )
                 ).toImmutableList(),
                 imageUri = "Dru"
 

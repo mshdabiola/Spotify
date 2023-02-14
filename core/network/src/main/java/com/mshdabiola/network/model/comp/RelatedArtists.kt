@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class RelatedArtists(
-	val artists: List<NetworkArtist>
+    val artists: List<NetworkArtist>
 )

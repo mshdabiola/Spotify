@@ -34,12 +34,12 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                compileSdk=33
-                compileSdkPreview="UpsideDownCake"
-                defaultConfig.minSdk=24
+                compileSdk = 33
+                compileSdkPreview = "UpsideDownCake"
+                defaultConfig.minSdk = 24
                 defaultConfig.targetSdk = 33
-               defaultConfig. testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-              //  configureFlavors(this)
+                defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                //  configureFlavors(this)
 
             }
 
@@ -55,7 +55,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             dependencies {
                 add("androidTestImplementation", kotlin("test"))
                 add("testImplementation", kotlin("test"))
-                add("implementation",libs.findLibrary("timber").get())
+                add("implementation", libs.findLibrary("timber").get())
             }
         }
     }

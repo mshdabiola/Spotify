@@ -1,9 +1,7 @@
 package com.mshdabiola.mainscreen
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mshdabiola.data.repository.ModelRepository
 import com.mshdabiola.data.repository.NetworkRepository
 import com.mshdabiola.data.repository.UserDataRepository
 import com.mshdabiola.ui.data.toAlbumUiState
@@ -25,13 +23,14 @@ import javax.inject.Inject
 class MainViewModel
 @Inject constructor(
     //private val savedStateHandle: SavedStateHandle,
-   // private val modelRepository: ModelRepository,
+    // private val modelRepository: ModelRepository,
     private val networkRepository: NetworkRepository,
     private val userDataRepository: UserDataRepository
 ) : ViewModel() {
 
-    private val _mainState= MutableStateFlow(MainState())
-    val mainState=_mainState.asStateFlow()
+    private val _mainState = MutableStateFlow(MainState())
+    val mainState = _mainState.asStateFlow()
+
     init {
         viewModelScope.launch {
             networkRepository.setUp()
@@ -41,8 +40,8 @@ class MainViewModel
     }
 
 
-    fun setToken(token :String){
-        viewModelScope.launch (Dispatchers.IO){
+    fun setToken(token: String) {
+        viewModelScope.launch(Dispatchers.IO) {
             userDataRepository.setToken(token)
             networkRepository.setUp()
             loadData()
@@ -50,13 +49,13 @@ class MainViewModel
 
     }
 
-    private  fun loadData(){
+    private fun loadData() {
         viewModelScope.launch {
 
             networkRepository
                 .getNewRelease()
                 .onSuccess { albumList ->
-                    val value=  albumList.map { it.toAlbumUiState() }
+                    val value = albumList.map { it.toAlbumUiState() }
                         .toImmutableList()
                     Timber.e(albumList.joinToString())
                     _mainState.update {
@@ -66,8 +65,8 @@ class MainViewModel
                 }
                 .onFailure { throwable ->
 
-                    Timber.e(t = throwable,message = "failure")
-                    if (throwable.message?.contains("acess")==true){
+                    Timber.e(t = throwable, message = "failure")
+                    if (throwable.message?.contains("acess") == true) {
                         _mainState.update {
                             it.copy(showLogin = true)
                         }
@@ -83,7 +82,7 @@ class MainViewModel
             networkRepository
                 .getRecommendation()
                 .onSuccess { albumList ->
-                    val value=  albumList.map { it.toTrackUiState()}
+                    val value = albumList.map { it.toTrackUiState() }
                         .toImmutableList()
                     Timber.e(albumList.joinToString())
                     _mainState.update {
@@ -93,7 +92,7 @@ class MainViewModel
                 }
                 .onFailure {
 
-                    Timber.e(t = it,message = "failure")
+                    Timber.e(t = it, message = "failure")
 
                 }
 
@@ -103,9 +102,10 @@ class MainViewModel
         viewModelScope.launch {
             networkRepository
                 .getCategory()
-                .onSuccess { list->
+                .onSuccess { list ->
                     _mainState.update { mainState1 ->
-                        mainState1.copy(category = list.map { it.toCategoryUiState() }.toImmutableList())
+                        mainState1.copy(category = list.map { it.toCategoryUiState() }
+                            .toImmutableList())
                     }
                 }
                 .onFailure {
@@ -116,9 +116,10 @@ class MainViewModel
         viewModelScope.launch {
             networkRepository
                 .getFeaturePlaylist()
-                .onSuccess { playlist->
+                .onSuccess { playlist ->
                     _mainState.update { mainState1 ->
-                        mainState1.copy(featurePlaylist = playlist.map { it.toPlaylistUiState() }.toImmutableList())
+                        mainState1.copy(featurePlaylist = playlist.map { it.toPlaylistUiState() }
+                            .toImmutableList())
                     }
                 }
                 .onFailure {
@@ -131,7 +132,8 @@ class MainViewModel
                 .getArtiste()
                 .onSuccess { artists ->
                     _mainState.update {
-                        it.copy(relatedArtiste =artists.map { it.toArtistUiState() }.toImmutableList())
+                        it.copy(relatedArtiste = artists.map { it.toArtistUiState() }
+                            .toImmutableList())
                     }
                 }
         }

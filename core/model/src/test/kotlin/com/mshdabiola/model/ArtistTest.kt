@@ -4,16 +4,16 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 
-class ArtistTest{
+class ArtistTest {
     @Test
-    fun create(){
-        val artist=Artist(
+    fun create() {
+        val artist = Artist(
             id = "Raina",
             name = "Raguel",
             image = "Andre",
             type = "Lakea"
         )
 
-        assertEquals("Raina",artist.id)
+        assertEquals("Raina", artist.id)
     }
 }

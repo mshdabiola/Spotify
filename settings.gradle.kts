@@ -14,10 +14,10 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Spotify"
-include (":app")
-include (":benchmark")
-include (":core:database")
-include (":core:designsystem")
+include(":app")
+include(":benchmark")
+include(":core:database")
+include(":core:designsystem")
 include(":core:model")
 include(":feature:mainscreen")
 include(":core:network")

@@ -1,12 +1,9 @@
 package com.mshdabiola.searchscreen
 
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -19,13 +16,13 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SearchBar
-import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -33,18 +30,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mshdabiola.ui.GenreCard
+import com.mshdabiola.ui.TrackCard
 import com.mshdabiola.ui.data.GenreUiState
 import kotlinx.collections.immutable.toImmutableList
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.graphics.Color
-import com.mshdabiola.ui.TrackCard
 
 
 @Composable
 internal fun SearchScreen(
     searchViewModel: SearchViewModel = hiltViewModel(),
-    onNavigateToDetail : (String,String)->Unit={_,_->}
+    onNavigateToDetail: (String, String) -> Unit = { _, _ -> }
 ) {
     val searchUiState = searchViewModel.searchUiState.collectAsState()
     SearchScreen(
@@ -57,83 +51,83 @@ internal fun SearchScreen(
 @Composable
 internal fun SearchScreen(
     searchUiState: SearchUiState,
-    onSearch: (String)->Unit={}
+    onSearch: (String) -> Unit = {}
 ) {
 
     var search by remember {
         mutableStateOf("")
     }
-        LazyVerticalGrid(
-            modifier = Modifier
-                .padding(horizontal = 16.dp)
-            ,
+    LazyVerticalGrid(
+        modifier = Modifier
+            .padding(horizontal = 16.dp),
 
-            columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            item {
-                Text(
-                    modifier = Modifier.padding(vertical = 16.dp),
-                    text = "Search",
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-            item(span = {GridItemSpan(2)}) {
+        columns = GridCells.Fixed(2),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        item {
+            Text(
+                modifier = Modifier.padding(vertical = 16.dp),
+                text = "Search",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold
+            )
+        }
+        item(span = { GridItemSpan(2) }) {
 
-                    SearchBar(
-                        modifier = Modifier,
-                        query = search,
-                        onQueryChange = {
-                                        search=it
-                            onSearch(it)
-                        },
-                        onSearch = {
-                                   onSearch(it)
-                        },
-                        active = false,
-                        placeholder = { Text(text = "What do you want to listen to?")},
-                        onActiveChange = {},
-                        leadingIcon = { Icon(
-                            imageVector = Icons.Default.Search,
-                            contentDescription = "search"
-                        )
-                        },
-                        //colors = SearchBarDefaults.colors(containerColor = Color.White, inputFieldColors = TextFieldDefaults.textFieldColors())
-                    ) {
-                    }
-
-
-            }
-
-            if(searchUiState.tracks.isEmpty()) {
-                item(span = { GridItemSpan(2) }) {
-                    Text(
-                        modifier = Modifier.fillMaxWidth(),
-                        text = "Browse All",
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center
+            SearchBar(
+                modifier = Modifier,
+                query = search,
+                onQueryChange = {
+                    search = it
+                    onSearch(it)
+                },
+                onSearch = {
+                    onSearch(it)
+                },
+                active = false,
+                placeholder = { Text(text = "What do you want to listen to?") },
+                onActiveChange = {},
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "search"
                     )
-                }
-                items(searchUiState.genres, key = { it.id }) {
-                    GenreCard(genreUiState = it)
+                },
+                //colors = SearchBarDefaults.colors(containerColor = Color.White, inputFieldColors = TextFieldDefaults.textFieldColors())
+            ) {
+            }
 
-                }
-            }
-            else{
-                items(searchUiState.tracks,key = {it.id}) {
-                    TrackCard(track = it)
-                }
-            }
-            item(span = { GridItemSpan(2) }) {
-                Box(modifier = Modifier
-                    //.background(Color.Blue)
-                    .size(88.dp))
-            }
 
         }
 
+        if (searchUiState.tracks.isEmpty()) {
+            item(span = { GridItemSpan(2) }) {
+                Text(
+                    modifier = Modifier.fillMaxWidth(),
+                    text = "Browse All",
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center
+                )
+            }
+            items(searchUiState.genres, key = { it.id }) {
+                GenreCard(genreUiState = it)
+
+            }
+        } else {
+            items(searchUiState.tracks, key = { it.id }) {
+                TrackCard(track = it)
+            }
+        }
+        item(span = { GridItemSpan(2) }) {
+            Box(
+                modifier = Modifier
+                    //.background(Color.Blue)
+                    .size(88.dp)
+            )
+        }
+
+    }
 
 
 }

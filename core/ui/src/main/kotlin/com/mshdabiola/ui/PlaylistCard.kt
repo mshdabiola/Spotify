@@ -9,12 +9,12 @@ import com.mshdabiola.ui.data.PlaylistUiState
 @Composable
 fun PlaylistCard(
     playlist: PlaylistUiState,
-    onClick : (String,String)->Unit={_,_->}
+    onClick: (String, String) -> Unit = { _, _ -> }
 ) {
 
     SquareCard(
         modifier = Modifier.clickable {
-            onClick(playlist.id,"playlist")
+            onClick(playlist.id, "playlist")
         },
         image = playlist.image,
         //title = playlist.name,
@@ -27,9 +27,9 @@ fun PlaylistCard(
 fun PlaylistCardPreview() {
 
     PlaylistCard(
-       playlist = PlaylistUiState(
-           id = "Marshal", name = "Kellie", description = "Steffany", image = "Iliana"
+        playlist = PlaylistUiState(
+            id = "Marshal", name = "Kellie", description = "Steffany", image = "Iliana"
 
-       )
+        )
     )
 }

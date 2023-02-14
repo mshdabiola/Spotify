@@ -1,6 +1,5 @@
 package com.mshdabiola.network
 
-import com.mshdabiola.network.fake.FakeNetworkDataSource
 import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.http.HttpHeaders
@@ -9,9 +8,8 @@ import io.ktor.http.headersOf
 import io.ktor.utils.io.ByteReadChannel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
-
 import org.junit.After
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import java.io.File
@@ -19,27 +17,28 @@ import java.io.File
 @OptIn(ExperimentalCoroutinesApi::class)
 class INetworkDataSourceTest {
     private lateinit var networkDataSource: NetworkDataSource
-    private val path="/Users/user/AndroidStudioProjects/Spotify/data/"
+    private val path = "/Users/user/AndroidStudioProjects/Spotify/data/"
+
     @Before
     fun setUp() {
 
-        val engine = MockEngine() { re ->
-            val name=when{
-                re.url.encodedPath.contains("artists/io")-> "artist"
-                re.url.encodedPath.contains("albums/io")-> "albumm"
-                re.url.encodedPath.contains("playlists/io")-> "playlistnew"
-                re.url.encodedPath.contains("tracks/io")-> "track"
-                re.url.encodedPath.contains("available")-> "available_genre"
-                re.url.encodedPath.contains("recommendations")-> "recommendations"
-                re.url.encodedPath.contains("new")-> "new_release"
-                re.url.encodedPath.contains("featured")-> "browse_featured_playlist"
-                re.url.encodedPath.contains("playlist")-> "browse_category_id_playlist"
-                re.url.encodedPath.contains("categories")-> "browse_category"
-                re.url.encodedPath.contains("artists")->"artists"
-                re.url.encodedPath.contains("search")->"search_track"
-                re.url.encodedPath.contains("albums")->"user_album"
-                re.url.encodedPath.contains("tracks")->"user_tracks"
-                else->""
+        val engine = MockEngine { re ->
+            val name = when {
+                re.url.encodedPath.contains("artists/io") -> "artist"
+                re.url.encodedPath.contains("albums/io") -> "albumm"
+                re.url.encodedPath.contains("playlists/io") -> "playlistnew"
+                re.url.encodedPath.contains("tracks/io") -> "track"
+                re.url.encodedPath.contains("available") -> "available_genre"
+                re.url.encodedPath.contains("recommendations") -> "recommendations"
+                re.url.encodedPath.contains("new") -> "new_release"
+                re.url.encodedPath.contains("featured") -> "browse_featured_playlist"
+                re.url.encodedPath.contains("playlist") -> "browse_category_id_playlist"
+                re.url.encodedPath.contains("categories") -> "browse_category"
+                re.url.encodedPath.contains("artists") -> "artists"
+                re.url.encodedPath.contains("search") -> "search_track"
+                re.url.encodedPath.contains("albums") -> "user_album"
+                re.url.encodedPath.contains("tracks") -> "user_tracks"
+                else -> ""
             }
 
             respond(
@@ -51,6 +50,7 @@ class INetworkDataSourceTest {
         val client = Client.get(engine)
         networkDataSource = INetworkDataSource(client)
     }
+
     @After
     fun tearDown() = runTest {
     }
@@ -58,74 +58,74 @@ class INetworkDataSourceTest {
     @Test
     fun getRecommendation() = runTest {
 
-        val recommendation= networkDataSource.getRecommendation()
+        val recommendation = networkDataSource.getRecommendation()
 
-        assertEquals(10,recommendation.size)
+        assertEquals(10, recommendation.size)
     }
 
     @Test
     fun getCategory() = runTest {
-    val categories= networkDataSource.getCategory()
-        assertEquals(20,categories.items.size)
+        val categories = networkDataSource.getCategory()
+        assertEquals(20, categories.items.size)
     }
 
     @Test
     fun getFeaturePlaylist() = runTest {
-        val playlists= networkDataSource.getFeaturePlaylist()
-        assertEquals(2,playlists.items.size)
+        val playlists = networkDataSource.getFeaturePlaylist()
+        assertEquals(2, playlists.items.size)
     }
 
     @Test
-    fun getNewRelease()= runTest {
-        val newRelease=networkDataSource.getNewRelease()
+    fun getNewRelease() = runTest {
+        val newRelease = networkDataSource.getNewRelease()
 
-        assertEquals(20,newRelease.items.size)
+        assertEquals(20, newRelease.items.size)
     }
 
     @Test
-    fun getRelatedArtists()= runTest {
-        val artists=networkDataSource.getRelatedArtists()
-        assertEquals(20,artists.size)
+    fun getRelatedArtists() = runTest {
+        val artists = networkDataSource.getRelatedArtists()
+        assertEquals(20, artists.size)
     }
 
     @Test
-    fun search()= runTest {
-        val search= networkDataSource.search("wizkid","track")
+    fun search() = runTest {
+        val search = networkDataSource.search("wizkid", "track")
 
-        assertEquals(10,search.size)
+        assertEquals(10, search.size)
     }
 
     @Test
-    fun getUserAlbum() = runTest{
-        val albums=networkDataSource.getUserAlbum()
+    fun getUserAlbum() = runTest {
+        val albums = networkDataSource.getUserAlbum()
 //
-        assertEquals(2,albums.size)
+        assertEquals(2, albums.size)
     }
 
     @Test
-    fun getUserTracks()= runTest() {
-        val tracks=networkDataSource.getUserTracks()
+    fun getUserTracks() = runTest {
+        val tracks = networkDataSource.getUserTracks()
 //
-        assertEquals(2,tracks.size)
+        assertEquals(2, tracks.size)
     }
 
     @Test
-    fun getTrack() = runTest{
-        val track=networkDataSource.getTrack("io")
+    fun getTrack() = runTest {
+        val track = networkDataSource.getTrack("io")
     }
 
     @Test
-    fun getAlbum()  = runTest{
-        val track=networkDataSource.getAlbum("io")
+    fun getAlbum() = runTest {
+        val track = networkDataSource.getAlbum("io")
     }
 
     @Test
-    fun getPlaylist()  = runTest{
-        val track=networkDataSource.getPlaylist("io")
+    fun getPlaylist() = runTest {
+        val track = networkDataSource.getPlaylist("io")
     }
 
     @Test
-    fun getArtist()  = runTest{
-        val track=networkDataSource.getArtist("io")
+    fun getArtist() = runTest {
+        val track = networkDataSource.getArtist("io")
     }
 }

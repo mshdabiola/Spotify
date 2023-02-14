@@ -1,31 +1,24 @@
 package com.mshdabiola.spotify
 
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
-import androidx.media3.session.MediaController
-import com.google.common.util.concurrent.ListenableFuture
-import com.google.common.util.concurrent.MoreExecutors
 import com.mshdabiola.designsystem.theme.SpotifyAppTheme
 import com.mshdabiola.spotify.ui.SpotifyApp
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    val mainViewModel by  viewModels<MainViewModel>()
+    val mainViewModel by viewModels<MainViewModel>()
 
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,12 +27,12 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             WindowCompat.setDecorFitsSystemWindows(window, false)
-            SpotifyAppTheme() {
+            SpotifyAppTheme {
                 // A surface container using the 'background' color from the theme
                 SpotifyApp(
                     windowSizeClass = calculateWindowSizeClass(activity = this),
-                    mainViewModel=mainViewModel
-                    )
+                    mainViewModel = mainViewModel
+                )
             }
         }
 
@@ -47,7 +40,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onStart() {
         super.onStart()
-
 
 
         val mediaItem2 = MediaItem.Builder()
@@ -80,7 +72,6 @@ class MainActivity : ComponentActivity() {
             .build()
 
 
-
 //           listener?.addListener(
 //               {
 //               mediaController=listener?.get()
@@ -96,14 +87,6 @@ class MainActivity : ComponentActivity() {
 //        mediaController?.currentMediaItemIndex
 
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-//        mediaController?.release()
-
-    }
-
-
 
 
 }

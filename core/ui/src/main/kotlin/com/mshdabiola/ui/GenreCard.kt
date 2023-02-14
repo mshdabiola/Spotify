@@ -16,21 +16,22 @@ import androidx.compose.ui.unit.dp
 import com.mshdabiola.ui.data.GenreUiState
 
 @Composable
-fun GenreCard(genreUiState : GenreUiState) {
+fun GenreCard(genreUiState: GenreUiState) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .height(88.dp),
         colors = CardDefaults.cardColors(
             contentColor = Color.White,
-            containerColor = colors[genreUiState.color].copy(alpha = 0.6f))
+            containerColor = colors[genreUiState.color].copy(alpha = 0.6f)
+        )
     ) {
         Text(
             modifier = Modifier.padding(8.dp),
             text = genreUiState.name,
             style = MaterialTheme.typography.bodyMedium,
             fontWeight = FontWeight.Bold
-            )
+        )
 
     }
 }
@@ -38,7 +39,7 @@ fun GenreCard(genreUiState : GenreUiState) {
 @Preview
 @Composable
 fun GenreCardPreview() {
-    GenreCard(GenreUiState(8,0,"Afro"))
+    GenreCard(GenreUiState(8, 0, "Afro"))
 }
 
-val colors= arrayOf(Color.Yellow,Color.Green, Color.Red, Color.Magenta)
+val colors = arrayOf(Color.Yellow, Color.Green, Color.Red, Color.Magenta)

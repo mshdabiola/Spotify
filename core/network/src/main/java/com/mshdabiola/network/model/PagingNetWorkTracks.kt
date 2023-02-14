@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class PagingNetWorkTracks(
-	val tracks: List<NetworkTrack>
+    val tracks: List<NetworkTrack>
 )

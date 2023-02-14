@@ -10,8 +10,8 @@ const val mainNavigationRoute = "main_route"
 const val mainRoute = "main_route"
 
 fun NavGraphBuilder.mainScreen(
-    onNavigateToDetail : (String,String)->Unit={_,_->},
-    showNavBar : (Boolean)->Unit={}
+    onNavigateToDetail: (String, String) -> Unit = { _, _ -> },
+    showNavBar: (Boolean) -> Unit = {}
 ) {
     composable(
         route = mainRoute,
@@ -19,10 +19,10 @@ fun NavGraphBuilder.mainScreen(
         MainScreen(
             onNavigateToDetail = onNavigateToDetail,
             showNavBar = showNavBar
-            )
+        )
     }
 }
 
 fun NavController.navigateToMain(navOption: NavOptions) {
-    navigate(route = mainRoute,navOptions = navOption)
+    navigate(route = mainRoute, navOptions = navOption)
 }

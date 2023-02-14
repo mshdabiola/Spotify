@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright 2021 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +18,7 @@
     <!-- Allows us to override night specific attributes in the
          values-night folder. -->
     <style name="NightAdjusted.Theme.App" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowLightStatusBar" >false</item>
+        <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
     </style>
 
@@ -34,7 +33,7 @@
     <style name="Theme.App" parent="PlatformAdjusted.Theme.App" />
 
     <style name="NightAdjusted.Theme.Splash" parent="Theme.SplashScreen">
-        <item name="android:windowLightStatusBar" >true</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
     </style>
 

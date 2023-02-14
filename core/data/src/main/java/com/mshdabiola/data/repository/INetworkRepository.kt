@@ -22,13 +22,13 @@ class INetworkRepository @Inject constructor(
 ) : NetworkRepository {
 
     override suspend fun setUp() {
-        Config.token=userPreferenceDatasource.userData.first().token
+        Config.token = userPreferenceDatasource.userData.first().token
     }
 
     override suspend fun getRecommendation(): Result<List<Track>> {
         return try {
-           Result.success(networkDataSource.getRecommendation().map { it.asTrack() })
-        }catch (e : Exception){
+            Result.success(networkDataSource.getRecommendation().map { it.asTrack() })
+        } catch (e: Exception) {
             Result.failure(e)
         }
 
@@ -37,15 +37,15 @@ class INetworkRepository @Inject constructor(
     override suspend fun getFeaturePlaylist(): Result<List<Playlist>> {
         return try {
             Result.success(networkDataSource.getFeaturePlaylist().items.map { it.asPlaylist() })
-        }catch (e : Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
 
     override suspend fun getCategory(): Result<List<Category>> {
         return try {
-            Result.success( networkDataSource.getCategory().items.map { it.asCategory() })
-        }catch (e : Exception){
+            Result.success(networkDataSource.getCategory().items.map { it.asCategory() })
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
@@ -54,7 +54,7 @@ class INetworkRepository @Inject constructor(
         //return networkDataSource.
         return try {
             Result.success(networkDataSource.getRelatedArtists().map { it.asArtiste() })
-        }catch (e : Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
@@ -62,7 +62,7 @@ class INetworkRepository @Inject constructor(
     override suspend fun search(query: String, type: String): Result<List<Track>> {
         return try {
             Result.success(networkDataSource.search(query, type).map { it.asTrack() })
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
@@ -70,7 +70,7 @@ class INetworkRepository @Inject constructor(
     override suspend fun getNewRelease(): Result<List<Album>> {
         return try {
             Result.success(networkDataSource.getNewRelease().items.map { it.asAlbum() })
-        }catch (e : Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
 
@@ -79,7 +79,7 @@ class INetworkRepository @Inject constructor(
     override suspend fun getUserAlbums(): Result<List<Album>> {
         return try {
             Result.success(networkDataSource.getUserAlbum().map { it.asAlbum() })
-        }catch (e : Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
@@ -87,7 +87,7 @@ class INetworkRepository @Inject constructor(
     override suspend fun getUserTracks(): Result<List<Track>> {
         return try {
             Result.success(networkDataSource.getUserTracks().map { it.asTrack() })
-        }catch (e : Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
@@ -95,7 +95,7 @@ class INetworkRepository @Inject constructor(
     override suspend fun getTrack(id: String): Result<Track> {
         return try {
             Result.success(networkDataSource.getTrack(id).asTrack())
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
@@ -103,24 +103,24 @@ class INetworkRepository @Inject constructor(
     override suspend fun getAlbum(id: String): Result<Album> {
         return try {
             Result.success(networkDataSource.getAlbum(id).asAlbum())
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
 
     override suspend fun getPlaylist(id: String): Result<Playlist> {
 
-            return try {
-                val playlist=networkDataSource.getPlaylist(id)
-                val play=Playlist(
-                    playlist.id,
-                    playlist.name,
-                    playlist.description,
-                    playlist.images.first().url,
-                    playlist.tracks.items.map { it.track.asTrack() }
-                    )
+        return try {
+            val playlist = networkDataSource.getPlaylist(id)
+            val play = Playlist(
+                playlist.id,
+                playlist.name,
+                playlist.description,
+                playlist.images.first().url,
+                playlist.tracks.items.map { it.track.asTrack() }
+            )
             Result.success(play)
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
 
@@ -129,7 +129,7 @@ class INetworkRepository @Inject constructor(
     override suspend fun getArtist(id: String): Result<Artist> {
         return try {
             Result.success(networkDataSource.getArtist(id).asArtiste())
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }

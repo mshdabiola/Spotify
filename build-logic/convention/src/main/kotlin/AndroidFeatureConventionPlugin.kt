@@ -54,18 +54,21 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("testImplementation", project(":core:testing"))
                 add("androidTestImplementation", kotlin("test"))
                 add("androidTestImplementation", project(":core:testing"))
-                add("androidTestImplementation",libs.findLibrary("androidx-compose-ui-test").get())
-                add("androidTestImplementation",libs.findLibrary("androidx-test-espresso-core").get())
-                add("androidTestImplementation",libs.findLibrary("androidx-test-ext").get())
+                add("androidTestImplementation", libs.findLibrary("androidx-compose-ui-test").get())
+                add(
+                    "androidTestImplementation",
+                    libs.findLibrary("androidx-test-espresso-core").get()
+                )
+                add("androidTestImplementation", libs.findLibrary("androidx-test-ext").get())
 
-                add("implementation",libs.findLibrary("coil.kt.compose").get())
-                add("implementation",libs.findLibrary("coil.kt").get())
-                add("implementation",libs.findLibrary("androidx.navigation.compose").get())
+                add("implementation", libs.findLibrary("coil.kt.compose").get())
+                add("implementation", libs.findLibrary("coil.kt").get())
+                add("implementation", libs.findLibrary("androidx.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
-               // add("implementation", libs.findLibrary("androidx.constraintlayout").get())
+                // add("implementation", libs.findLibrary("androidx.constraintlayout").get())
                 add("implementation", libs.findLibrary("kotlinx-collection-immutable").get())
                 // add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
-               // add("implementation", libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
+                // add("implementation", libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
 
 
             }

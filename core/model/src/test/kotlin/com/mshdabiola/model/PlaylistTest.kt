@@ -4,17 +4,17 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 
-class PlaylistTest{
+class PlaylistTest {
     @Test
-    fun create(){
-        val playlist=Playlist(
+    fun create() {
+        val playlist = Playlist(
             id = "Vikas",
             name = "Kade",
             description = "Jarryd",
             image = "Alessandra",
-        //    tracks = listOf()
-                )
+            //    tracks = listOf()
+        )
 
-        assertEquals("Kade",playlist.name)
+        assertEquals("Kade", playlist.name)
     }
 }

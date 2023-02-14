@@ -43,6 +43,7 @@ class ResultKtTest {
                         "Test Done",
                         errorResult.exception?.message,
                     )
+
                     com.mshdabiola.common.result.Result.Loading,
                     is com.mshdabiola.common.result.Result.Success,
                     -> throw IllegalStateException(
