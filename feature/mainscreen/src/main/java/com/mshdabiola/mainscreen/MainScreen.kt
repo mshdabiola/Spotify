@@ -221,7 +221,7 @@ internal fun MainScreen(
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(168.dp)
+                        .height(176.dp)
                 )
 
 

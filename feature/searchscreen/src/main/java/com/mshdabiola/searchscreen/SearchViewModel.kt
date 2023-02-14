@@ -4,6 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mshdabiola.data.repository.NetworkRepository
+import com.mshdabiola.ui.colors
 import com.mshdabiola.ui.data.GenreUiState
 import com.mshdabiola.ui.data.toTrackUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -162,7 +163,7 @@ class SearchViewModel @Inject constructor(
                 .shuffled()
                 .take(17)
                 .mapIndexed { index, s ->
-                    GenreUiState(id = index, color = rand.nextInt(4), name = s)
+                    GenreUiState(id = index, color = rand.nextInt(colors.size), name = s)
                 }
                 .toImmutableList()
 

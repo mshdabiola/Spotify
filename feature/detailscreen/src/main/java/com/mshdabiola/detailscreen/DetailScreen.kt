@@ -160,7 +160,7 @@ internal fun DetailScreen(
             }
             item { Text(text = "© ℗ ${detailState.artists.first().name}") }
             item {
-                Box(modifier = Modifier.size(80.dp))
+                Box(modifier = Modifier.size(176.dp))
             }
         }
     }

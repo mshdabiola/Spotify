@@ -43,7 +43,8 @@ internal fun SearchScreen(
     val searchUiState = searchViewModel.searchUiState.collectAsState()
     SearchScreen(
         searchUiState.value,
-        onSearch = searchViewModel::search
+        onSearch = searchViewModel::search,
+        onNavigateToDetail=onNavigateToDetail
     )
 }
 
@@ -51,7 +52,8 @@ internal fun SearchScreen(
 @Composable
 internal fun SearchScreen(
     searchUiState: SearchUiState,
-    onSearch: (String) -> Unit = {}
+    onSearch: (String) -> Unit = {},
+    onNavigateToDetail: (String, String) -> Unit = { _, _ -> }
 ) {
 
     var search by remember {
@@ -116,14 +118,17 @@ internal fun SearchScreen(
             }
         } else {
             items(searchUiState.tracks, key = { it.id }) {
-                TrackCard(track = it)
+                TrackCard(
+                    track = it,
+                    onClick = onNavigateToDetail
+                )
             }
         }
         item(span = { GridItemSpan(2) }) {
             Box(
                 modifier = Modifier
                     //.background(Color.Blue)
-                    .size(88.dp)
+                    .size(192.dp)
             )
         }
 

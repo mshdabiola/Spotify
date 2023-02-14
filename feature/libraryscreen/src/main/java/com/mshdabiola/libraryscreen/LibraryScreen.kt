@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
@@ -41,16 +43,18 @@ internal fun LibraryScreen(
 ) {
     val libraryUiState = libraryViewModel.libraryUiState.collectAsStateWithLifecycle()
     LibraryScreen(
-        libraryUiState = libraryUiState.value
+        libraryUiState = libraryUiState.value,
+        onNavigateToDetail2=onNavigateToDetail
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun LibraryScreen(
-    libraryUiState: LibraryUiState = LibraryUiState()
+    libraryUiState: LibraryUiState = LibraryUiState(),
+    onNavigateToDetail2: (String, String) -> Unit = { _, _ -> }
 ) {
-    Column {
+    Column(Modifier.padding(horizontal = 16.dp)) {
         TopAppBar(
             title = { Text(text = "Your Library") },
             navigationIcon = {
@@ -98,10 +102,19 @@ internal fun LibraryScreen(
 
         ) {
             items(libraryUiState.userAlbums, key = { it.id }) {
-                AlbumCard(albumUiState = it)
+                AlbumCard(
+                    albumUiState = it,
+                    onClick = onNavigateToDetail2
+                )
             }
             items(libraryUiState.userTracks, key = { it.id }) {
-                TrackCard(track = it)
+                TrackCard(
+                    track = it,
+                    onClick = onNavigateToDetail2
+                )
+            }
+            item(span = { GridItemSpan(2) }) {
+                Box(modifier = Modifier.size(192.dp))
             }
         }
     }
@@ -111,6 +124,8 @@ internal fun LibraryScreen(
 @Preview
 @Composable
 internal fun LibraryScreenPreview() {
-    LibraryScreen()
+    LibraryScreen(
+        libraryUiState = LibraryUiState()
+    )
 
 }
