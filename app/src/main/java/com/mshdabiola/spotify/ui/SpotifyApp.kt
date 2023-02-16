@@ -29,8 +29,8 @@ import com.mshdabiola.mainscreen.mainRoute
 import com.mshdabiola.searchscreen.searchRoute
 import com.mshdabiola.spotify.MainViewModel
 import com.mshdabiola.spotify.navigation.SpotifyAppNavHost
+import timber.log.Timber
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SpotifyApp(
     windowSizeClass: WindowSizeClass,
@@ -90,7 +90,7 @@ fun SpotifyBottomNavBar(
         modifier = modifier.background(
             Brush.verticalGradient(
                 0f to Color.Transparent,
-                0.8f to Color.Black
+                0.4f to Color.Black
             )
         ),
         containerColor = Color.Transparent,
@@ -121,7 +121,10 @@ fun SpotifyBottomNavBar(
 }
 
 //Todo("incorrect nav bar after to detail")
-fun NavDestination?.isTop(destination: TopLevelDestination) =
-    this?.hierarchy?.any { it.route?.contains(routeArray[destination.ordinal]) ?: false } ?: false
+fun NavDestination?.isTop(destination: TopLevelDestination):Boolean{
+    Timber.e(this?.hierarchy?.joinToString { it.route ?:"null" })
+    return this?.hierarchy?.any { it.route?.contains(routeArray[destination.ordinal]) ?: false } ?: false
+}
+
 
 val routeArray = arrayOf(mainRoute, searchRoute, libraryRoute)

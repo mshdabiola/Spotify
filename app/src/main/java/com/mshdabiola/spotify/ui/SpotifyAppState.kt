@@ -30,7 +30,11 @@ data class SpotifyAppState(
 
 
     val currentDestination
-        @Composable get() = navHostController.currentBackStackEntryAsState().value?.destination
+        @Composable get() =
+            navHostController
+                .currentBackStackEntryAsState()
+                .value
+                ?.destination
 
     val currentTopDestination
         @Composable get() = when (currentDestination?.route) {
@@ -42,24 +46,6 @@ data class SpotifyAppState(
 
     fun setShowBar(show: Boolean) {
         showBar.value = show
-    }
-
-    fun setTracks(trackList: List<TrackUiState>) {
-        val m = MediaItem.Builder()
-            .setMediaId("https://p.scdn.co/mp3-preview/facd9e5b75514daefb81d6492da242068873fe93?cid=774b29d4f13844c495f206cafdad9c86")
-            .setMediaMetadata(
-                MediaMetadata.Builder()
-                    .setFolderType(MediaMetadata.FOLDER_TYPE_ALBUMS)
-                    .setArtworkUri(Uri.parse("https://i.scdn.co/image/ab67616d0000b27341462de7dd99c99f01a96695"))
-                    .setAlbumTitle("YBAG")
-                    .setTitle("2 Thousand")
-                    .setArtist("Laycon")
-
-                    .build()
-            )
-            .build()
-
-
     }
 
     fun navigateToTopLevel(destination: TopLevelDestination) {
