@@ -5,6 +5,11 @@ plugins {
 
 android {
     namespace = "com.mshdabiola.common"
+    buildTypes {
+        create("benchmark") {
+            matchingFallbacks += listOf("release")
+        }
+    }
 }
 dependencies {
     testImplementation(project(":core:testing"))
