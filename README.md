@@ -4,7 +4,7 @@
 [![Issues](https://img.shields.io/github/issues/mshdabiola/Play_NotePad.svg?style=for-the-badge)](https://github.com/Wladefant/mshdabiola/Play_NotePad/issues)
 [![License](https://img.shields.io/github/license/mshdabiola/Play_NotePad.svg?style=for-the-badge)](https://github.com/mshdabiola/Play_NotePad/master/LICENSE)
 
-# Play NotePad
+# Spotify
 
 [<img src="/images/ic_launcher-playstore.png" align="left"
 width="200" hspace="10" vspace="10">](/images/ic_launcher-playstore.png)
