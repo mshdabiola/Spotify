@@ -1,0 +1,85 @@
+{
+  "message": "Editor's picks",
+  "playlists": {
+    "href": "https://api.spotify.com/v1/browse/featured-playlists?country=NG&timestamp=2023-02-05T18%3A26%3A23&offset=2&limit=2",
+    "items": [
+      {
+        "collaborative": false,
+        "description": "Happy tunes from the 50s, 60s & 70s. Cover: The Beach Boys.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWVinJBuv0P4z"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVinJBuv0P4z",
+        "id": "37i9dQZF1DWVinJBuv0P4z",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f000000032cbdcb688db08f392ee02c80",
+            "width": null
+          }
+        ],
+        "name": "Feel Good Classics",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY3Mjc1ODI3NiwwMDAwMDAwMGVjYWU5NjU1OTcwNjhiZDhjYjdhNzJkYTY1YjRlMDI4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVinJBuv0P4z/tracks",
+          "total": 150
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DWVinJBuv0P4z"
+      },
+      {
+        "collaborative": false,
+        "description": "Keep your night easy and light with this acoustic mix.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcWBRiUaG3o5"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcWBRiUaG3o5",
+        "id": "37i9dQZF1DXcWBRiUaG3o5",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706f00000003bdd580456b856d8e1176ffb1",
+            "width": null
+          }
+        ],
+        "name": "Evening Acoustic",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTY1MDA0MTgwOSwwMDAwMDAwMGY2OTQ5YTY0Y2M3MmMwODRjYjE1NTJkNGJhNmZhOGRh",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcWBRiUaG3o5/tracks",
+          "total": 100
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXcWBRiUaG3o5"
+      }
+    ],
+    "limit": 2,
+    "next": "https://api.spotify.com/v1/browse/featured-playlists?country=NG&timestamp=2023-02-05T18%3A26%3A23&offset=4&limit=2",
+    "offset": 2,
+    "previous": "https://api.spotify.com/v1/browse/featured-playlists?country=NG&timestamp=2023-02-05T18%3A26%3A23&offset=0&limit=2",
+    "total": 10
+  }
+}

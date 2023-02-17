@@ -1,4 +1,3 @@
-
 package com.mshdabiola.database
 
 import androidx.room.DeleteColumn

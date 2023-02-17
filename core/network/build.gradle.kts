@@ -1,15 +1,18 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("mshdabiola.android.library")
-    id ("mshdabiola.android.hilt")
+    id("mshdabiola.android.hilt")
     alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "com.mshdabiola.network"
     //Todo(add seriallization)
+    defaultConfig {
+        consumerProguardFiles("consumer-proguard-rules.pro")
+    }
 }
-dependencies{
+dependencies {
     testImplementation(project(":core:testing"))
 
     implementation(libs.ktor.client.core)
@@ -19,6 +22,7 @@ dependencies{
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.serialization)
     implementation(libs.ktor.client.resources)
+    implementation(libs.ktor.client.auth)
 
-    testImplementation (libs.ktor.client.mock)
+    testImplementation(libs.ktor.client.mock)
 }

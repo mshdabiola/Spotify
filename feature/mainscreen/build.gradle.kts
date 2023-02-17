@@ -1,5 +1,5 @@
 plugins {
-    id ("mshdabiola.android.feature")
+    id("mshdabiola.android.feature")
 }
 
 android {
@@ -9,4 +9,9 @@ android {
             matchingFallbacks += listOf("release")
         }
     }
+}
+
+dependencies {
+//    implementation(project(":core:ui"))
+    implementation("com.spotify.android:auth:1.2.5")
 }

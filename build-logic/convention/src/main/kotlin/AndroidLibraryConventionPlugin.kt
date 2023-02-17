@@ -34,27 +34,20 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                compileSdk=33
-                defaultConfig.minSdk=24
+                compileSdk = 33
+                compileSdkPreview = "UpsideDownCake"
+                defaultConfig.minSdk = 24
                 defaultConfig.targetSdk = 33
-               defaultConfig. testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-              //  configureFlavors(this)
+                defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                //  configureFlavors(this)
 
             }
 
-//            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-//            configurations.configureEach {
-//                resolutionStrategy {
-//                    force(libs.findLibrary("junit4").get())
-//                    // Temporary workaround for https://issuetracker.google.com/174733673
-//                    force("org.objenesis:objenesis:2.6")
-//                }
-//            }
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
             dependencies {
                 add("androidTestImplementation", kotlin("test"))
                 add("testImplementation", kotlin("test"))
-                add("implementation",libs.findLibrary("timber").get())
+                add("implementation", libs.findLibrary("timber").get())
             }
         }
     }

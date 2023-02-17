@@ -80,8 +80,9 @@ fun SpotifyAppTheme(
             val context = LocalContext.current
             if (useDarkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-        useDarkTheme -> DarkColors
-        else -> LightColors
+
+        useDarkTheme -> LightColors
+        else -> DarkColors
     }
 
     MaterialTheme(

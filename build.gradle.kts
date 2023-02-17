@@ -32,7 +32,6 @@ versionCatalogUpdate {
 }
 
 
-
 //tasks.create("add_spot"){
 //    val proj=project.rootDir
 //

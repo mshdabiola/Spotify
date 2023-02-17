@@ -35,8 +35,7 @@ class UserPreferenceSerializerTest {
     @Test
     fun readAndWriteUserPreference() = runTest {
         val expectedUserPreferences = userPreferences {
-            yes = true
-            integer = 67
+            token = "abiola"
         }
 
         val output = ByteArrayOutputStream()

@@ -1,0 +1,731 @@
+{
+  "artists": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/12kjvw4e3gLp6qVHO65n7W"
+      },
+      "followers": {
+        "href": null,
+        "total": 202510
+      },
+      "genres": [
+        "afropop",
+        "nigerian hip hop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/12kjvw4e3gLp6qVHO65n7W",
+      "id": "12kjvw4e3gLp6qVHO65n7W",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb7a249815a88872fb2bae635f",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab676161000051747a249815a88872fb2bae635f",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f1787a249815a88872fb2bae635f",
+          "width": 160
+        }
+      ],
+      "name": "Blaqbonez",
+      "popularity": 55,
+      "type": "artist",
+      "uri": "spotify:artist:12kjvw4e3gLp6qVHO65n7W"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6Kp3KWPiVgi33DkJqo9T4g"
+      },
+      "followers": {
+        "href": null,
+        "total": 523522
+      },
+      "genres": [
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6Kp3KWPiVgi33DkJqo9T4g",
+      "id": "6Kp3KWPiVgi33DkJqo9T4g",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebece3ac73edd04fb129a479cf",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174ece3ac73edd04fb129a479cf",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178ece3ac73edd04fb129a479cf",
+          "width": 160
+        }
+      ],
+      "name": "Zinoleesky",
+      "popularity": 61,
+      "type": "artist",
+      "uri": "spotify:artist:6Kp3KWPiVgi33DkJqo9T4g"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7oVwzvvrXEC8LbXhaNjTi4"
+      },
+      "followers": {
+        "href": null,
+        "total": 161568
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7oVwzvvrXEC8LbXhaNjTi4",
+      "id": "7oVwzvvrXEC8LbXhaNjTi4",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebb9453cac338f2993cd827077",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174b9453cac338f2993cd827077",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178b9453cac338f2993cd827077",
+          "width": 160
+        }
+      ],
+      "name": "Ajebo Hustlers",
+      "popularity": 51,
+      "type": "artist",
+      "uri": "spotify:artist:7oVwzvvrXEC8LbXhaNjTi4"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7kK5badbqOjd8WlT2XWMeM"
+      },
+      "followers": {
+        "href": null,
+        "total": 594600
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7kK5badbqOjd8WlT2XWMeM",
+      "id": "7kK5badbqOjd8WlT2XWMeM",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebed6c3f1b2b9303ec1bce3785",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174ed6c3f1b2b9303ec1bce3785",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178ed6c3f1b2b9303ec1bce3785",
+          "width": 160
+        }
+      ],
+      "name": "Bella Shmurda",
+      "popularity": 57,
+      "type": "artist",
+      "uri": "spotify:artist:7kK5badbqOjd8WlT2XWMeM"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1FIsnQiSPsuqA38z48irJC"
+      },
+      "followers": {
+        "href": null,
+        "total": 200730
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1FIsnQiSPsuqA38z48irJC",
+      "id": "1FIsnQiSPsuqA38z48irJC",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebc35c020d6161c0d5fbaa6152",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174c35c020d6161c0d5fbaa6152",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178c35c020d6161c0d5fbaa6152",
+          "width": 160
+        }
+      ],
+      "name": "T.I BLAZE",
+      "popularity": 49,
+      "type": "artist",
+      "uri": "spotify:artist:1FIsnQiSPsuqA38z48irJC"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4JM1zsVj1pt38Q8mhv5teI"
+      },
+      "followers": {
+        "href": null,
+        "total": 154432
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4JM1zsVj1pt38Q8mhv5teI",
+      "id": "4JM1zsVj1pt38Q8mhv5teI",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb51f4dbb098d9f9716adecd80",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab6761610000517451f4dbb098d9f9716adecd80",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f17851f4dbb098d9f9716adecd80",
+          "width": 160
+        }
+      ],
+      "name": "Young Jonn",
+      "popularity": 61,
+      "type": "artist",
+      "uri": "spotify:artist:4JM1zsVj1pt38Q8mhv5teI"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/68R39izwNAztATrXMOqkJS"
+      },
+      "followers": {
+        "href": null,
+        "total": 225504
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/68R39izwNAztATrXMOqkJS",
+      "id": "68R39izwNAztATrXMOqkJS",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb07a843e88e0407e795d002ef",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab6761610000517407a843e88e0407e795d002ef",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f17807a843e88e0407e795d002ef",
+          "width": 160
+        }
+      ],
+      "name": "Bad Boy Timz",
+      "popularity": 51,
+      "type": "artist",
+      "uri": "spotify:artist:68R39izwNAztATrXMOqkJS"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0a8YNI8VHVPYKIPvCiJDxa"
+      },
+      "followers": {
+        "href": null,
+        "total": 248918
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0a8YNI8VHVPYKIPvCiJDxa",
+      "id": "0a8YNI8VHVPYKIPvCiJDxa",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebe63e4ff78ae15e87e71382fe",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174e63e4ff78ae15e87e71382fe",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178e63e4ff78ae15e87e71382fe",
+          "width": 160
+        }
+      ],
+      "name": "Mohbad",
+      "popularity": 50,
+      "type": "artist",
+      "uri": "spotify:artist:0a8YNI8VHVPYKIPvCiJDxa"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4oQyXxDBq8FBhsjjS7MbcM"
+      },
+      "followers": {
+        "href": null,
+        "total": 195504
+      },
+      "genres": [
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4oQyXxDBq8FBhsjjS7MbcM",
+      "id": "4oQyXxDBq8FBhsjjS7MbcM",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebedaefcaf00477622fa341ce9",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174edaefcaf00477622fa341ce9",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178edaefcaf00477622fa341ce9",
+          "width": 160
+        }
+      ],
+      "name": "Cheque",
+      "popularity": 51,
+      "type": "artist",
+      "uri": "spotify:artist:4oQyXxDBq8FBhsjjS7MbcM"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0XqLMMiljB30SqHKV9PYsD"
+      },
+      "followers": {
+        "href": null,
+        "total": 109421
+      },
+      "genres": [
+        "afro dancehall",
+        "afropop",
+        "alte",
+        "nigerian hip hop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0XqLMMiljB30SqHKV9PYsD",
+      "id": "0XqLMMiljB30SqHKV9PYsD",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebd6a815166302f3b641e5375b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174d6a815166302f3b641e5375b",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178d6a815166302f3b641e5375b",
+          "width": 160
+        }
+      ],
+      "name": "Show Dem Camp",
+      "popularity": 50,
+      "type": "artist",
+      "uri": "spotify:artist:0XqLMMiljB30SqHKV9PYsD"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4mSWNal2Ixxf1zrXSTLoep"
+      },
+      "followers": {
+        "href": null,
+        "total": 358044
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4mSWNal2Ixxf1zrXSTLoep",
+      "id": "4mSWNal2Ixxf1zrXSTLoep",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb817e4b5df9a848a10d54711d",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174817e4b5df9a848a10d54711d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178817e4b5df9a848a10d54711d",
+          "width": 160
+        }
+      ],
+      "name": "Zlatan",
+      "popularity": 56,
+      "type": "artist",
+      "uri": "spotify:artist:4mSWNal2Ixxf1zrXSTLoep"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0obuUG86gXYcMtRMNKaYKL"
+      },
+      "followers": {
+        "href": null,
+        "total": 170308
+      },
+      "genres": [
+        "afropop",
+        "nigerian hip hop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0obuUG86gXYcMtRMNKaYKL",
+      "id": "0obuUG86gXYcMtRMNKaYKL",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebb7bbaa332812f16ae6cb554d",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174b7bbaa332812f16ae6cb554d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178b7bbaa332812f16ae6cb554d",
+          "width": 160
+        }
+      ],
+      "name": "M.I. Abaga",
+      "popularity": 46,
+      "type": "artist",
+      "uri": "spotify:artist:0obuUG86gXYcMtRMNKaYKL"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5z207JpMeX1oCYVvMKReku"
+      },
+      "followers": {
+        "href": null,
+        "total": 137876
+      },
+      "genres": [
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5z207JpMeX1oCYVvMKReku",
+      "id": "5z207JpMeX1oCYVvMKReku",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb103a4bceaa0de33653779d21",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174103a4bceaa0de33653779d21",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178103a4bceaa0de33653779d21",
+          "width": 160
+        }
+      ],
+      "name": "Rexxie",
+      "popularity": 50,
+      "type": "artist",
+      "uri": "spotify:artist:5z207JpMeX1oCYVvMKReku"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1fYVmAFB7sC7eDoF3mJXla"
+      },
+      "followers": {
+        "href": null,
+        "total": 462278
+      },
+      "genres": [
+        "afro dancehall",
+        "afropop",
+        "azontobeats",
+        "nigerian hip hop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1fYVmAFB7sC7eDoF3mJXla",
+      "id": "1fYVmAFB7sC7eDoF3mJXla",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb922758dbd78b786c6ae3932f",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174922758dbd78b786c6ae3932f",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178922758dbd78b786c6ae3932f",
+          "width": 160
+        }
+      ],
+      "name": "Wande Coal",
+      "popularity": 61,
+      "type": "artist",
+      "uri": "spotify:artist:1fYVmAFB7sC7eDoF3mJXla"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3DNCUaKdMZcMVJIS7yTskd"
+      },
+      "followers": {
+        "href": null,
+        "total": 794709
+      },
+      "genres": [
+        "afro dancehall",
+        "afropop",
+        "azontobeats",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3DNCUaKdMZcMVJIS7yTskd",
+      "id": "3DNCUaKdMZcMVJIS7yTskd",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb82674176492eb4253365df88",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab6761610000517482674176492eb4253365df88",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f17882674176492eb4253365df88",
+          "width": 160
+        }
+      ],
+      "name": "Mayorkun",
+      "popularity": 61,
+      "type": "artist",
+      "uri": "spotify:artist:3DNCUaKdMZcMVJIS7yTskd"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0rskhjcLm5BxjwZDRs4142"
+      },
+      "followers": {
+        "href": null,
+        "total": 133780
+      },
+      "genres": [
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0rskhjcLm5BxjwZDRs4142",
+      "id": "0rskhjcLm5BxjwZDRs4142",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb6808dc5aee4a15b9c7dff651",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab676161000051746808dc5aee4a15b9c7dff651",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f1786808dc5aee4a15b9c7dff651",
+          "width": 160
+        }
+      ],
+      "name": "Magixx",
+      "popularity": 64,
+      "type": "artist",
+      "uri": "spotify:artist:0rskhjcLm5BxjwZDRs4142"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4zmZ8lVLzGc84S4v2B1rLx"
+      },
+      "followers": {
+        "href": null,
+        "total": 237192
+      },
+      "genres": [
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4zmZ8lVLzGc84S4v2B1rLx",
+      "id": "4zmZ8lVLzGc84S4v2B1rLx",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb514c0ed2d2914cac10ef320c",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174514c0ed2d2914cac10ef320c",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178514c0ed2d2914cac10ef320c",
+          "width": 160
+        }
+      ],
+      "name": "Seyi Vibez",
+      "popularity": 60,
+      "type": "artist",
+      "uri": "spotify:artist:4zmZ8lVLzGc84S4v2B1rLx"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2dIFhJ8RkRS2rXeDefY3t1"
+      },
+      "followers": {
+        "href": null,
+        "total": 71385
+      },
+      "genres": [
+        "afro dancehall",
+        "afropop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2dIFhJ8RkRS2rXeDefY3t1",
+      "id": "2dIFhJ8RkRS2rXeDefY3t1",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebd7712e9b13e809651c7a55d9",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174d7712e9b13e809651c7a55d9",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178d7712e9b13e809651c7a55d9",
+          "width": 160
+        }
+      ],
+      "name": "Vector",
+      "popularity": 45,
+      "type": "artist",
+      "uri": "spotify:artist:2dIFhJ8RkRS2rXeDefY3t1"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1E5hfn5BduN2nnoZCJmUVG"
+      },
+      "followers": {
+        "href": null,
+        "total": 252620
+      },
+      "genres": [
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1E5hfn5BduN2nnoZCJmUVG",
+      "id": "1E5hfn5BduN2nnoZCJmUVG",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5eb47d1c8616e73ade87d5f5fea",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab6761610000517447d1c8616e73ade87d5f5fea",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f17847d1c8616e73ade87d5f5fea",
+          "width": 160
+        }
+      ],
+      "name": "Victony",
+      "popularity": 66,
+      "type": "artist",
+      "uri": "spotify:artist:1E5hfn5BduN2nnoZCJmUVG"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/12bnIxBXecZzYmrJKRbaQ4"
+      },
+      "followers": {
+        "href": null,
+        "total": 63611
+      },
+      "genres": [
+        "afropop",
+        "igbo pop",
+        "nigerian pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/12bnIxBXecZzYmrJKRbaQ4",
+      "id": "12bnIxBXecZzYmrJKRbaQ4",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab6761610000e5ebfc877cd526fef6bbef46d712",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ab67616100005174fc877cd526fef6bbef46d712",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ab6761610000f178fc877cd526fef6bbef46d712",
+          "width": 160
+        }
+      ],
+      "name": "Basketmouth",
+      "popularity": 40,
+      "type": "artist",
+      "uri": "spotify:artist:12bnIxBXecZzYmrJKRbaQ4"
+    }
+  ]
+}

@@ -1,0 +1,941 @@
+{
+  "tracks": {
+    "href": "https://api.spotify.com/v1/search?query=wizkid&type=track&market=ES&locale=en-US%2Cen%3Bq%3D0.9&offset=5&limit=10",
+    "items": [
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+              },
+              "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+              "id": "3tVQdUvClmAT7URs9V3rsp",
+              "name": "Wizkid",
+              "type": "artist",
+              "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6bCs4XCCkm9cTwlswlu0VD"
+          },
+          "href": "https://api.spotify.com/v1/albums/6bCs4XCCkm9cTwlswlu0VD",
+          "id": "6bCs4XCCkm9cTwlswlu0VD",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27379ab73f6bfebec7c0e85f922",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0279ab73f6bfebec7c0e85f922",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485179ab73f6bfebec7c0e85f922",
+              "width": 64
+            }
+          ],
+          "name": "Made In Lagos: Deluxe Edition",
+          "release_date": "2021-08-27",
+          "release_date_precision": "day",
+          "total_tracks": 18,
+          "type": "album",
+          "uri": "spotify:album:6bCs4XCCkm9cTwlswlu0VD"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3zaDigUwjHvjOkSn0NDf9x"
+            },
+            "href": "https://api.spotify.com/v1/artists/3zaDigUwjHvjOkSn0NDf9x",
+            "id": "3zaDigUwjHvjOkSn0NDf9x",
+            "name": "BNXN fka Buju",
+            "type": "artist",
+            "uri": "spotify:artist:3zaDigUwjHvjOkSn0NDf9x"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 209760,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USRC12102465"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/6jdTkoEaer7XNGSblczoSu"
+        },
+        "href": "https://api.spotify.com/v1/tracks/6jdTkoEaer7XNGSblczoSu",
+        "id": "6jdTkoEaer7XNGSblczoSu",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Mood (feat. BNXN)",
+        "popularity": 64,
+        "preview_url": "https://p.scdn.co/mp3-preview/8ccf28840c9144f6ab7c7d64b7614180f5f026f2?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 16,
+        "type": "track",
+        "uri": "spotify:track:6jdTkoEaer7XNGSblczoSu"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6w2IGYYbcQENdjdjU2IFo4"
+              },
+              "href": "https://api.spotify.com/v1/artists/6w2IGYYbcQENdjdjU2IFo4",
+              "id": "6w2IGYYbcQENdjdjU2IFo4",
+              "name": "StarBoy",
+              "type": "artist",
+              "uri": "spotify:artist:6w2IGYYbcQENdjdjU2IFo4"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5pJAx43ygdhq0uKb0MABEo"
+          },
+          "href": "https://api.spotify.com/v1/albums/5pJAx43ygdhq0uKb0MABEo",
+          "id": "5pJAx43ygdhq0uKb0MABEo",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27378666f5f8696c188ac93a76e",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0278666f5f8696c188ac93a76e",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485178666f5f8696c188ac93a76e",
+              "width": 64
+            }
+          ],
+          "name": "Soco (feat. Wizkid, Ceeza Milli, Spotless & Terri)",
+          "release_date": "2018-02-21",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:5pJAx43ygdhq0uKb0MABEo"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6w2IGYYbcQENdjdjU2IFo4"
+            },
+            "href": "https://api.spotify.com/v1/artists/6w2IGYYbcQENdjdjU2IFo4",
+            "id": "6w2IGYYbcQENdjdjU2IFo4",
+            "name": "StarBoy",
+            "type": "artist",
+            "uri": "spotify:artist:6w2IGYYbcQENdjdjU2IFo4"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/11b21KVATwG7LgLPiD3a1A"
+            },
+            "href": "https://api.spotify.com/v1/artists/11b21KVATwG7LgLPiD3a1A",
+            "id": "11b21KVATwG7LgLPiD3a1A",
+            "name": "Ceeza Milli",
+            "type": "artist",
+            "uri": "spotify:artist:11b21KVATwG7LgLPiD3a1A"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7zd8O0lGS5sHftyvnhtWD1"
+            },
+            "href": "https://api.spotify.com/v1/artists/7zd8O0lGS5sHftyvnhtWD1",
+            "id": "7zd8O0lGS5sHftyvnhtWD1",
+            "name": "Spotless",
+            "type": "artist",
+            "uri": "spotify:artist:7zd8O0lGS5sHftyvnhtWD1"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6h3iqdnfBKV2jRhUJz0oto"
+            },
+            "href": "https://api.spotify.com/v1/artists/6h3iqdnfBKV2jRhUJz0oto",
+            "id": "6h3iqdnfBKV2jRhUJz0oto",
+            "name": "Terri",
+            "type": "artist",
+            "uri": "spotify:artist:6h3iqdnfBKV2jRhUJz0oto"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 255608,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "USUYG1184573"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1KpBtWSI9dlv0RjtzvF1BD"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1KpBtWSI9dlv0RjtzvF1BD",
+        "id": "1KpBtWSI9dlv0RjtzvF1BD",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Soco (feat. Wizkid, Ceeza Milli, Spotless & Terri)",
+        "popularity": 59,
+        "preview_url": "https://p.scdn.co/mp3-preview/0d2d6d29c77780be19db22fce658e5b02aa6745f?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:1KpBtWSI9dlv0RjtzvF1BD"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+              },
+              "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+              "id": "3tVQdUvClmAT7URs9V3rsp",
+              "name": "Wizkid",
+              "type": "artist",
+              "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5KBalcanPNHMGSNkyE7HG2"
+          },
+          "href": "https://api.spotify.com/v1/albums/5KBalcanPNHMGSNkyE7HG2",
+          "id": "5KBalcanPNHMGSNkyE7HG2",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2732e74362b470526cda9f124eb",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e022e74362b470526cda9f124eb",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048512e74362b470526cda9f124eb",
+              "width": 64
+            }
+          ],
+          "name": "Fever",
+          "release_date": "2018-09-30",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:5KBalcanPNHMGSNkyE7HG2"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 252244,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USRC11803307"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/5mN3xSyvCmFy1jkdA98IfS"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5mN3xSyvCmFy1jkdA98IfS",
+        "id": "5mN3xSyvCmFy1jkdA98IfS",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Fever",
+        "popularity": 51,
+        "preview_url": "https://p.scdn.co/mp3-preview/793aec5f4cb708df80e2353081ca75f16d74d6fa?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:5mN3xSyvCmFy1jkdA98IfS"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+              },
+              "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+              "id": "3tVQdUvClmAT7URs9V3rsp",
+              "name": "Wizkid",
+              "type": "artist",
+              "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6HpMdN52TfJAwVbmkrFeBN"
+          },
+          "href": "https://api.spotify.com/v1/albums/6HpMdN52TfJAwVbmkrFeBN",
+          "id": "6HpMdN52TfJAwVbmkrFeBN",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27390e89e3afc4441bf36720a73",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0290e89e3afc4441bf36720a73",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485190e89e3afc4441bf36720a73",
+              "width": 64
+            }
+          ],
+          "name": "Made In Lagos",
+          "release_date": "2020-10-29",
+          "release_date_precision": "day",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:6HpMdN52TfJAwVbmkrFeBN"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3wcj11K77LjEY1PkEazffa"
+            },
+            "href": "https://api.spotify.com/v1/artists/3wcj11K77LjEY1PkEazffa",
+            "id": "3wcj11K77LjEY1PkEazffa",
+            "name": "Burna Boy",
+            "type": "artist",
+            "uri": "spotify:artist:3wcj11K77LjEY1PkEazffa"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 196146,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USRC12003053"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/51mLQ3w7yR7vjdSTFLWaY5"
+        },
+        "href": "https://api.spotify.com/v1/tracks/51mLQ3w7yR7vjdSTFLWaY5",
+        "id": "51mLQ3w7yR7vjdSTFLWaY5",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Ginger (feat. Burna Boy)",
+        "popularity": 62,
+        "preview_url": "https://p.scdn.co/mp3-preview/dedeea9117e5496f62e02df5e3324604bec63969?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:51mLQ3w7yR7vjdSTFLWaY5"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+              },
+              "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+              "id": "3tVQdUvClmAT7URs9V3rsp",
+              "name": "Wizkid",
+              "type": "artist",
+              "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6bCs4XCCkm9cTwlswlu0VD"
+          },
+          "href": "https://api.spotify.com/v1/albums/6bCs4XCCkm9cTwlswlu0VD",
+          "id": "6bCs4XCCkm9cTwlswlu0VD",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27379ab73f6bfebec7c0e85f922",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0279ab73f6bfebec7c0e85f922",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485179ab73f6bfebec7c0e85f922",
+              "width": 64
+            }
+          ],
+          "name": "Made In Lagos: Deluxe Edition",
+          "release_date": "2021-08-27",
+          "release_date_precision": "day",
+          "total_tracks": 18,
+          "type": "album",
+          "uri": "spotify:album:6bCs4XCCkm9cTwlswlu0VD"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 181360,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "USRC12102464"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/60lUecrFeE2t6QMJ1Nmsve"
+        },
+        "href": "https://api.spotify.com/v1/tracks/60lUecrFeE2t6QMJ1Nmsve",
+        "id": "60lUecrFeE2t6QMJ1Nmsve",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Anoti",
+        "popularity": 50,
+        "preview_url": "https://p.scdn.co/mp3-preview/f174d108a4ec9d5806d087858c3ebba784d651d6?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 15,
+        "type": "track",
+        "uri": "spotify:track:60lUecrFeE2t6QMJ1Nmsve"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z"
+              },
+              "href": "https://api.spotify.com/v1/artists/7bXgB6jMjp9ATFy66eO08Z",
+              "id": "7bXgB6jMjp9ATFy66eO08Z",
+              "name": "Chris Brown",
+              "type": "artist",
+              "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+              },
+              "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+              "id": "3tVQdUvClmAT7URs9V3rsp",
+              "name": "Wizkid",
+              "type": "artist",
+              "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/6FKhBgElPu5RBHlarPE1aO"
+          },
+          "href": "https://api.spotify.com/v1/albums/6FKhBgElPu5RBHlarPE1aO",
+          "id": "6FKhBgElPu5RBHlarPE1aO",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273f65d818be0655b734b77188e",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02f65d818be0655b734b77188e",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851f65d818be0655b734b77188e",
+              "width": 64
+            }
+          ],
+          "name": "Call Me Every Day (feat. Wizkid)",
+          "release_date": "2022-06-17",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:6FKhBgElPu5RBHlarPE1aO"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z"
+            },
+            "href": "https://api.spotify.com/v1/artists/7bXgB6jMjp9ATFy66eO08Z",
+            "id": "7bXgB6jMjp9ATFy66eO08Z",
+            "name": "Chris Brown",
+            "type": "artist",
+            "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 146840,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USRC12201904"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/7vVs4XCsQyGn1Au3drvo9Z"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7vVs4XCsQyGn1Au3drvo9Z",
+        "id": "7vVs4XCsQyGn1Au3drvo9Z",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Call Me Every Day (feat. Wizkid)",
+        "popularity": 64,
+        "preview_url": "https://p.scdn.co/mp3-preview/43e2bd60955fb66acbeae6d42616851bb93a54ef?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:7vVs4XCsQyGn1Au3drvo9Z"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+              },
+              "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+              "id": "3tVQdUvClmAT7URs9V3rsp",
+              "name": "Wizkid",
+              "type": "artist",
+              "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
+              },
+              "href": "https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s",
+              "id": "1uNFoZAHBGtllmzznpCI3s",
+              "name": "Justin Bieber",
+              "type": "artist",
+              "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/687cZJR45JO7jhk1LHIbgq"
+              },
+              "href": "https://api.spotify.com/v1/artists/687cZJR45JO7jhk1LHIbgq",
+              "id": "687cZJR45JO7jhk1LHIbgq",
+              "name": "Tems",
+              "type": "artist",
+              "uri": "spotify:artist:687cZJR45JO7jhk1LHIbgq"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/0Rn8NAh8NnoaCOt8r8Tc3e"
+          },
+          "href": "https://api.spotify.com/v1/albums/0Rn8NAh8NnoaCOt8r8Tc3e",
+          "id": "0Rn8NAh8NnoaCOt8r8Tc3e",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273a415eca4f2d614ad1f5f3598",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02a415eca4f2d614ad1f5f3598",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851a415eca4f2d614ad1f5f3598",
+              "width": 64
+            }
+          ],
+          "name": "Essence (feat. Justin Bieber & Tems)",
+          "release_date": "2021-08-13",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:0Rn8NAh8NnoaCOt8r8Tc3e"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
+            },
+            "href": "https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s",
+            "id": "1uNFoZAHBGtllmzznpCI3s",
+            "name": "Justin Bieber",
+            "type": "artist",
+            "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/687cZJR45JO7jhk1LHIbgq"
+            },
+            "href": "https://api.spotify.com/v1/artists/687cZJR45JO7jhk1LHIbgq",
+            "id": "687cZJR45JO7jhk1LHIbgq",
+            "name": "Tems",
+            "type": "artist",
+            "uri": "spotify:artist:687cZJR45JO7jhk1LHIbgq"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 263288,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USRC12102450"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1mSdbey7RstGLY2udgXv74"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1mSdbey7RstGLY2udgXv74",
+        "id": "1mSdbey7RstGLY2udgXv74",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Essence (feat. Justin Bieber & Tems)",
+        "popularity": 62,
+        "preview_url": "https://p.scdn.co/mp3-preview/618847fad444cad70366f854818dd3b2f06cb32c?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:1mSdbey7RstGLY2udgXv74"
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3wcj11K77LjEY1PkEazffa"
+              },
+              "href": "https://api.spotify.com/v1/artists/3wcj11K77LjEY1PkEazffa",
+              "id": "3wcj11K77LjEY1PkEazffa",
+              "name": "Burna Boy",
+              "type": "artist",
+              "uri": "spotify:artist:3wcj11K77LjEY1PkEazffa"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2Nwv16YY4xo8Jm4TVm54i9"
+          },
+          "href": "https://api.spotify.com/v1/albums/2Nwv16YY4xo8Jm4TVm54i9",
+          "id": "2Nwv16YY4xo8Jm4TVm54i9",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273ed808ecd866a67c6e47e33f9",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02ed808ecd866a67c6e47e33f9",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851ed808ecd866a67c6e47e33f9",
+              "width": 64
+            }
+          ],
+          "name": "B. D’OR (feat. Wizkid)",
+          "release_date": "2021-12-14",
+          "release_date_precision": "day",
+          "total_tracks": 1,
+          "type": "album",
+          "uri": "spotify:album:2Nwv16YY4xo8Jm4TVm54i9"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3wcj11K77LjEY1PkEazffa"
+            },
+            "href": "https://api.spotify.com/v1/artists/3wcj11K77LjEY1PkEazffa",
+            "id": "3wcj11K77LjEY1PkEazffa",
+            "name": "Burna Boy",
+            "type": "artist",
+            "uri": "spotify:artist:3wcj11K77LjEY1PkEazffa"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 189800,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USAT22108194"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1n6vbblzNmLgkfyPiQK4Ig"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1n6vbblzNmLgkfyPiQK4Ig",
+        "id": "1n6vbblzNmLgkfyPiQK4Ig",
+        "is_local": false,
+        "is_playable": true,
+        "linked_from": {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/track/3ketN3dth18vSJ1T3HIztN"
+          },
+          "href": "https://api.spotify.com/v1/tracks/3ketN3dth18vSJ1T3HIztN",
+          "id": "3ketN3dth18vSJ1T3HIztN",
+          "type": "track",
+          "uri": "spotify:track:3ketN3dth18vSJ1T3HIztN"
+        },
+        "name": "B. D'OR (feat. Wizkid)",
+        "popularity": 47,
+        "preview_url": "https://p.scdn.co/mp3-preview/628131a9b5b6bddba8f4243e23405d6004ec8d75?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:1n6vbblzNmLgkfyPiQK4Ig"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+              },
+              "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+              "id": "3tVQdUvClmAT7URs9V3rsp",
+              "name": "Wizkid",
+              "type": "artist",
+              "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/73rKiFhHZatrwJL0B1F6hY"
+          },
+          "href": "https://api.spotify.com/v1/albums/73rKiFhHZatrwJL0B1F6hY",
+          "id": "73rKiFhHZatrwJL0B1F6hY",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273e944c571fca9ea470ebb5821",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02e944c571fca9ea470ebb5821",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851e944c571fca9ea470ebb5821",
+              "width": 64
+            }
+          ],
+          "name": "More Love, Less Ego",
+          "release_date": "2022-11-11",
+          "release_date_precision": "day",
+          "total_tracks": 13,
+          "type": "album",
+          "uri": "spotify:album:73rKiFhHZatrwJL0B1F6hY"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2p1fiYHYiXz9qi0JJyxBzN"
+            },
+            "href": "https://api.spotify.com/v1/artists/2p1fiYHYiXz9qi0JJyxBzN",
+            "id": "2p1fiYHYiXz9qi0JJyxBzN",
+            "name": "Skepta",
+            "type": "artist",
+            "uri": "spotify:artist:2p1fiYHYiXz9qi0JJyxBzN"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5DfaMudUwkoz6TAPYifqkJ"
+            },
+            "href": "https://api.spotify.com/v1/artists/5DfaMudUwkoz6TAPYifqkJ",
+            "id": "5DfaMudUwkoz6TAPYifqkJ",
+            "name": "Naira Marley",
+            "type": "artist",
+            "uri": "spotify:artist:5DfaMudUwkoz6TAPYifqkJ"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 179800,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USRC12203517"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/0Z5HVNSXGXHf7MDb0zJHVW"
+        },
+        "href": "https://api.spotify.com/v1/tracks/0Z5HVNSXGXHf7MDb0zJHVW",
+        "id": "0Z5HVNSXGXHf7MDb0zJHVW",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Wow (feat. Skepta & Naira Marley)",
+        "popularity": 64,
+        "preview_url": "https://p.scdn.co/mp3-preview/098a71e70f46a5e586f1e575cf7dc1b4b4fa8166?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 9,
+        "type": "track",
+        "uri": "spotify:track:0Z5HVNSXGXHf7MDb0zJHVW"
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z"
+              },
+              "href": "https://api.spotify.com/v1/artists/7bXgB6jMjp9ATFy66eO08Z",
+              "id": "7bXgB6jMjp9ATFy66eO08Z",
+              "name": "Chris Brown",
+              "type": "artist",
+              "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/5kfM4GlfOj2PdcvcRglN86"
+          },
+          "href": "https://api.spotify.com/v1/albums/5kfM4GlfOj2PdcvcRglN86",
+          "id": "5kfM4GlfOj2PdcvcRglN86",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273a19e09374ed73aabb6546bb5",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02a19e09374ed73aabb6546bb5",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851a19e09374ed73aabb6546bb5",
+              "width": 64
+            }
+          ],
+          "name": "Breezy",
+          "release_date": "2022-06-23",
+          "release_date_precision": "day",
+          "total_tracks": 24,
+          "type": "album",
+          "uri": "spotify:album:5kfM4GlfOj2PdcvcRglN86"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z"
+            },
+            "href": "https://api.spotify.com/v1/artists/7bXgB6jMjp9ATFy66eO08Z",
+            "id": "7bXgB6jMjp9ATFy66eO08Z",
+            "name": "Chris Brown",
+            "type": "artist",
+            "uri": "spotify:artist:7bXgB6jMjp9ATFy66eO08Z"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3tVQdUvClmAT7URs9V3rsp"
+            },
+            "href": "https://api.spotify.com/v1/artists/3tVQdUvClmAT7URs9V3rsp",
+            "id": "3tVQdUvClmAT7URs9V3rsp",
+            "name": "Wizkid",
+            "type": "artist",
+            "uri": "spotify:artist:3tVQdUvClmAT7URs9V3rsp"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 146840,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USRC12201904"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1B5I5yqLpVI5EosZS6bJFs"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1B5I5yqLpVI5EosZS6bJFs",
+        "id": "1B5I5yqLpVI5EosZS6bJFs",
+        "is_local": false,
+        "is_playable": true,
+        "name": "Call Me Every Day (feat. Wizkid)",
+        "popularity": 59,
+        "preview_url": "https://p.scdn.co/mp3-preview/99a76844635e137d19040ea5fd2874b2f7c143fc?cid=774b29d4f13844c495f206cafdad9c86",
+        "track_number": 6,
+        "type": "track",
+        "uri": "spotify:track:1B5I5yqLpVI5EosZS6bJFs"
+      }
+    ],
+    "limit": 10,
+    "next": "https://api.spotify.com/v1/search?query=wizkid&type=track&market=ES&locale=en-US%2Cen%3Bq%3D0.9&offset=15&limit=10",
+    "offset": 5,
+    "previous": "https://api.spotify.com/v1/search?query=wizkid&type=track&market=ES&locale=en-US%2Cen%3Bq%3D0.9&offset=0&limit=10",
+    "total": 1000
+  }
+}
