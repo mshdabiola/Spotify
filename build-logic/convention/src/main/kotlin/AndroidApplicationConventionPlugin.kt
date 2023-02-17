@@ -34,7 +34,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 compileSdkPreview = "UpsideDownCake"
                 defaultConfig.targetSdk = 33
                 defaultConfig.minSdk = 24
-                defaultConfig.versionName = "0.1.0"
+                defaultConfig.versionName = "0.0.1"
                 defaultConfig.versionCode = 1
 
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

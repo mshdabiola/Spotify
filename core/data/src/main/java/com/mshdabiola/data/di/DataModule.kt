@@ -22,5 +22,5 @@ interface DataModule {
     fun bindUserDataRepository(realUserDataRepository: RealUserDataRepository): UserDataRepository
 
     @Binds
-    fun bindNetworkMonitor(connectivityManagerNetworkMonitor: ConnectivityManagerNetworkMonitor):NetworkMonitor
+    fun bindNetworkMonitor(connectivityManagerNetworkMonitor: ConnectivityManagerNetworkMonitor): NetworkMonitor
 }

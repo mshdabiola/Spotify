@@ -1,4 +1,3 @@
-
 package com.mshdabiola.data.util
 
 import android.annotation.SuppressLint

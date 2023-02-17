@@ -1,12 +1,9 @@
 package com.mshdabiola.spotify.ui
 
-import android.net.Uri
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.media3.common.MediaItem
-import androidx.media3.common.MediaMetadata
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -18,7 +15,6 @@ import com.mshdabiola.mainscreen.mainRoute
 import com.mshdabiola.mainscreen.navigateToMain
 import com.mshdabiola.searchscreen.navigateToSearch
 import com.mshdabiola.searchscreen.searchRoute
-import com.mshdabiola.ui.data.TrackUiState
 import timber.log.Timber
 
 data class SpotifyAppState(

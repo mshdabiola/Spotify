@@ -10,9 +10,9 @@ class SpotifyApplication : Application() {
         super.onCreate()
 
         //if(packageName.contains("debug")) {
-            Timber.plant(Timber.DebugTree())
+        Timber.plant(Timber.DebugTree())
         //}
-            Timber.e("log on app create")
+        Timber.e("log on app create")
 
     }
 }

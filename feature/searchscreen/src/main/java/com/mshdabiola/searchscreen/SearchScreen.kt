@@ -44,7 +44,7 @@ internal fun SearchScreen(
     SearchScreen(
         searchUiState.value,
         onSearch = searchViewModel::search,
-        onNavigateToDetail=onNavigateToDetail
+        onNavigateToDetail = onNavigateToDetail
     )
 }
 

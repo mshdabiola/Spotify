@@ -42,7 +42,6 @@ hspace="10" vspace="10">](images/screenshot2.png)
 width="200"
 hspace="10" vspace="10">](images/screenshot3.png)
 
-
 ## Built With
 
 ## Clean architecture with 3 main modules
@@ -69,7 +68,6 @@ hspace="10" vspace="10">](images/screenshot3.png)
 - Google Material 3 [Material Design](https://material.io/blog/android-material-theme-color) library
 
 - Edge To Edge Configuration
-
 
 ## Contribution
 
@@ -102,7 +100,6 @@ Here are other ways you can help:
 * [Report bugs](https://github.com/mshdabiola/spotify/issues)
 
 * [Translate the app](https://poeditor.com/join/spotify/rdWI3SpnSW)
-
 
 ## License
 

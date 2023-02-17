@@ -1,5 +1,3 @@
-
-
 package com.mshdabiola.common.appdispatchers
 
 import javax.inject.Qualifier
