@@ -216,4 +216,8 @@ class FakeNetworkRepository : NetworkRepository {
         )
 
     }
+
+    override suspend fun setUp() {
+        TODO("Not yet implemented")
+    }
 }
