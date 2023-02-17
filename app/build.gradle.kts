@@ -83,7 +83,7 @@ dependencies {
     implementation(libs.androidx.media3.exoplayer)
     // For exposing and controlling media sessions
     implementation(libs.androidx.media3.session)
-    implementation("com.spotify.android:auth:1.2.5")
+    implementation(libs.auth)
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
     implementation(libs.kotlinx.collection.immutable)

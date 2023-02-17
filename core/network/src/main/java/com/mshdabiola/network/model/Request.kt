@@ -1,4 +1,4 @@
-package com.mshdabiola.network.request
+package com.mshdabiola.network.model
 
 import io.ktor.resources.Resource
 

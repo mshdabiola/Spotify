@@ -16,7 +16,7 @@ import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
 import com.mshdabiola.network.model.comp.RelatedArtists
-import com.mshdabiola.network.request.Request
+import com.mshdabiola.network.model.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.resources.get

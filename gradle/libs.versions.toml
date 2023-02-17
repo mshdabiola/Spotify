@@ -2,10 +2,10 @@
 accompanist = "0.28.0"
 admob = "21.5.0"
 androidDesugarJdkLibs = "2.0.2"
-androidGradlePlugin = "8.1.0-alpha04"
+androidGradlePlugin = "8.1.0-alpha05"
 androidx-compose-foundation = "1.4.0-beta01"
 androidxActivity = "1.8.0-alpha01"
-androidxAppCompat = "1.6.0"
+androidxAppCompat = "1.6.1"
 androidxCompose = "1.4.0-beta01"
 androidxComposeBom = "2022.11.00"
 androidxComposeCompiler = "1.4.0"
@@ -34,9 +34,10 @@ androidxTracing = "1.1.0"
 androidxUiAutomator = "2.3.0-alpha02"
 androidxWindowManager = "1.0.0"
 androidxWork = "2.8.0"
+auth = "1.2.5"
 coil = "2.2.2"
 firebaseAnalytics = "21.2.0"
-firebaseCrashlyticsKts = "18.3.3"
+firebaseCrashlyticsKts = "18.3.5"
 firebaseCrashylyticsPlugins = "2.9.2"
 googleServicePlugin = "4.3.14"
 hilt = "2.44.2"
@@ -117,6 +118,7 @@ androidx-tracing-ktx = { module = "androidx.tracing:tracing-ktx", version.ref = 
 androidx-window-manager = { module = "androidx.window:window", version.ref = "androidxWindowManager" }
 androidx-work-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidxWork" }
 androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "androidxWork" }
+auth = { module = "com.spotify.android:auth", version.ref = "auth" }
 coil-kt = { module = "io.coil-kt:coil", version.ref = "coil" }
 coil-kt-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 coil-kt-svg = { module = "io.coil-kt:coil-svg", version.ref = "coil" }
