@@ -97,7 +97,11 @@ internal fun MainScreen(
 
     Crossfade(targetState = mainState.showLogin) {
         if (it) {
-            Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Button(
                     modifier = Modifier,
                     onClick = {
@@ -125,7 +129,7 @@ internal fun MainScreen(
                     else
                         "Network is not available",
                     style = MaterialTheme.typography.titleMedium
-                    )
+                )
             }
         } else {
             Column(

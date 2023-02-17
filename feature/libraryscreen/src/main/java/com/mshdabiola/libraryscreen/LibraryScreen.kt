@@ -44,7 +44,7 @@ internal fun LibraryScreen(
     val libraryUiState = libraryViewModel.libraryUiState.collectAsStateWithLifecycle()
     LibraryScreen(
         libraryUiState = libraryUiState.value,
-        onNavigateToDetail2=onNavigateToDetail
+        onNavigateToDetail2 = onNavigateToDetail
     )
 }
 

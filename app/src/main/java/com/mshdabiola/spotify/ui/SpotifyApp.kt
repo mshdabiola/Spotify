@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -121,9 +120,10 @@ fun SpotifyBottomNavBar(
 }
 
 //Todo("incorrect nav bar after to detail")
-fun NavDestination?.isTop(destination: TopLevelDestination):Boolean{
-    Timber.e(this?.hierarchy?.joinToString { it.route ?:"null" })
-    return this?.hierarchy?.any { it.route?.contains(routeArray[destination.ordinal]) ?: false } ?: false
+fun NavDestination?.isTop(destination: TopLevelDestination): Boolean {
+    Timber.e(this?.hierarchy?.joinToString { it.route ?: "null" })
+    return this?.hierarchy?.any { it.route?.contains(routeArray[destination.ordinal]) ?: false }
+        ?: false
 }
 
 

@@ -4,6 +4,7 @@ import com.mshdabiola.network.model.CategoryItem
 import com.mshdabiola.network.model.OnePlaylist
 import com.mshdabiola.network.model.PagingNetWorkTracks
 import com.mshdabiola.network.model.PagingNetworkAlbums
+import com.mshdabiola.network.model.Request
 import com.mshdabiola.network.model.Search
 import com.mshdabiola.network.model.UserAlbums
 import com.mshdabiola.network.model.UserTracks
@@ -16,7 +17,6 @@ import com.mshdabiola.network.model.comp.NetworkArtist
 import com.mshdabiola.network.model.comp.NetworkPlaylists
 import com.mshdabiola.network.model.comp.NetworkTrack
 import com.mshdabiola.network.model.comp.RelatedArtists
-import com.mshdabiola.network.model.Request
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.resources.get

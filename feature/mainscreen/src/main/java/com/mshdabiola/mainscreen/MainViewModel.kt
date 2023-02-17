@@ -39,7 +39,7 @@ class MainViewModel
         viewModelScope.launch {
             networkMonitor.isOnline.distinctUntilChanged()
                 .collectLatest {
-                    _mainState.update { main->
+                    _mainState.update { main ->
                         main.copy(isConnected = it)
                     }
                 }
